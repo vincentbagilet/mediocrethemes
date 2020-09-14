@@ -1,0 +1,20 @@
+Package: mediocrethemes
+Type: Package
+Title: No particularly nice ggplot themes
+Version: 0.1.0
+Author: person("Vincent", "Bagilet", email = "Vincent.bagilet@columbia.edu",
+      role = c("aut", "cre"))
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    ggplot2
+Depends: 
+    R (>= 2.10)
+RoxygenNote: 7.1.0
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
