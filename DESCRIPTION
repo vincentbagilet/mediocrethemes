@@ -18,4 +18,5 @@ Suggests:
     rmarkdown
 VignetteBuilder: knitr
 Imports: 
-    grDevices
+    grDevices,
+    showtext

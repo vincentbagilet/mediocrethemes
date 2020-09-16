@@ -11,14 +11,14 @@
 #'
 #' @examples
 #' ggplot(ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
-#' geom_col() +
-#' theme_mediocre() +
-#' scale_mediocre_d()
+#'   geom_col() +
+#'   theme_mediocre() +
+#'   scale_mediocre_d()
 #'
 #' ggplot(ggplot2::mpg, aes(x = cty, y = displ, color = hwy)) +
-#' geom_point() +
-#' theme_mediocre() +
-#' scale_mediocre_c()
+#'   geom_point() +
+#'   theme_mediocre() +
+#'   scale_mediocre_c()
 #'
 scale_mediocre_d <- function(...) {
   mediocre_color_vector <- c("#5F0F40", "#9A031E", "#FB9637", "#AE5E26", "#44524A", "#15343D")
@@ -43,7 +43,3 @@ scale_mediocre_c <- function(...) {
     aesthetics = c("fill", "color")
   )
 }
-
-
-
-
