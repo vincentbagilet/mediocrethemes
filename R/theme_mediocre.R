@@ -37,16 +37,16 @@ theme_mediocre <- function() {
       panel.grid.minor.x = ggplot2::element_blank(),
       panel.grid.major.x =  ggplot2::element_blank(),
       panel.grid.minor.y = ggplot2::element_blank(),
-      text = ggplot2::element_text(family = "opensans", colour = color_type[["dark"]],),
+      text = ggplot2::element_text(family = "nunito", colour = color_type[["dark"]],),
       axis.text = ggplot2::element_text(size = 10),
       axis.text.x = ggplot2::element_text(angle = 45),
       axis.ticks.x = ggplot2::element_line(size = 0.2),
       plot.title.position = "plot",
       plot.title = ggplot2::element_text(hjust = 0.1, size = 13),
-      plot.subtitle = ggplot2::element_text(hjust = 0.1, vjust = 0, size = 10, face = "italic"),
+      plot.subtitle = ggplot2::element_text(hjust = 0.12, vjust = 0, size = 10, face = "italic"),
       legend.position = "top",
       legend.title.align = 0.5,
-      legend.title = ggplot2::element_text(size = 10),
+      legend.title = ggplot2::element_text(size = 10, vjust = 0.8),
       legend.text = ggplot2::element_text(size = 8)
     )
 }

@@ -11,13 +11,13 @@ Defines the ggplot theme with the default R colors.
 }
 \examples{
 ggplot(ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
-geom_col() +
-theme_mediocre() +
-labs(title = "A very nice title", subtitle = "A desapointing subtitle")
+  geom_col() +
+  theme_mediocre() +
+  labs(title = "A very nice title", subtitle = "A desapointing subtitle")
 
-#' ggplot(ggplot2::mpg, aes(x = cty, y = displ, color = hwy)) +
-geom_point() +
-theme_mediocre() +
-labs(title = "A very nice title", subtitle = "A desapointing subtitle")
+ggplot(ggplot2::mpg, aes(x = cty, y = displ, color = hwy)) +
+  geom_point() +
+  theme_mediocre() +
+  labs(title = "A very nice title", subtitle = "A desapointing subtitle")
 
 }

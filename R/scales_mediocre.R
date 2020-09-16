@@ -20,26 +20,60 @@
 #'   theme_mediocre() +
 #'   scale_mediocre_c()
 #'
-scale_mediocre_d <- function(...) {
+scale_fill_mediocre_d <- function(...) {
   mediocre_color_vector <- c("#5F0F40", "#9A031E", "#FB9637", "#AE5E26", "#44524A", "#15343D")
   mediocre_pal <- grDevices::colorRampPalette(mediocre_color_vector)
 
   ggplot2::discrete_scale(
     ...,
-    aesthetics = c("fill", "color"),
+    aesthetics = "fill",
     scale_name = "disc_scale",
     palette = mediocre_pal
   )
 }
 
 #' @export
-#' @rdname scale_mediocre_d
-scale_mediocre_c <- function(...) {
+#' @rdname scale_fill_mediocre_d
+scale_color_mediocre_d <- function(...) {
+  mediocre_color_vector <- c("#5F0F40", "#9A031E", "#FB9637", "#AE5E26", "#44524A", "#15343D")
+  mediocre_pal <- grDevices::colorRampPalette(mediocre_color_vector)
+
+  ggplot2::discrete_scale(
+    ...,
+    aesthetics = "color",
+    scale_name = "disc_scale",
+    palette = mediocre_pal
+  )
+}
+
+#' @export
+#' @rdname scale_fill_mediocre_d
+scale_colour_mediocre_d <- scale_color_mediocre_d
+
+#' @export
+#' @rdname scale_fill_mediocre_d
+scale_fill_mediocre_c <- function(...) {
   mediocre_color_vector <- c("#5F0F40", "#9A031E", "#FB9637", "#AE5E26", "#44524A", "#15343D")
 
   ggplot2::scale_fill_gradientn(
     ...,
     colors = mediocre_color_vector,
-    aesthetics = c("fill", "color")
+    aesthetics = "fill"
   )
 }
+
+#' @export
+#' @rdname scale_fill_mediocre_d
+scale_color_mediocre_c <- function(...) {
+  mediocre_color_vector <- c("#5F0F40", "#9A031E", "#FB9637", "#AE5E26", "#44524A", "#15343D")
+
+  ggplot2::scale_fill_gradientn(
+    ...,
+    colors = mediocre_color_vector,
+    aesthetics = "color"
+  )
+}
+
+#' @export
+#' @rdname scale_fill_mediocre_d
+scale_colour_mediocre_c <- scale_color_mediocre_c
