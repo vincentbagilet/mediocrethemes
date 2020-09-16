@@ -2,21 +2,22 @@
 % Please edit documentation in R/theme_mediocre.R
 \name{theme_mediocre}
 \alias{theme_mediocre}
-\title{Defines the ggplot theme with the corresponding mediocre colors}
+\title{Defines the ggplot theme with the default R colors.}
 \usage{
-theme_mediocre(color = "gray")
+theme_mediocre()
 }
 \description{
-Defines the ggplot theme with the corresponding mediocre colors
+Defines the ggplot theme with the default R colors.
 }
 \examples{
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
+ggplot(ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
 geom_col() +
 theme_mediocre() +
 labs(title = "A very nice title", subtitle = "A desapointing subtitle")
 
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
+#' ggplot(ggplot2::mpg, aes(x = cty, y = displ, color = hwy)) +
 geom_point() +
 theme_mediocre() +
 labs(title = "A very nice title", subtitle = "A desapointing subtitle")
+
 }
