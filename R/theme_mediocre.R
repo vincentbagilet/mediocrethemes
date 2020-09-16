@@ -24,7 +24,10 @@ theme_mediocre <- function() {
   ggplot2::update_geom_defaults(geom = "density", list(colour = color_type[["base"]]))
   ggplot2::update_geom_defaults(geom = "smooth", list(colour = color_type[["light"]], fill = color_type[["light"]], alpha = 0.2))
 
-  sysfonts::font_add_google("Open Sans", "opensans")
+  # set fonts
+  # sysfonts::font_add_google("Open Sans", "opensans")
+  # sysfonts::font_add_google("Montserrat", "montserrat")
+  sysfonts::font_add_google("Nunito Sans", "nunito")
   showtext::showtext_auto()
 
   ggplot2::theme_minimal() %+replace%
