@@ -16,11 +16,16 @@ This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
 
 ```{r}
+library(ggplot2)
+library(showtext)
+
+sysfonts::font_add_google("Playfair Display", "opensans")
+showtext::showtext_auto()
+
   ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
-    geom_col() +
-    # theme_mediocre() +
-    # scale_mediocre_d() +
-    labs(title = "A very nice title")#, subtitle = "A disapointing subtitle")
+    geom_col() + 
+    theme(text = ggplot2::element_text(family = "opensans")) +
+    labs(title = "A very nice title", subtitle = "A disapointing subtitle")
   
 ```
 

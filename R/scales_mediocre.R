@@ -21,9 +21,9 @@
 #'   scale_mediocre_c()
 #'
 scale_mediocre_d <- function(...) {
-  mediocre_color_vector <- c("#5F0F40", "#9A031E", "#FB9637", "#AE5E26", "#44524A", "#15343D")
+  mediocre_color_vector <- c("#580E3C", "#9A031E", "#CB4D2B", "#FB9637", "#AE5E26", "#44524A", "#15343D")
 
-  mediocre_pal <- grDevices::colorRampPalette(mediocre_color_vector)
+  mediocre_pal <- grDevices::colorRampPalette(mediocre_color_vector, bias = 0.8)
 
   ggplot2::discrete_scale(
     ...,
@@ -36,7 +36,7 @@ scale_mediocre_d <- function(...) {
 #' @export
 #' @rdname scale_mediocre_d
 scale_mediocre_c <- function(...) {
-  mediocre_color_vector <- c("#5F0F40", "#9A031E", "#FB9637", "#AE5E26", "#44524A", "#15343D")
+  mediocre_color_vector <- c("#580E3C", "#9A031E", "#CB4D2B", "#FB9637", "#AE5E26", "#44524A", "#15343D")
 
   ggplot2::scale_fill_gradientn(
     ...,

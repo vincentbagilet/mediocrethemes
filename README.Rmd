@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "70%",
   dpi = 300,
-  fig.align="center"
+  fig.align = "center"
 )
 ```
 
@@ -62,8 +62,16 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
 Here are a couple of example plots obtained with this theme.
 
 ```{r}
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
+    geom_col() +
+    labs(title = "A very nice title", subtitle = "A disapointing subtitle")
+
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, color = drv)) +
   geom_point() +
+  labs(title = "A very nice title", subtitle = "A desapointing subtitle")
+
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
+  geom_col() +
   labs(title = "A very nice title", subtitle = "A desapointing subtitle")
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
