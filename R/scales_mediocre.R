@@ -22,6 +22,7 @@
 #'
 scale_mediocre_d <- function(...) {
   mediocre_color_vector <- c("#5F0F40", "#9A031E", "#FB9637", "#AE5E26", "#44524A", "#15343D")
+
   mediocre_pal <- grDevices::colorRampPalette(mediocre_color_vector)
 
   ggplot2::discrete_scale(

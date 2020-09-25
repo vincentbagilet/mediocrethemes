@@ -2,6 +2,6 @@
 
 export(scale_mediocre_c)
 export(scale_mediocre_d)
-export(set_document_mediocre)
+export(set_mediocre_all)
 export(theme_mediocre)
 importFrom(ggplot2,"%+replace%")

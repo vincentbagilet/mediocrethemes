@@ -3,6 +3,6 @@
 library(tidyverse)
 library(readxl)
 
-colors_table <- read_excel("data-raw/colors_table.xlsx")
+colors_table <- read_excel("inst/data-raw/colors_table.xlsx")
 
-usethis::use_data(color_table, overwrite = TRUE)
+usethis::use_data(colors_table, overwrite = TRUE)

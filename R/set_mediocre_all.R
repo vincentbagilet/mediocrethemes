@@ -2,9 +2,9 @@
 #'
 #' @export
 #' @examples
-#' set_document_mediocre()
+#' set_mediocre_all()
 #'
-set_document_mediocre <- function() {
+set_mediocre_all <- function() {
   ggplot2::theme_set(mediocrethemes::theme_mediocre())
   options(ggplot2.continuous.fill = mediocrethemes::scale_mediocre_c)
   options(ggplot2.continuous.colour = mediocrethemes::scale_mediocre_c)

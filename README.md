@@ -17,30 +17,44 @@ You can install the development version of `mediocrethemes` from
 
 ``` r
 # install.packages("devtools")
-# devtools::install_github("vincentbagilet/mediocrethemes")
+# devtools::install_github(" vincentbagilet/mediocrethemes")
 ```
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+Here are a couple of example plots obtained with this theme.
 
 ``` r
-# library(mediocrethemes)
-## basic example code
+library(ggplot2)
+library(mediocrethemes)
+
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
+    geom_point() +
+    theme_mediocre() +
+    labs(title = "A very nice title", subtitle = "A desapointing subtitle")
 ```
 
-There are several base colors for in this theme (gray, )
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
 ``` r
-# library(ggplot2)
-# 
-# ggplot(aes(data = ggplot2::mpg, x = cty, y = displ)) +
-#     geom_point() +
-#     theme_mediocre() +
-#     labs(title = "A very nice title", subtitle = "A desapointing subtitle")
-# 
-# ggplot(aes(ata = ggplot2::mpg, x = cty, y = displ, fill = manufacturer)) +
-#     geom_col() +
-#     theme_mediocre() +
-#     labs(title = "A very nice title", subtitle = "A desapointing subtitle")
+
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
+    geom_col() +
+    theme_mediocre() +
+    scale_mediocre_d() +
+    labs(title = "A very nice title", subtitle = "A desapointing subtitle")
+```
+
+<img src="man/figures/README-unnamed-chunk-3-2.png" width="100%" />
+
+## Usage
+
+This package provides both a ggplot theme and a color palette. Users can
+either set the theme and color palatette as done in the previous
+examples or they can set the theme and color palette for all plots in a
+document by using the function `set_mediocre_all` at the top of their
+document:
+
+``` r
+set_mediocre_all()
 ```
