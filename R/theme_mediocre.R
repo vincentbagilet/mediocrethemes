@@ -44,11 +44,12 @@ theme_mediocre <- function() {
       axis.title.x = element_text(margin = margin(t = .3, unit = "cm")),
       axis.title.y = element_text(margin = margin(r = .3, unit = "cm"), angle = 90),
       plot.title.position = "plot",
-      plot.title = ggplot2::element_text(hjust = 0.1, size = rel(1.2), margin = margin(b = .5, unit = "cm")),
-      plot.subtitle = ggplot2::element_text(hjust = 0.12, size = rel(1), face = "italic", vjust = 4.5),
+      plot.title = ggplot2::element_text(hjust = 0.05, size = rel(1.4), margin = margin(b = .5, unit = "cm")),
+      plot.subtitle = ggplot2::element_text(hjust = 0.07, size = rel(1.2), face = "italic", vjust = 4.5),
       legend.position = "top",
       legend.title.align = 0,
-      legend.title = ggplot2::element_text(size = rel(0.9)),
-      legend.text = ggplot2::element_text(size = rel(0.8))
+      legend.title = ggplot2::element_text(size = rel(0.8)),
+      legend.text = ggplot2::element_text(size = rel(0.7)),
+      strip.text = ggplot2::element_text(size = rel(1.1), hjust = 0, margin = margin(b = .1, unit = "cm"))
     )
 }

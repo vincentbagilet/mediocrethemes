@@ -106,3 +106,14 @@ ggplot(df, aes(x, y)) +
 ```
 
 <img src="man/figures/README-unnamed-chunk-5-5.png" width="70%" style="display: block; margin: auto;" />
+
+``` r
+
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
+  geom_point() +
+  facet_wrap(~ year) +
+  theme_mediocre() +
+  labs(title = "A very nice title", subtitle = "A desapointing subtitle") 
+```
+
+<img src="man/figures/README-unnamed-chunk-5-6.png" width="70%" style="display: block; margin: auto;" />

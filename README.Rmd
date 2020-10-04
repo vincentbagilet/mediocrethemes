@@ -88,6 +88,12 @@ ggplot(df, aes(x, y)) +
   geom_hex() +
   coord_fixed() +
   labs(title = "A very nice title", subtitle = "A desapointing subtitle")
+
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
+  geom_point() +
+  facet_wrap(~ year) +
+  theme_mediocre() +
+  labs(title = "A very nice title", subtitle = "A desapointing subtitle") 
 ```
 
 
