@@ -66,10 +66,6 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
     geom_col() +
     labs(title = "A very nice title", subtitle = "A disapointing subtitle")
 
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, color = drv)) +
-  geom_point() +
-  labs(title = "A very nice title", subtitle = "A desapointing subtitle")
-
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
   geom_col() +
   labs(title = "A very nice title", subtitle = "A desapointing subtitle")

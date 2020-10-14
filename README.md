@@ -65,21 +65,12 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
 
 ``` r
 
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, color = drv)) +
-  geom_point() +
-  labs(title = "A very nice title", subtitle = "A desapointing subtitle")
-```
-
-<img src="man/figures/README-unnamed-chunk-5-2.png" width="70%" style="display: block; margin: auto;" />
-
-``` r
-
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
   geom_col() +
   labs(title = "A very nice title", subtitle = "A desapointing subtitle")
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-3.png" width="70%" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-5-2.png" width="70%" style="display: block; margin: auto;" />
 
 ``` r
 
@@ -90,7 +81,7 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
 #> `geom_smooth()` using method = 'loess' and formula 'y ~ x'
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-4.png" width="70%" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-5-3.png" width="70%" style="display: block; margin: auto;" />
 
 ``` r
 
@@ -105,7 +96,7 @@ ggplot(df, aes(x, y)) +
   labs(title = "A very nice title", subtitle = "A desapointing subtitle")
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-5.png" width="70%" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-5-4.png" width="70%" style="display: block; margin: auto;" />
 
 ``` r
 
@@ -116,4 +107,4 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
   labs(title = "A very nice title", subtitle = "A desapointing subtitle") 
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-6.png" width="70%" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-5-5.png" width="70%" style="display: block; margin: auto;" />
