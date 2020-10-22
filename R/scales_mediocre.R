@@ -28,9 +28,9 @@ scale_mediocre_d <- function(...) {
 
   mediocre_pal <- function(n) {
     if (n < 4) { #cannot tell extreme values of the scale appart well
-      color_vector <- mediocre_color_vector[-c(2, 3, 4, 13, 14, 15)]
+      color_vector <- mediocre_color_vector[-c(2, 15)]
     } else if (n == 4) {
-      color_vector <- mediocre_color_vector[-c(13, 14, 15)]
+      color_vector <- mediocre_color_vector[-c(12, 13, 15)]
     } else {
       color_vector <- mediocre_color_vector
     }
