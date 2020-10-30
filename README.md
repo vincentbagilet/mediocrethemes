@@ -8,7 +8,7 @@
 <!-- badges: end -->
 
 This package provides not particularly nice and, hopefully, not
-particularly hugly ggplot themes.
+particularly ugly ggplot themes.
 
 ## Installation
 
@@ -33,7 +33,7 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
     geom_point() +
     theme_mediocre() +
     scale_mediocre_d() +
-    labs(title = "A very nice title", subtitle = "A desapointing subtitle")
+    labs(title = "A very nice title", subtitle = "A disapointing subtitle")
 ```
 
 <img src="man/figures/README-unnamed-chunk-3-1.png" width="70%" style="display: block; margin: auto;" />
@@ -67,7 +67,7 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
   geom_col() +
-  labs(title = "A very nice title", subtitle = "A desapointing subtitle")
+  labs(title = "A very nice title", subtitle = "A disapointing subtitle")
 ```
 
 <img src="man/figures/README-unnamed-chunk-5-2.png" width="70%" style="display: block; margin: auto;" />
@@ -77,7 +77,7 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
   geom_point() +
   geom_smooth() +
-  labs(title = "A very nice title", subtitle = "A desapointing subtitle")
+  labs(title = "A very nice title", subtitle = "A disapointing subtitle")
 #> `geom_smooth()` using method = 'loess' and formula 'y ~ x'
 ```
 
@@ -93,7 +93,7 @@ df <- data.frame(
 ggplot(df, aes(x, y)) +
   geom_hex() +
   coord_fixed() +
-  labs(title = "A very nice title", subtitle = "A desapointing subtitle")
+  labs(title = "A very nice title", subtitle = "A disapointing subtitle")
 ```
 
 <img src="man/figures/README-unnamed-chunk-5-4.png" width="70%" style="display: block; margin: auto;" />
@@ -104,7 +104,7 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
   geom_point() +
   facet_wrap(~ year) +
   theme_mediocre() +
-  labs(title = "A very nice title", subtitle = "A desapointing subtitle") 
+  labs(title = "A very nice title", subtitle = "A disapointing subtitle") 
 ```
 
 <img src="man/figures/README-unnamed-chunk-5-5.png" width="70%" style="display: block; margin: auto;" />
