@@ -14,14 +14,14 @@
 #'   theme_mediocre() +
 #'   labs(title = "A very nice title", subtitle = "A desapointing subtitle")
 #'
-theme_mediocre <- function() {
+theme_mediocre <- function(background = TRUE) {
   color_type <- mediocrethemes::colors_table[which(mediocrethemes::colors_table$color == "gray"),]
 
   ggplot2::update_geom_defaults(geom = "point", list(colour = color_type[["base"]]))
   ggplot2::update_geom_defaults(geom = "bar", list(fill = color_type[["base"]]))
   ggplot2::update_geom_defaults(geom = "col", list(fill = color_type[["base"]]))
   ggplot2::update_geom_defaults(geom = "line", list(colour = color_type[["base"]]))
-  ggplot2::update_geom_defaults(geom = "density", list(colour = color_type[["base"]]))
+  ggplot2::update_geom_defaults(geom = "density", list(fill = color_type[["base"]], colour = color_type[["base"]], alpha = 0.2))
   ggplot2::update_geom_defaults(geom = "smooth", list(colour = color_type[["light"]], fill = color_type[["light"]], alpha = 0.2))
 
   # set fonts
@@ -30,9 +30,8 @@ theme_mediocre <- function() {
   }
   showtext::showtext_auto()
 
-  ggplot2::theme_minimal(base_size = 11, base_family = "opensans") %+replace%
+  theme_custom <- ggplot2::theme_minimal(base_size = 11, base_family = "opensans") %+replace%
     ggplot2::theme(
-      plot.background = ggplot2::element_rect(color = color_type[["background"]], fill = color_type[["background"]]),
       panel.grid.major.y = ggplot2::element_line(colour = color_type[["base"]], size = 0.07),
       panel.grid.minor.x = ggplot2::element_blank(),
       panel.grid.major.x =  ggplot2::element_blank(),
@@ -52,4 +51,13 @@ theme_mediocre <- function() {
       legend.text = ggplot2::element_text(size = ggplot2::rel(0.7)),
       strip.text = ggplot2::element_text(size = ggplot2::rel(1.1), hjust = 0, margin = ggplot2::margin(b = .1, unit = "cm"))
     )
+
+  if (background) {
+    theme_custom <- theme_custom +
+      ggplot2::theme(
+        plot.background = element_rect(color = color_type[["background"]], fill = color_type[["background"]])
+      )
+  }
+
+  return(theme_custom)
 }

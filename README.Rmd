@@ -29,14 +29,14 @@ You can install the development version of `mediocrethemes` from [GitHub](https:
 
 ```{r}
 # install.packages("devtools")
-# devtools::install_github(" vincentbagilet/mediocrethemes")
+# devtools::install_github("vincentbagilet/mediocrethemes")
 ```
 
 ## Usage
 
 This package provides both a ggplot theme and a color palette. Users can set the theme and color palatette..
 
-```{r}
+```{r base_graph}
 library(ggplot2)
 library(mediocrethemes)
 
@@ -49,7 +49,7 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
 
 Users can set the theme and color palette for all plots in a document by using the function `set_mediocre_all` at the top of their document:
 
-```{r}
+```{r set_mediocre_all}
 set_mediocre_all()
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
@@ -59,9 +59,11 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
 
 ## Examples
 
+### General examples
+
 Here are a couple of example plots obtained with this theme.
 
-```{r}
+```{r examples}
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
     geom_col() +
     labs(title = "A very nice title", subtitle = "A disapointing subtitle")
@@ -74,6 +76,10 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
   geom_point() +
   geom_smooth() +
   labs(title = "A very nice title", subtitle = "A disapointing subtitle")
+
+ggplot(data = ggplot2::mpg, aes(x = cty)) +
+    geom_density() +
+    labs(title = "A very nice title", subtitle = "A disapointing subtitle")
 
 df <- data.frame(
   x = rnorm(10000),
@@ -92,6 +98,17 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
   labs(title = "A very nice title", subtitle = "A disapointing subtitle") 
 ```
 
+### Removing the background
+
+One can also easly remove the background for their plots by setting the parameter `background` of the functions `theme_mediocre` or `set_mediocre_all` to `FALSE`:
+
+```{r background}
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
+    geom_point() +
+    theme_mediocre(background = FALSE) +
+    scale_mediocre_d() +
+    labs(title = "A very nice title", subtitle = "A disapointing subtitle")
+```
 
 
 

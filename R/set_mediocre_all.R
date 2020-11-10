@@ -4,8 +4,8 @@
 #' @examples
 #' set_mediocre_all()
 #'
-set_mediocre_all <- function() {
-  ggplot2::theme_set(mediocrethemes::theme_mediocre())
+set_mediocre_all <- function(background = TRUE) {
+  ggplot2::theme_set(mediocrethemes::theme_mediocre(background = background))
   options(ggplot2.continuous.fill = mediocrethemes::scale_mediocre_c)
   options(ggplot2.continuous.colour = mediocrethemes::scale_mediocre_c)
   options(ggplot2.discrete.fill = mediocrethemes::scale_mediocre_d)
