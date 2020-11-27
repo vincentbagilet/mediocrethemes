@@ -98,15 +98,15 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
   labs(title = "A very nice title", subtitle = "A disapointing subtitle") 
 ```
 
-### Removing the background
+### Setting a background
 
-One can also easly remove the background for their plots by setting the parameter `background` of the functions `theme_mediocre` or `set_mediocre_all` to `FALSE`:
+One can also easily det a background for all their plots by setting the parameter `background` of the functions `theme_mediocre` or `set_mediocre_all` to `TRUE`. The color of the background is predefined to  fit nicely the theme palette. One can of course still modify the background color by adding a layer to the ggplot theme: `theme(plot.background = element_rect(fill = "red"))`.
 
 ```{r background}
+set_mediocre_all(background = TRUE)
+
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
     geom_point() +
-    theme_mediocre(background = FALSE) +
-    scale_mediocre_d() +
     labs(title = "A very nice title", subtitle = "A disapointing subtitle")
 ```
 
