@@ -33,7 +33,7 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
     geom_point() +
     theme_mediocre() +
     scale_mediocre_d() +
-    labs(title = "A very nice title", subtitle = "A disapointing subtitle")
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
 <img src="man/figures/README-base_graph-1.png" width="70%" style="display: block; margin: auto;" />
@@ -46,7 +46,7 @@ set_mediocre_all()
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
     geom_col() +
-    labs(title = "A very nice title", subtitle = "A disapointing subtitle")
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
 <img src="man/figures/README-set_mediocre_all-1.png" width="70%" style="display: block; margin: auto;" />
@@ -60,39 +60,49 @@ Here are a couple of example plots obtained with this theme.
 ``` r
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
     geom_col() +
-    labs(title = "A very nice title", subtitle = "A disapointing subtitle")
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
 <img src="man/figures/README-examples-1.png" width="70%" style="display: block; margin: auto;" />
 
 ``` r
 
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
-  geom_col() +
-  labs(title = "A very nice title", subtitle = "A disapointing subtitle")
+ggplot(data = ggplot2::mpg, aes(x = drv)) +
+    geom_bar(aes(fill = factor(year)), position = "dodge", bins = 10) +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+#> Warning: Ignoring unknown parameters: bins
 ```
 
 <img src="man/figures/README-examples-2.png" width="70%" style="display: block; margin: auto;" />
 
 ``` r
 
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
-  geom_point() +
-  geom_smooth() +
-  labs(title = "A very nice title", subtitle = "A disapointing subtitle")
-#> `geom_smooth()` using method = 'loess' and formula 'y ~ x'
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
+  geom_col() +
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
 <img src="man/figures/README-examples-3.png" width="70%" style="display: block; margin: auto;" />
 
 ``` r
 
-ggplot(data = ggplot2::mpg, aes(x = cty)) +
-    geom_density() +
-    labs(title = "A very nice title", subtitle = "A disapointing subtitle")
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
+  geom_point() +
+  geom_smooth() +
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+#> `geom_smooth()` using method = 'loess' and formula 'y ~ x'
 ```
 
 <img src="man/figures/README-examples-4.png" width="70%" style="display: block; margin: auto;" />
+
+``` r
+
+ggplot(data = ggplot2::mpg, aes(x = cty)) +
+    geom_density() +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+```
+
+<img src="man/figures/README-examples-5.png" width="70%" style="display: block; margin: auto;" />
 
 ``` r
 
@@ -104,10 +114,10 @@ df <- data.frame(
 ggplot(df, aes(x, y)) +
   geom_hex() +
   coord_fixed() +
-  labs(title = "A very nice title", subtitle = "A disapointing subtitle")
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
-<img src="man/figures/README-examples-5.png" width="70%" style="display: block; margin: auto;" />
+<img src="man/figures/README-examples-6.png" width="70%" style="display: block; margin: auto;" />
 
 ``` r
 
@@ -115,10 +125,10 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
   geom_point() +
   facet_wrap(~ year) +
   theme_mediocre() +
-  labs(title = "A very nice title", subtitle = "A disapointing subtitle") 
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle") 
 ```
 
-<img src="man/figures/README-examples-6.png" width="70%" style="display: block; margin: auto;" />
+<img src="man/figures/README-examples-7.png" width="70%" style="display: block; margin: auto;" />
 
 ### Setting a background
 
@@ -134,7 +144,7 @@ set_mediocre_all(background = TRUE)
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
     geom_point() +
-    labs(title = "A very nice title", subtitle = "A disapointing subtitle")
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
 <img src="man/figures/README-background-1.png" width="70%" style="display: block; margin: auto;" />

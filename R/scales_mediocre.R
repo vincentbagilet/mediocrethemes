@@ -22,12 +22,16 @@
 #'
 scale_mediocre_d <- function(...) {
   # mediocre_color_vector <- c("#15343D", "#445255", "#A07446", "#FB9637", "#CB4D2B", "#9A031E", "#520036")
-  mediocre_color_vector <- c("#15343D", "#284046", "#3E4D4E", "#5F5B4E", "#856949",
-                             "#AB7743", "#D2863C", "#FB9637", "#E57630", "#D0562B",
-                             "#BC3626", "#A61922", "#8D0422", "#70002A", "#520036")
+  # mediocre_color_vector <- c("#15343D", "#284046", "#3E4D4E", "#5F5B4E", "#856949",
+  #                            "#AB7743", "#D2863C", "#FB9637", "#E57630", "#D0562B",
+  #                            "#BC3626", "#A61922", "#8D0422", "#70002A", "#520036")
+  color_theme <- mediocrethemes::colors_table[which(mediocrethemes::colors_table$color == "gray"),]
+  mediocre_color_vector <- unlist(strsplit(color_theme[["vector"]], split=", "))
 
   mediocre_pal <- function(n) {
-    if (n < 4) { #cannot tell extreme values of the scale appart well
+    if (n == 2) { #cannot tell apart extreme values of the scale
+      color_vector <- mediocre_color_vector[c(1,10)]
+    } else if (n == 3) {
       color_vector <- mediocre_color_vector[-c(2, 15)]
     } else if (n == 4) {
       color_vector <- mediocre_color_vector[-c(12, 13, 15)]
@@ -50,10 +54,8 @@ scale_mediocre_d <- function(...) {
 #' @export
 #' @rdname scale_mediocre_d
 scale_mediocre_c <- function(...) {
-  # mediocre_color_vector <- c("#580E3C", "#9A031E", "#CB4D2B", "#FB9637", "#AE5E26", "#44524A", "#15343D")
-  mediocre_color_vector <- c("#15343D", "#284046", "#3E4D4E", "#5F5B4E", "#856949",
-                             "#AB7743", "#D2863C", "#FB9637", "#E57630", "#D0562B",
-                             "#BC3626", "#A61922", "#8D0422", "#70002A", "#520036")
+  color_theme <- mediocrethemes::colors_table[which(mediocrethemes::colors_table$color == "gray"),]
+  mediocre_color_vector <- unlist(strsplit(color_theme[["vector"]], split=", "))
 
   ggplot2::scale_fill_gradientn(
     ...,

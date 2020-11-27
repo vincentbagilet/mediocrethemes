@@ -44,7 +44,7 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
     geom_point() +
     theme_mediocre() +
     scale_mediocre_d() +
-    labs(title = "A very nice title", subtitle = "A disapointing subtitle")
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
 Users can set the theme and color palette for all plots in a document by using the function `set_mediocre_all` at the top of their document:
@@ -54,7 +54,7 @@ set_mediocre_all()
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
     geom_col() +
-    labs(title = "A very nice title", subtitle = "A disapointing subtitle")
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
 ## Examples
@@ -66,20 +66,24 @@ Here are a couple of example plots obtained with this theme.
 ```{r examples}
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
     geom_col() +
-    labs(title = "A very nice title", subtitle = "A disapointing subtitle")
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+
+ggplot(data = ggplot2::mpg, aes(x = drv)) +
+    geom_bar(aes(fill = factor(year)), position = "dodge", bins = 10) +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
   geom_col() +
-  labs(title = "A very nice title", subtitle = "A disapointing subtitle")
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
   geom_point() +
   geom_smooth() +
-  labs(title = "A very nice title", subtitle = "A disapointing subtitle")
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 
 ggplot(data = ggplot2::mpg, aes(x = cty)) +
     geom_density() +
-    labs(title = "A very nice title", subtitle = "A disapointing subtitle")
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 
 df <- data.frame(
   x = rnorm(10000),
@@ -89,13 +93,13 @@ df <- data.frame(
 ggplot(df, aes(x, y)) +
   geom_hex() +
   coord_fixed() +
-  labs(title = "A very nice title", subtitle = "A disapointing subtitle")
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
   geom_point() +
   facet_wrap(~ year) +
   theme_mediocre() +
-  labs(title = "A very nice title", subtitle = "A disapointing subtitle") 
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle") 
 ```
 
 ### Setting a background
@@ -107,7 +111,7 @@ set_mediocre_all(background = TRUE)
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
     geom_point() +
-    labs(title = "A very nice title", subtitle = "A disapointing subtitle")
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
 
