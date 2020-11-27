@@ -31,20 +31,21 @@ theme_mediocre <- function(background = FALSE) {
   ggplot2::update_geom_defaults(geom = "smooth", list(colour = color_type[["light"]], fill = color_type[["light"]], alpha = 0.2))
 
   # set fonts
-  if (!("lato" %in% sysfonts::font_families())) {
-    # sysfonts::font_add_google("Open Sans", "opensans")
-    sysfonts::font_add_google("Lato", "lato")
+  showtextdb::load_showtext_fonts()
+  if (!("Lato" %in% sysfonts::font_families())) {
+    lato <- showtextdb::google_fonts("Lato")
+    showtextdb::font_install(lato)
   }
   showtext::showtext_auto()
 
-  theme_custom <- ggplot2::theme_minimal(base_size = 12, base_family = "lato") %+replace%
+  theme_custom <- ggplot2::theme_minimal(base_size = 12, base_family = "Lato") %+replace%
     ggplot2::theme(
       panel.grid.major.y = ggplot2::element_line(colour = color_type[["base"]], size = 0.07),
       panel.grid.minor.x = ggplot2::element_blank(),
       panel.grid.major.x =  ggplot2::element_blank(),
       panel.grid.minor.y = ggplot2::element_blank(),
       plot.margin = ggplot2::unit(c(0.5,0.5,0.5,0.5), "cm"),
-      text = ggplot2::element_text(family = "lato", colour = color_type[["base"]]),
+      text = ggplot2::element_text(family = "Lato", colour = color_type[["base"]]),
       axis.text = ggplot2::element_text(size = ggplot2::rel(0.9)),
       axis.ticks.x = ggplot2::element_line(size = ggplot2::rel(0.2)),
       axis.title.x = ggplot2::element_text(hjust = 0.97, margin = ggplot2::margin(t = .35, unit = "cm"), size = ggplot2::rel(1.1)),

@@ -20,4 +20,5 @@ VignetteBuilder: knitr
 Imports: 
     grDevices,
     showtext,
-    sysfonts
+    sysfonts,
+    showtextdb
