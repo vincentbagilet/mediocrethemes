@@ -18,7 +18,7 @@ theme_mediocre <- function(background = FALSE) {
   color_type <- mediocrethemes::colors_table[which(mediocrethemes::colors_table$color == "gray"),]
 
   #setting default colors
-  geoms_color <- c("point", "bar", "col", "line", "contour", "text", "curve", "function", "spoke", "rug")
+  geoms_color <- c("point", "line", "contour", "text", "curve", "function", "spoke", "rug")
   geoms_complementary <- c("abline", "vline", "hline", "errorbar", "errorbarh")
   geoms_fill <- c("area", "bar", "col", "dotplot", "hex", "tile")
   geoms_density <- c("boxplot", "density", "violin", "contour_filled", "ribbon")
