@@ -28,7 +28,7 @@ theme_mediocre <- function(background = FALSE) {
   lapply(geoms_color, ggplot2::update_geom_defaults, list(colour = color_type[["base"]]))
   lapply(geoms_complementary, ggplot2::update_geom_defaults, list(colour = color_type[["complementary"]]))
   lapply(geoms_fill, ggplot2::update_geom_defaults, list(fill = color_type[["base"]]))
-  lapply(geoms_density, ggplot2::update_geom_defaults, list(fill = color_type[["base"]], alpha = 0.2))
+  lapply(geoms_density, ggplot2::update_geom_defaults, list(fill = color_type[["base"]], color = color_type[["base"]], alpha = 0.2))
 
   ggplot2::update_geom_defaults(geom = "smooth", list(colour = color_type[["light"]], fill = color_type[["light"]], alpha = 0.2))
 
