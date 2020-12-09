@@ -34,7 +34,7 @@ You can install the development version of `mediocrethemes` from [GitHub](https:
 
 ## Usage
 
-This package provides both a ggplot theme and a color palette. Users can set the theme and color palatette..
+This package provides both a ggplot theme and a color palette. Users can set the theme and color palette.
 
 ```{r base_graph}
 library(ggplot2)

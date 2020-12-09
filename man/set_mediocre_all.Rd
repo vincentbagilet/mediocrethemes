@@ -4,7 +4,7 @@
 \alias{set_mediocre_all}
 \title{Sets the mediocre theme and colors for the whole document.}
 \usage{
-set_mediocre_all()
+set_mediocre_all(background = FALSE)
 }
 \description{
 Sets the mediocre theme and colors for the whole document.

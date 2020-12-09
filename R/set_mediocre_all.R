@@ -1,5 +1,7 @@
 #' Sets the mediocre theme and colors for the whole document.
 #'
+#' @param background If TRUE, a background is added to the plots
+#'
 #' @export
 #' @examples
 #' set_mediocre_all()

@@ -4,7 +4,7 @@
 \alias{theme_mediocre}
 \title{Defines the ggplot theme with the default R colors.}
 \usage{
-theme_mediocre()
+theme_mediocre(background = FALSE)
 }
 \description{
 Defines the ggplot theme with the default R colors.

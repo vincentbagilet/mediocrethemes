@@ -1,6 +1,5 @@
 ## The (super simple) code to prepare the `color_table` dataset goes here
 
-library(tidyverse)
 library(readxl)
 
 colors_table <- read_excel("inst/data-raw/colors_table.xlsx")

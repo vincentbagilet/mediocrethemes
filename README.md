@@ -23,7 +23,7 @@ You can install the development version of `mediocrethemes` from
 ## Usage
 
 This package provides both a ggplot theme and a color palette. Users can
-set the theme and color palatette..
+set the theme and color palette.
 
 ``` r
 library(ggplot2)
