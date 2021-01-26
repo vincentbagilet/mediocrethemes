@@ -30,4 +30,4 @@ ggplot(ggplot2::mpg, aes(x = cty, y = displ, color = hwy)) +
   scale_mediocre_c()
 
 }
-\concept{colour scales}
+\concept{color scales}

@@ -10,7 +10,7 @@
 #'   \item{light}{a lighter color}
 #'   \item{background}{color for the background of plots}
 #'   \item{dark}{a darker color}
-#'   \item{complementary}{a complementary color to the base color, to provide some contrast}
+#'   \item{complementary}{a complementary color to the base color, for contrast}
 #'   \item{vector}{a vector of colors used in the scale}
 #'   ...
 #' }

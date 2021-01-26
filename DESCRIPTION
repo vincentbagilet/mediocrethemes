@@ -15,11 +15,12 @@ Depends:
 RoxygenNote: 7.1.1
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    lintr,
+    testthat
 VignetteBuilder: knitr
 Imports: 
     grDevices,
     showtext,
     sysfonts,
-    showtextdb,
-    testthat
+    showtextdb
