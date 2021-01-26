@@ -4,9 +4,12 @@
 \alias{set_mediocre_all}
 \title{Sets the mediocre theme and colors for the whole document.}
 \usage{
-set_mediocre_all(background = FALSE)
+set_mediocre_all(pal = "autumn", background = FALSE)
 }
 \arguments{
+\item{pal}{a string. Defines the color palette selected.
+Can either be "autumn" or "rainbow"}
+
 \item{background}{If TRUE, a background is added to the plots}
 }
 \description{

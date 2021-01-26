@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A table with different colors combinations for the theme — colors_table • mediocrethemes</title>
+<title>Mediocre color palette — palette_mediocre_d • mediocrethemes</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,10 @@
 
 
 
-<meta property="og:title" content="A table with different colors combinations for the theme — colors_table" />
-<meta property="og:description" content="A table containing the name of the color combination, a base color,
-a background color, a lighter and a darker one" />
+<meta property="og:title" content="Mediocre color palette — palette_mediocre_d" />
+<meta property="og:description" content="The `mediocre` palettes provide alternative default colors for ggplots.
+These functions enable to create such palettes.
+The main color palettes have been defined using https://coolors.co/." />
 
 
 
@@ -104,35 +105,87 @@ a background color, a lighter and a darker one" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>A table with different colors combinations for the theme</h1>
+    <h1>Mediocre color palette</h1>
     
-    <div class="hidden name"><code>colors_table.Rd</code></div>
+    <div class="hidden name"><code>palette_mediocre_d.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A table containing the name of the color combination, a base color,
-a background color, a lighter and a darker one</p>
+    <p>The `mediocre` palettes provide alternative default colors for ggplots.
+These functions enable to create such palettes.
+The main color palettes have been defined using <a href='https://coolors.co/'>https://coolors.co/</a>.</p>
     </div>
 
-    <pre class="usage"><span class='va'>colors_table</span></pre>
+    <pre class="usage"><span class='fu'>palette_mediocre_d</span><span class='op'>(</span>pal <span class='op'>=</span> <span class='st'>"autumn"</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>pal</th>
+      <td><p>a string. Defines the color palette selected.
+Can either be "autumn" or "rainbow"</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Other arguments passed on to
+<code><a href='https://ggplot2.tidyverse.org/reference/discrete_scale.html'>discrete_scale</a></code>,
+<code><a href='https://ggplot2.tidyverse.org/reference/continuous_scale.html'>continuous_scale</a></code>,
+or <code><a href='https://ggplot2.tidyverse.org/reference/binned_scale.html'>binned_scale</a></code> to control name, limits, breaks,
+labels and so forth.</p></td>
+    </tr>
+    </table>
 
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p>A data frame with 644 rows and 3 variables:</p><dl>
-  <dt>color</dt><dd><p>color set name</p></dd>
-  <dt>base</dt><dd><p>base color, for one color graphs</p></dd>
-  <dt>text</dt><dd><p>color for text and axes</p></dd>
-  <dt>light</dt><dd><p>a lighter color</p></dd>
-  <dt>background</dt><dd><p>color for the background of plots</p></dd>
-  <dt>dark</dt><dd><p>a darker color</p></dd>
-  <dt>complementary</dt><dd><p>a complementary color to the base color, for contrast</p></dd>
-  <dt>vector</dt><dd><p>a vector of colors used in the scale</p></dd>
-  ...
+    <div class='dont-index'><p>Other color scales: 
+<code><a href='palette_mediocre_c.html'>palette_mediocre_c</a>()</code></p></div>
 
-</dl>
-
-
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>palette_mediocre_d</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; function (...) 
+#&gt; {
+#&gt;     colors_table &lt;- mediocrethemes::colors_table
+#&gt;     color_theme &lt;- colors_table[which(colors_table$color == pal), 
+#&gt;         ]
+#&gt;     mediocre_color_vector &lt;- unlist(strsplit(color_theme[["vector"]], 
+#&gt;         split = ", "))
+#&gt;     mediocre_pal &lt;- function(n) {
+#&gt;         if (n == 2) {
+#&gt;             color_vector &lt;- mediocre_color_vector[c(1, 8)]
+#&gt;         }
+#&gt;         else if (n == 3) {
+#&gt;             color_vector &lt;- mediocre_color_vector[-c(2, 15)]
+#&gt;         }
+#&gt;         else if (n == 4) {
+#&gt;             color_vector &lt;- mediocre_color_vector[-c(12, 13, 
+#&gt;                 15)]
+#&gt;         }
+#&gt;         else {
+#&gt;             color_vector &lt;- mediocre_color_vector
+#&gt;         }
+#&gt;         the_palette &lt;- grDevices::colorRampPalette(color_vector)
+#&gt;         return(the_palette(n))
+#&gt;     }
+#&gt;     ggplot2::discrete_scale(..., aesthetics = c("fill", "color"), 
+#&gt;         scale_name = "disc_scale", palette = mediocre_pal)
+#&gt; }
+#&gt; &lt;bytecode: 0x7f9094995510&gt;
+#&gt; &lt;environment: 0x7f9094a3cf08&gt;</div><div class='input'>
+<span class='fu'><a href='palette_mediocre_c.html'>palette_mediocre_c</a></span><span class='op'>(</span>pal <span class='op'>=</span> <span class='st'>"rainbow"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; function (...) 
+#&gt; {
+#&gt;     colors_table &lt;- mediocrethemes::colors_table
+#&gt;     color_theme &lt;- colors_table[which(colors_table$color == pal), 
+#&gt;         ]
+#&gt;     mediocre_color_vector &lt;- unlist(strsplit(color_theme[["vector"]], 
+#&gt;         split = ", "))
+#&gt;     ggplot2::scale_fill_gradientn(..., colors = mediocre_color_vector, 
+#&gt;         aesthetics = c("fill", "color"))
+#&gt; }
+#&gt; &lt;bytecode: 0x7f9094939a88&gt;
+#&gt; &lt;environment: 0x7f909492f530&gt;</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

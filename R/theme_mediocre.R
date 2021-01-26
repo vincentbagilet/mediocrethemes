@@ -1,6 +1,8 @@
 #' Defines the ggplot theme with the default R colors.
 #'
 #' @param background If TRUE, a background is added to the plots
+#' @param pal a string. Defines the color palette selected.
+#' Can either be "autumn" or "rainbow"
 #'
 #' @importFrom ggplot2 %+replace%
 #'
@@ -16,14 +18,17 @@
 #'   theme_mediocre() +
 #'   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 #'
-theme_mediocre <- function(background = FALSE) {
+theme_mediocre <- function(pal = "autumn", background = FALSE) {
 
   if (!is.logical(background)) {
     stop("background should be logical")
   }
+  if (!(pal %in% c("autumn", "rainbow"))) {
+    stop('pal should be either "autumn" or "rainbow"')
+  }
 
   colors_table <- mediocrethemes::colors_table
-  color_type <- colors_table[which(colors_table$color == "gray"), ]
+  color_type <- colors_table[which(colors_table$color == pal), ]
 
   #setting default colors
   geoms_color <- c("point", "line", "contour", "text",
@@ -71,7 +76,7 @@ theme_mediocre <- function(background = FALSE) {
     ggplot2::theme_minimal(base_size = 12, base_family = "Lato") %+replace%
     ggplot2::theme(
       panel.grid.major.y = ggplot2::element_line(
-        colour = color_type[["base"]],
+        colour = color_type[["text"]],
         size = 0.07
       ),
       panel.grid.minor.x = ggplot2::element_blank(),
@@ -80,7 +85,7 @@ theme_mediocre <- function(background = FALSE) {
       plot.margin = ggplot2::unit(c(0.5, 0.5, 0.5, 0.5), "cm"),
       text = ggplot2::element_text(
         family = "Lato",
-        colour = color_type[["base"]]
+        colour = color_type[["text"]]
       ),
       axis.text = ggplot2::element_text(size = ggplot2::rel(0.8)),
       axis.ticks.x = ggplot2::element_line(size = ggplot2::rel(0.2)),

@@ -1,4 +1,4 @@
-## The (super simple) code to prepare the `color_table` dataset goes here
+## The (super simple) code to prepare the `color_table` data set goes here
 
 library(readxl)
 

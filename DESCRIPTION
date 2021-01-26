@@ -8,6 +8,7 @@ Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: MIT + file LICENSE
 Encoding: UTF-8
+URL: https://vincentbagilet.github.io/mediocrethemes/
 LazyData: true
 Depends: 
     R (>= 2.10),

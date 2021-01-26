@@ -4,9 +4,12 @@
 \alias{theme_mediocre}
 \title{Defines the ggplot theme with the default R colors.}
 \usage{
-theme_mediocre(background = FALSE)
+theme_mediocre(pal = "autumn", background = FALSE)
 }
 \arguments{
+\item{pal}{a string. Defines the color palette selected.
+Can either be "autumn" or "rainbow"}
+
 \item{background}{If TRUE, a background is added to the plots}
 }
 \description{
