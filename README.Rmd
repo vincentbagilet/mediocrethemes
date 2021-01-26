@@ -65,7 +65,7 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
 
 A couple of example plots obtained with this theme:
 
-```{r examples}
+```{r examples, echo=FALSE}
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
     geom_col() +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle")
@@ -116,7 +116,43 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
+### Additional palettes
 
+Notes that additional palettes are available, such as the `rainbow` palette.
+
+### General examples
+
+A couple of example plots obtained with this theme:
+
+```{r rainbow, echo=FALSE}
+set_mediocre_all(pal = "rainbow")
+
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
+    geom_col() +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
+    geom_col() +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+
+ggplot(data = ggplot2::mpg, aes(x = drv)) +
+    geom_bar(aes(fill = factor(year)), position = "dodge", bins = 10) +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
+  geom_col() +
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+
+df <- data.frame(
+  x = rnorm(10000),
+  y = rnorm(10000)
+)
+
+ggplot(df, aes(x, y)) +
+  geom_hex() +
+  coord_fixed() +
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+```
 
 
 

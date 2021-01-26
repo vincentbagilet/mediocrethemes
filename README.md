@@ -61,78 +61,15 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
 
 A couple of example plots obtained with this theme:
 
-``` r
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
-    geom_col() +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-```
-
 <img src="man/figures/README-examples-1.png" width="70%" style="display: block; margin: auto;" />
 
-``` r
+    #> Warning: Ignoring unknown parameters: bins
 
-ggplot(data = ggplot2::mpg, aes(x = drv)) +
-    geom_bar(aes(fill = factor(year)), position = "dodge", bins = 10) +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-#> Warning: Ignoring unknown parameters: bins
-```
+<img src="man/figures/README-examples-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-3.png" width="70%" style="display: block; margin: auto;" />
 
-<img src="man/figures/README-examples-2.png" width="70%" style="display: block; margin: auto;" />
+    #> `geom_smooth()` using method = 'loess' and formula 'y ~ x'
 
-``` r
-
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
-  geom_col() +
-  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-```
-
-<img src="man/figures/README-examples-3.png" width="70%" style="display: block; margin: auto;" />
-
-``` r
-
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
-  geom_point() +
-  geom_smooth() +
-  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-#> `geom_smooth()` using method = 'loess' and formula 'y ~ x'
-```
-
-<img src="man/figures/README-examples-4.png" width="70%" style="display: block; margin: auto;" />
-
-``` r
-
-ggplot(data = ggplot2::mpg, aes(x = cty)) +
-    geom_density() +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-```
-
-<img src="man/figures/README-examples-5.png" width="70%" style="display: block; margin: auto;" />
-
-``` r
-
-df <- data.frame(
-  x = rnorm(10000),
-  y = rnorm(10000)
-)
-
-ggplot(df, aes(x, y)) +
-  geom_hex() +
-  coord_fixed() +
-  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-```
-
-<img src="man/figures/README-examples-6.png" width="70%" style="display: block; margin: auto;" />
-
-``` r
-
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
-  geom_point() +
-  facet_wrap(~ year) +
-  theme_mediocre() +
-  labs(title = "A very nice title", subtitle = "A disappointing subtitle") 
-```
-
-<img src="man/figures/README-examples-7.png" width="70%" style="display: block; margin: auto;" />
+<img src="man/figures/README-examples-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-5.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-6.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-7.png" width="70%" style="display: block; margin: auto;" />
 
 ### Setting a background
 
@@ -152,3 +89,18 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
 ```
 
 <img src="man/figures/README-background-1.png" width="70%" style="display: block; margin: auto;" />
+
+### Additional palettes
+
+Notes that additional palettes are available, such as the `rainbow`
+palette.
+
+### General examples
+
+A couple of example plots obtained with this theme:
+
+<img src="man/figures/README-rainbow-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-2.png" width="70%" style="display: block; margin: auto;" />
+
+    #> Warning: Ignoring unknown parameters: bins
+
+<img src="man/figures/README-rainbow-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-5.png" width="70%" style="display: block; margin: auto;" />
