@@ -21,4 +21,5 @@ Imports:
     grDevices,
     showtext,
     sysfonts,
-    showtextdb
+    showtextdb,
+    testthat

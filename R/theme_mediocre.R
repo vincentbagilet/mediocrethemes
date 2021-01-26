@@ -9,14 +9,17 @@
 #' ggplot(ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
 #'   geom_col() +
 #'   theme_mediocre() +
-#'   labs(title = "A very nice title", subtitle = "A desapointing subtitle")
+#'   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 #'
 #' ggplot(ggplot2::mpg, aes(x = cty, y = displ, color = hwy)) +
 #'   geom_point() +
 #'   theme_mediocre() +
-#'   labs(title = "A very nice title", subtitle = "A desapointing subtitle")
+#'   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 #'
 theme_mediocre <- function(background = FALSE) {
+
+  if (!is.logical(background)) {stop("background should be logical")}
+
   color_type <- mediocrethemes::colors_table[which(mediocrethemes::colors_table$color == "gray"),]
 
   #setting default colors
@@ -59,8 +62,8 @@ theme_mediocre <- function(background = FALSE) {
       legend.title.align = 0,
       legend.title = ggplot2::element_text(size = ggplot2::rel(0.8)),
       legend.text = ggplot2::element_text(size = ggplot2::rel(0.7)),
-      legend.key.size = unit(1, "lines"),
-      strip.text = ggplot2::element_text(size = ggplot2::rel(1.1), hjust = 0, face = "italic", margin = ggplot2::margin(b = .3, unit = "cm"))
+      legend.key.size = ggplot2::unit(1, "lines"),
+      strip.text = ggplot2::element_text(size = ggplot2::rel(0.9), hjust = 0, face = "italic", margin = ggplot2::margin(b = .3, unit = "cm"))
     )
 
   if (background) {

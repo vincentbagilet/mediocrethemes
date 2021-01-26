@@ -6,6 +6,9 @@
 \usage{
 set_mediocre_all(background = FALSE)
 }
+\arguments{
+\item{background}{If TRUE, a background is added to the plots}
+}
 \description{
 Sets the mediocre theme and colors for the whole document.
 }

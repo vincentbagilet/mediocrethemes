@@ -6,6 +6,9 @@
 \usage{
 theme_mediocre(background = FALSE)
 }
+\arguments{
+\item{background}{If TRUE, a background is added to the plots}
+}
 \description{
 Defines the ggplot theme with the default R colors.
 }
@@ -13,11 +16,11 @@ Defines the ggplot theme with the default R colors.
 ggplot(ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
   geom_col() +
   theme_mediocre() +
-  labs(title = "A very nice title", subtitle = "A desapointing subtitle")
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 
 ggplot(ggplot2::mpg, aes(x = cty, y = displ, color = hwy)) +
   geom_point() +
   theme_mediocre() +
-  labs(title = "A very nice title", subtitle = "A desapointing subtitle")
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 
 }

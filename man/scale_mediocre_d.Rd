@@ -3,7 +3,7 @@
 \name{scale_mediocre_d}
 \alias{scale_mediocre_d}
 \alias{scale_mediocre_c}
-\title{Mediocre colour scales}
+\title{Mediocre color scales}
 \usage{
 scale_mediocre_d(...)
 
@@ -15,8 +15,8 @@ scale_mediocre_c(...)
   labels and so forth.}
 }
 \description{
-The `mediocre` scales provide alternative default colours for ggplots.
-The main colour scale has been chosen and created using \url{https://coolors.co/}.
+The `mediocre` scales provide alternative default colors for ggplots.
+The main color scale has been chosen and created using \url{https://coolors.co/}.
 }
 \examples{
 ggplot(ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
