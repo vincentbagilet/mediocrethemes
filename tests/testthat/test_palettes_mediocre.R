@@ -1,21 +1,21 @@
 library(mediocrethemes)
 library(testthat)
 
-test_that("Error if palette not defined", {
+test_that("Error if palette not correct", {
   expect_error(
     palette_mediocre_d(pal = "a"),
-    'pal should be either "autumn" or "rainbow"'
+    'pal should be either "autumn", "rainbow" or "green"'
   )
   expect_error(
     palette_mediocre_d(pal = 1),
-    'pal should be either "autumn" or "rainbow"'
+    'pal should be either "autumn", "rainbow" or "green"'
   )
   expect_error(
     palette_mediocre_c(pal = "a"),
-    'pal should be either "autumn" or "rainbow"'
+    'pal should be either "autumn", "rainbow" or "green"'
   )
   expect_error(
     palette_mediocre_c(pal = 1),
-    'pal should be either "autumn" or "rainbow"'
+    'pal should be either "autumn", "rainbow" or "green"'
   )
 })

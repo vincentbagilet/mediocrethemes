@@ -61,11 +61,7 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
 
 A couple of example plots obtained with this theme:
 
-<img src="man/figures/README-examples-1.png" width="70%" style="display: block; margin: auto;" />
-
-    #> Warning: Ignoring unknown parameters: bins
-
-<img src="man/figures/README-examples-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-3.png" width="70%" style="display: block; margin: auto;" />
+<img src="man/figures/README-examples-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-3.png" width="70%" style="display: block; margin: auto;" />
 
     #> `geom_smooth()` using method = 'loess' and formula 'y ~ x'
 
@@ -92,15 +88,12 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
 
 ### Additional palettes
 
-Notes that additional palettes are available, such as the `rainbow`
-palette.
+Notes that additional palettes are available.
 
-### General examples
+#### Rainbow
 
-A couple of example plots obtained with this theme:
+<img src="man/figures/README-rainbow-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-5.png" width="70%" style="display: block; margin: auto;" />
 
-<img src="man/figures/README-rainbow-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-2.png" width="70%" style="display: block; margin: auto;" />
+#### Green
 
-    #> Warning: Ignoring unknown parameters: bins
-
-<img src="man/figures/README-rainbow-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-5.png" width="70%" style="display: block; margin: auto;" />
+<img src="man/figures/README-green-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-green-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-green-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-green-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-green-5.png" width="70%" style="display: block; margin: auto;" />

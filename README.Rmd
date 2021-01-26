@@ -71,7 +71,7 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 
 ggplot(data = ggplot2::mpg, aes(x = drv)) +
-    geom_bar(aes(fill = factor(year)), position = "dodge", bins = 10) +
+    geom_bar(aes(fill = factor(year)), position = "dodge") +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
@@ -118,11 +118,9 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
 
 ### Additional palettes
 
-Notes that additional palettes are available, such as the `rainbow` palette.
+Notes that additional palettes are available.
 
-### General examples
-
-A couple of example plots obtained with this theme:
+#### Rainbow
 
 ```{r rainbow, echo=FALSE}
 set_mediocre_all(pal = "rainbow")
@@ -136,7 +134,7 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 
 ggplot(data = ggplot2::mpg, aes(x = drv)) +
-    geom_bar(aes(fill = factor(year)), position = "dodge", bins = 10) +
+    geom_bar(aes(fill = factor(year)), position = "dodge") +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
@@ -154,7 +152,36 @@ ggplot(df, aes(x, y)) +
   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
+#### Green
 
+```{r green, echo=FALSE}
+set_mediocre_all(pal = "green")
 
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
+    geom_col() +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
+    geom_col() +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+
+ggplot(data = ggplot2::mpg, aes(x = drv)) +
+    geom_bar(aes(fill = factor(year)), position = "dodge") +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
+  geom_col() +
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+
+df <- data.frame(
+  x = rnorm(10000),
+  y = rnorm(10000)
+)
+
+ggplot(df, aes(x, y)) +
+  geom_hex() +
+  coord_fixed() +
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+```
 
 
