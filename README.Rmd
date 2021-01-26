@@ -11,7 +11,7 @@ knitr::opts_chunk$set(
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "70%",
-  dpi = 300,
+  dpi = 400,
   fig.align = "center"
 )
 ```
@@ -118,9 +118,9 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
 
 ### Additional palettes
 
-Notes that additional palettes are available.
+Note that additional palettes are available (`rainbow` and `green` for now).
 
-#### Rainbow
+#### rainbow
 
 ```{r rainbow, echo=FALSE}
 set_mediocre_all(pal = "rainbow")
@@ -152,10 +152,10 @@ ggplot(df, aes(x, y)) +
   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
-#### Green
+#### hotcold
 
-```{r green, echo=FALSE}
-set_mediocre_all(pal = "green")
+```{r hotcold, echo=FALSE}
+set_mediocre_all(pal = "hotcold")
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
     geom_col() +
@@ -183,5 +183,3 @@ ggplot(df, aes(x, y)) +
   coord_fixed() +
   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
-
-

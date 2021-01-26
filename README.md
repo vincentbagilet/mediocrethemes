@@ -88,12 +88,13 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
 
 ### Additional palettes
 
-Notes that additional palettes are available.
+Note that additional palettes are available (`rainbow` and `green` for
+now).
 
-#### Rainbow
+#### rainbow
 
 <img src="man/figures/README-rainbow-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-5.png" width="70%" style="display: block; margin: auto;" />
 
-#### Green
+#### hotcold
 
-<img src="man/figures/README-green-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-green-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-green-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-green-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-green-5.png" width="70%" style="display: block; margin: auto;" />
+<img src="man/figures/README-hotcold-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-5.png" width="70%" style="display: block; margin: auto;" />

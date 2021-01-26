@@ -22,8 +22,8 @@
 #'
 palette_mediocre_d <- function(pal = "autumn", ...) {
 
-  if (!(pal %in% c("autumn", "rainbow", "green"))) {
-    stop('pal should be either "autumn", "rainbow" or "green"')
+  if (!(pal %in% c("autumn", "rainbow", "green", "hotcold"))) {
+    stop('pal should be either "autumn", "rainbow", "green" or "hotcold"')
   }
 
   make_palette <- function(...) {
@@ -34,7 +34,8 @@ palette_mediocre_d <- function(pal = "autumn", ...) {
     )
 
     mediocre_pal <- function(n) {
-      if (n == 2) { #cannot tell apart extreme values of the scale
+      if (n == 2 & pal != "hotcold") {
+        #cannot tell apart extreme values of the scale
         color_vector <- mediocre_color_vector[c(1, 8)]
       } else if (n == 3) {
         color_vector <- mediocre_color_vector[-c(2, 15)]
@@ -63,8 +64,8 @@ palette_mediocre_d <- function(pal = "autumn", ...) {
 #' @rdname scale_mediocre_d
 palette_mediocre_c <- function(pal = "autumn", ...) {
 
-  if (!(pal %in% c("autumn", "rainbow", "green"))) {
-    stop('pal should be either "autumn", "rainbow" or "green"')
+  if (!(pal %in% c("autumn", "rainbow", "green", "hotcold"))) {
+    stop('pal should be either "autumn", "rainbow", "green" or "hotcold"')
   }
 
   make_palette <- function(...) {

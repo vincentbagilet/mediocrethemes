@@ -23,8 +23,8 @@ theme_mediocre <- function(pal = "autumn", background = FALSE) {
   if (!is.logical(background)) {
     stop("background should be logical")
   }
-  if (!(pal %in% c("autumn", "rainbow", "green"))) {
-    stop('pal should be either "autumn", "rainbow" or "green"')
+  if (!(pal %in% c("autumn", "rainbow", "green", "hotcold"))) {
+    stop('pal should be either "autumn", "rainbow", "green" or "hotcold"')
   }
 
   colors_table <- mediocrethemes::colors_table
