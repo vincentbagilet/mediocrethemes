@@ -156,9 +156,10 @@ labels and so forth.</p></td>
 #&gt;     mediocre_color_vector &lt;- unlist(strsplit(color_theme[["vector"]], 
 #&gt;         split = ", "))
 #&gt;     mediocre_pal &lt;- function(n) {
-#&gt;         if (n == 2 &amp; pal != "hotcold") {
-#&gt;             color_vector &lt;- mediocre_color_vector[c(1 + 4 * second_pair, 
-#&gt;                 8 + 4 * second_pair)]
+#&gt;         if (n == 2) {
+#&gt;             color_vector &lt;- mediocre_color_vector[c(1 + 5 * second_pair + 
+#&gt;                 (pal == "hotcold"), 8 + 5 * second_pair + (pal == 
+#&gt;                 "hotcold"))]
 #&gt;         }
 #&gt;         else if (n == 3) {
 #&gt;             color_vector &lt;- mediocre_color_vector[-c(2, 15)]
@@ -176,8 +177,8 @@ labels and so forth.</p></td>
 #&gt;     ggplot2::discrete_scale(..., aesthetics = c("fill", "color"), 
 #&gt;         scale_name = "disc_scale", palette = mediocre_pal)
 #&gt; }
-#&gt; &lt;bytecode: 0x7ff9784fe800&gt;
-#&gt; &lt;environment: 0x7ff978504988&gt;</div><div class='input'>
+#&gt; &lt;bytecode: 0x7ff8a86c9da0&gt;
+#&gt; &lt;environment: 0x7ff8a86cd9e8&gt;</div><div class='input'>
 <span class='fu'><a href='palette_mediocre_c.html'>palette_mediocre_c</a></span><span class='op'>(</span>pal <span class='op'>=</span> <span class='st'>"rainbow"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; function (...) 
 #&gt; {
@@ -189,8 +190,8 @@ labels and so forth.</p></td>
 #&gt;     ggplot2::scale_fill_gradientn(..., colors = mediocre_color_vector, 
 #&gt;         aesthetics = c("fill", "color"))
 #&gt; }
-#&gt; &lt;bytecode: 0x7ff9785bbca0&gt;
-#&gt; &lt;environment: 0x7ff9785be758&gt;</div><div class='input'>
+#&gt; &lt;bytecode: 0x7ff8a87a3ca8&gt;
+#&gt; &lt;environment: 0x7ff8a87a2c78&gt;</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

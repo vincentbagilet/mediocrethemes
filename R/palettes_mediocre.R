@@ -36,10 +36,12 @@ palette_mediocre_d <- function(pal = "autumn", second_pair = FALSE, ...) {
     )
 
     mediocre_pal <- function(n) {
-      if (n == 2 & pal != "hotcold") {
+      if (n == 2) {
         #cannot tell apart extreme values of the scale
-        color_vector <-
-          mediocre_color_vector[c(1 + 4 * second_pair, 8 + 4 * second_pair)]
+        color_vector <- mediocre_color_vector[
+          c(1 + 5 * second_pair + (pal == "hotcold"),
+            8 + 5 * second_pair + (pal == "hotcold")
+          )]
       } else if (n == 3) {
         color_vector <- mediocre_color_vector[-c(2, 15)]
       } else if (n == 4) {
