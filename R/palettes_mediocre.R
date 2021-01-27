@@ -6,6 +6,8 @@
 #'
 #' @param pal a string. Defines the color palette selected.
 #' Can either be "autumn" or "rainbow"
+#' @param second_pair if true sets an alternative pair of colors
+#' for graphs with two colors
 #' @param ... Other arguments passed on to
 #' \code{\link[ggplot2]{discrete_scale}},
 #' \code{\link[ggplot2]{continuous_scale}},
@@ -20,7 +22,7 @@
 #'
 #' palette_mediocre_c(pal = "rainbow")
 #'
-palette_mediocre_d <- function(pal = "autumn", ...) {
+palette_mediocre_d <- function(pal = "autumn", second_pair = FALSE, ...) {
 
   if (!(pal %in% c("autumn", "rainbow", "green", "hotcold"))) {
     stop('pal should be either "autumn", "rainbow", "green" or "hotcold"')
@@ -36,7 +38,8 @@ palette_mediocre_d <- function(pal = "autumn", ...) {
     mediocre_pal <- function(n) {
       if (n == 2 & pal != "hotcold") {
         #cannot tell apart extreme values of the scale
-        color_vector <- mediocre_color_vector[c(1, 8)]
+        color_vector <-
+          mediocre_color_vector[c(1 + 4 * second_pair, 8 + 4 * second_pair)]
       } else if (n == 3) {
         color_vector <- mediocre_color_vector[-c(2, 15)]
       } else if (n == 4) {

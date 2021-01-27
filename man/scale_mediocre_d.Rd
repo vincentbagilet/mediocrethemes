@@ -8,7 +8,7 @@
 \usage{
 palette_mediocre_c(pal = "autumn", ...)
 
-scale_mediocre_d(pal = "autumn", ...)
+scale_mediocre_d(pal = "autumn", second_pair = FALSE, ...)
 
 scale_mediocre_c(pal = "autumn", ...)
 }
@@ -21,6 +21,9 @@ Can either be "autumn" or "rainbow"}
 \code{\link[ggplot2]{continuous_scale}},
 or \code{\link[ggplot2]{binned_scale}} to control name, limits, breaks,
 labels and so forth.}
+
+\item{second_pair}{if true sets an alternative pair of colors
+for graphs with two colors}
 }
 \description{
 The `mediocre` scales provide alternative default colors for ggplots.

@@ -1,6 +1,6 @@
 Package: mediocrethemes
 Type: Package
-Title: No particularly nice ggplot themes
+Title: Not particularly nice nor ugly ggplot themes
 Version: 0.1.0
 Authors@R: person("Vincent", "Bagilet", email = "vincent.bagilet@columbia.edu",
       role = c("aut", "cre"))

@@ -4,11 +4,14 @@
 \alias{palette_mediocre_d}
 \title{Mediocre color palette}
 \usage{
-palette_mediocre_d(pal = "autumn", ...)
+palette_mediocre_d(pal = "autumn", second_pair = FALSE, ...)
 }
 \arguments{
 \item{pal}{a string. Defines the color palette selected.
 Can either be "autumn" or "rainbow"}
+
+\item{second_pair}{if true sets an alternative pair of colors
+for graphs with two colors}
 
 \item{...}{Other arguments passed on to
 \code{\link[ggplot2]{discrete_scale}},
