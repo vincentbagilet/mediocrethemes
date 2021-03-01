@@ -30,8 +30,8 @@
 #'
 scale_mediocre_d <- function(pal = "autumn", second_pair = FALSE, ...) {
 
-  if (!(pal %in% c("autumn", "rainbow", "green", "hotcold"))) {
-    stop('pal should be either "autumn", "rainbow", "green" or "hotcold"')
+  if (!(pal %in% c("autumn", "rainbow", "green", "hotcold", "blackandwhite", "coty"))) {
+    stop('pal should be either "autumn", "rainbow", "green", "hotcold", "blackandwhite", or "coty"')
   }
 
   mediocrethemes::palette_mediocre_d(pal = pal, second_pair = second_pair)()
@@ -41,8 +41,8 @@ scale_mediocre_d <- function(pal = "autumn", second_pair = FALSE, ...) {
 #' @rdname scale_mediocre_d
 scale_mediocre_c <- function(pal = "autumn", ...) {
 
-  if (!(pal %in% c("autumn", "rainbow", "green", "hotcold"))) {
-    stop('pal should be either "autumn", "rainbow", "green" or "hotcold"')
+  if (!(pal %in% c("autumn", "rainbow", "green", "hotcold", "blackandwhite", "coty"))) {
+    stop('pal should be either "autumn", "rainbow", "green", "hotcold", "blackandwhite", or "coty"')
   }
 
   mediocrethemes::palette_mediocre_c(pal = pal)()

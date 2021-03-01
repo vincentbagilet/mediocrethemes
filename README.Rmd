@@ -152,10 +152,76 @@ ggplot(df, aes(x, y)) +
   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
+#### coty
+
+A (tentatively) colorblind friendly palette, based on a NPR map.
+
+```{r coty, echo=FALSE}
+set_mediocre_all(pal = "coty")
+
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
+    geom_col() +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
+    geom_col() +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+
+ggplot(data = ggplot2::mpg, aes(x = drv)) +
+    geom_bar(aes(fill = factor(year)), position = "dodge") +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
+  geom_col() +
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+
+df <- data.frame(
+  x = rnorm(10000),
+  y = rnorm(10000)
+)
+
+ggplot(df, aes(x, y)) +
+  geom_hex() +
+  coord_fixed() +
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+```
+
 #### hotcold
 
 ```{r hotcold, echo=FALSE}
 set_mediocre_all(pal = "hotcold")
+
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
+    geom_col() +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
+    geom_col() +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+
+ggplot(data = ggplot2::mpg, aes(x = drv)) +
+    geom_bar(aes(fill = factor(year)), position = "dodge") +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
+  geom_col() +
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+
+df <- data.frame(
+  x = rnorm(10000),
+  y = rnorm(10000)
+)
+
+ggplot(df, aes(x, y)) +
+  geom_hex() +
+  coord_fixed() +
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+```
+
+#### blackandwhite
+
+```{r blackandwhite, echo=FALSE}
+set_mediocre_all(pal = "blackandwhite")
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
     geom_col() +

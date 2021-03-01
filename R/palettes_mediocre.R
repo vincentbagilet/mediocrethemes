@@ -24,8 +24,8 @@
 #'
 palette_mediocre_d <- function(pal = "autumn", second_pair = FALSE, ...) {
 
-  if (!(pal %in% c("autumn", "rainbow", "green", "hotcold"))) {
-    stop('pal should be either "autumn", "rainbow", "green" or "hotcold"')
+  if (!(pal %in% c("autumn", "rainbow", "green", "hotcold", "blackandwhite", "coty"))) {
+    stop('pal should be either "autumn", "rainbow", "green", "hotcold", "blackandwhite", or "coty"')
   }
 
   make_palette <- function(...) {
@@ -35,18 +35,21 @@ palette_mediocre_d <- function(pal = "autumn", second_pair = FALSE, ...) {
       strsplit(color_theme[["vector"]], split = ", ")
     )
 
+    if (pal == "coty") {mediocre_color_vector <- rev(mediocre_color_vector)}
+
     mediocre_pal <- function(n) {
       if (n == 2) {
         #cannot tell apart extreme values of the scale
         color_vector <- mediocre_color_vector[
-          c(1 + 5 * second_pair + (pal == "hotcold"),
-            8 + 5 * second_pair + (pal == "hotcold")
+          c(1 + 5 * second_pair + (pal %in% c("hotcold", "blackandwhite")),
+            8 + 5 * second_pair + (pal %in% c("hotcold", "blackandwhite"))
           )]
       } else if (n == 3) {
         color_vector <- mediocre_color_vector[-c(2, 15)]
       } else if (n == 4) {
         color_vector <- mediocre_color_vector[-c(12, 13, 15)]
       } else {
+        if (pal == "coty") {mediocre_color_vector <- rev(mediocre_color_vector)}
         color_vector <- mediocre_color_vector
       }
       the_palette <- grDevices::colorRampPalette(color_vector)
@@ -70,8 +73,8 @@ palette_mediocre_d <- function(pal = "autumn", second_pair = FALSE, ...) {
 #' @rdname scale_mediocre_d
 palette_mediocre_c <- function(pal = "autumn", ...) {
 
-  if (!(pal %in% c("autumn", "rainbow", "green", "hotcold"))) {
-    stop('pal should be either "autumn", "rainbow", "green" or "hotcold"')
+  if (!(pal %in% c("autumn", "rainbow", "green", "hotcold", "blackandwhite", "coty"))) {
+    stop('pal should be either "autumn", "rainbow", "green", "hotcold", "blackandwhite", or "coty"')
   }
 
   make_palette <- function(...) {

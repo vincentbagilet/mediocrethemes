@@ -95,6 +95,16 @@ now).
 
 <img src="man/figures/README-rainbow-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-5.png" width="70%" style="display: block; margin: auto;" />
 
+#### coty
+
+A (tentatively) colorblind friendly palette, based on a NPR map.
+
+<img src="man/figures/README-coty-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-coty-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-coty-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-coty-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-coty-5.png" width="70%" style="display: block; margin: auto;" />
+
 #### hotcold
 
 <img src="man/figures/README-hotcold-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-5.png" width="70%" style="display: block; margin: auto;" />
+
+#### blackandwhite
+
+<img src="man/figures/README-blackandwhite-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-blackandwhite-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-blackandwhite-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-blackandwhite-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-blackandwhite-5.png" width="70%" style="display: block; margin: auto;" />
