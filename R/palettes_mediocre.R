@@ -58,7 +58,8 @@ palette_mediocre_d <- function(pal = "autumn", second_pair = FALSE, ...) {
       ...,
       aesthetics = c("fill", "color"),
       scale_name = "disc_scale",
-      palette = mediocre_pal
+      palette = mediocre_pal,
+      na.value = "grey"
     )
   }
 
@@ -83,7 +84,8 @@ palette_mediocre_c <- function(pal = "autumn", ...) {
     ggplot2::scale_fill_gradientn(
       ...,
       colors = mediocre_color_vector,
-      aesthetics = c("fill", "color")
+      aesthetics = c("fill", "color"),
+      na.value = "grey"
     )
   }
 

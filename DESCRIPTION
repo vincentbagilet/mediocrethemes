@@ -4,8 +4,7 @@ Title: Not particularly nice nor ugly ggplot themes
 Version: 0.1.0
 Authors@R: person("Vincent", "Bagilet", email = "vincent.bagilet@columbia.edu",
       role = c("aut", "cre"))
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: This package provides not particularly nice and, hopefully, not particularly ugly ggplot themes.
 License: MIT + file LICENSE
 Encoding: UTF-8
 URL: https://vincentbagilet.github.io/mediocrethemes/
