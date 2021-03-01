@@ -124,7 +124,8 @@ The main color palettes have been defined using <a href='https://coolors.co/'>ht
     <tr>
       <th>pal</th>
       <td><p>a string. Defines the color palette selected.
-Can either be "autumn" or "rainbow"</p></td>
+Can either be either "autumn", "rainbow", "green",
+ "hotcold", "blackandwhite", or "coty"</p></td>
     </tr>
     <tr>
       <th>second_pair</th>
@@ -155,11 +156,14 @@ labels and so forth.</p></td>
 #&gt;         ]
 #&gt;     mediocre_color_vector &lt;- unlist(strsplit(color_theme[["vector"]], 
 #&gt;         split = ", "))
+#&gt;     if (pal == "coty") {
+#&gt;         mediocre_color_vector &lt;- rev(mediocre_color_vector)
+#&gt;     }
 #&gt;     mediocre_pal &lt;- function(n) {
 #&gt;         if (n == 2) {
 #&gt;             color_vector &lt;- mediocre_color_vector[c(1 + 5 * second_pair + 
-#&gt;                 (pal == "hotcold"), 8 + 5 * second_pair + (pal == 
-#&gt;                 "hotcold"))]
+#&gt;                 (pal %in% c("hotcold", "blackandwhite")), 8 + 
+#&gt;                 5 * second_pair + (pal %in% c("hotcold", "blackandwhite")))]
 #&gt;         }
 #&gt;         else if (n == 3) {
 #&gt;             color_vector &lt;- mediocre_color_vector[-c(2, 15)]
@@ -169,16 +173,19 @@ labels and so forth.</p></td>
 #&gt;                 15)]
 #&gt;         }
 #&gt;         else {
+#&gt;             if (pal == "coty") {
+#&gt;                 mediocre_color_vector &lt;- rev(mediocre_color_vector)
+#&gt;             }
 #&gt;             color_vector &lt;- mediocre_color_vector
 #&gt;         }
 #&gt;         the_palette &lt;- grDevices::colorRampPalette(color_vector)
 #&gt;         return(the_palette(n))
 #&gt;     }
 #&gt;     ggplot2::discrete_scale(..., aesthetics = c("fill", "color"), 
-#&gt;         scale_name = "disc_scale", palette = mediocre_pal)
+#&gt;         scale_name = "disc_scale", palette = mediocre_pal, na.value = "grey")
 #&gt; }
-#&gt; &lt;bytecode: 0x7ff8a86c9da0&gt;
-#&gt; &lt;environment: 0x7ff8a86cd9e8&gt;</div><div class='input'>
+#&gt; &lt;bytecode: 0x7f863557f028&gt;
+#&gt; &lt;environment: 0x7f863457dc88&gt;</div><div class='input'>
 <span class='fu'><a href='palette_mediocre_c.html'>palette_mediocre_c</a></span><span class='op'>(</span>pal <span class='op'>=</span> <span class='st'>"rainbow"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; function (...) 
 #&gt; {
@@ -188,10 +195,10 @@ labels and so forth.</p></td>
 #&gt;     mediocre_color_vector &lt;- unlist(strsplit(color_theme[["vector"]], 
 #&gt;         split = ", "))
 #&gt;     ggplot2::scale_fill_gradientn(..., colors = mediocre_color_vector, 
-#&gt;         aesthetics = c("fill", "color"))
+#&gt;         aesthetics = c("fill", "color"), na.value = "grey")
 #&gt; }
-#&gt; &lt;bytecode: 0x7ff8a87a3ca8&gt;
-#&gt; &lt;environment: 0x7ff8a87a2c78&gt;</div><div class='input'>
+#&gt; &lt;bytecode: 0x7f8633683bf8&gt;
+#&gt; &lt;environment: 0x7f8633681920&gt;</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
