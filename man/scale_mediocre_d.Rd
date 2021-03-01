@@ -14,7 +14,8 @@ scale_mediocre_c(pal = "autumn", ...)
 }
 \arguments{
 \item{pal}{a string. Defines the color palette selected.
-Can either be "autumn" or "rainbow"}
+Can either be either "autumn", "rainbow", "green",
+ "hotcold", "blackandwhite", or "coty"}
 
 \item{...}{Other arguments passed on to
 \code{\link[ggplot2]{discrete_scale}},

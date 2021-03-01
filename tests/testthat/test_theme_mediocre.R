@@ -9,11 +9,10 @@ test_that("Error if background not logical", {
 test_that("Error if palette not correct", {
   expect_error(
     theme_mediocre(pal = "a"),
-    'pal should be either "autumn", "rainbow", "green", "hotcold", "blackandwhite", or "coty"'
-    }
+    "This palette does not exist in this package"
   )
   expect_error(
     theme_mediocre(pal = 1),
-    'pal should be either "autumn", "rainbow", "green", "hotcold", "blackandwhite", or "coty"'
+    "This palette does not exist in this package"
   )
 })

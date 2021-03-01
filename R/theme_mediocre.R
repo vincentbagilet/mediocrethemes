@@ -2,7 +2,8 @@
 #'
 #' @param background If TRUE, a background is added to the plots
 #' @param pal a string. Defines the color palette selected.
-#' Can either be "autumn" or "rainbow"
+#' Can either be either "autumn", "rainbow", "green",
+#'  "hotcold", "blackandwhite", or "coty"
 #'
 #' @importFrom ggplot2 %+replace%
 #'
@@ -23,8 +24,8 @@ theme_mediocre <- function(pal = "autumn", background = FALSE) {
   if (!is.logical(background)) {
     stop("background should be logical")
   }
-  if (!(pal %in% c("autumn", "rainbow", "green", "hotcold", "blackandwhite", "coty"))) {
-    stop('pal should be either "autumn", "rainbow", "green", "hotcold", "blackandwhite", or "coty"')
+  if (!(pal %in% mediocrethemes::colors_table[["color"]])) {
+    stop("This palette does not exist in this package")
   }
 
   colors_table <- mediocrethemes::colors_table

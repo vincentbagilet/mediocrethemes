@@ -8,7 +8,8 @@ set_mediocre_all(pal = "autumn", background = FALSE, second_pair = FALSE)
 }
 \arguments{
 \item{pal}{a string. Defines the color palette selected.
-Can either be "autumn" or "rainbow"}
+Can either be either "autumn", "rainbow", "green",
+ "hotcold", "blackandwhite", or "coty"}
 
 \item{background}{If TRUE, a background is added to the plots}
 

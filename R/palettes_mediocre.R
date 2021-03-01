@@ -5,7 +5,8 @@
 #' The main color palettes have been defined using \url{https://coolors.co/}.
 #'
 #' @param pal a string. Defines the color palette selected.
-#' Can either be "autumn" or "rainbow"
+#' Can either be either "autumn", "rainbow", "green",
+#'  "hotcold", "blackandwhite", or "coty"
 #' @param second_pair if true sets an alternative pair of colors
 #' for graphs with two colors
 #' @param ... Other arguments passed on to
@@ -24,8 +25,8 @@
 #'
 palette_mediocre_d <- function(pal = "autumn", second_pair = FALSE, ...) {
 
-  if (!(pal %in% c("autumn", "rainbow", "green", "hotcold", "blackandwhite", "coty"))) {
-    stop('pal should be either "autumn", "rainbow", "green", "hotcold", "blackandwhite", or "coty"')
+  if (!(pal %in% mediocrethemes::colors_table[["color"]])) {
+    stop("This palette does not exist in this package")
   }
 
   make_palette <- function(...) {
@@ -35,7 +36,9 @@ palette_mediocre_d <- function(pal = "autumn", second_pair = FALSE, ...) {
       strsplit(color_theme[["vector"]], split = ", ")
     )
 
-    if (pal == "coty") {mediocre_color_vector <- rev(mediocre_color_vector)}
+    if (pal == "coty") {
+      mediocre_color_vector <- rev(mediocre_color_vector)
+    }
 
     mediocre_pal <- function(n) {
       if (n == 2) {
@@ -49,7 +52,9 @@ palette_mediocre_d <- function(pal = "autumn", second_pair = FALSE, ...) {
       } else if (n == 4) {
         color_vector <- mediocre_color_vector[-c(12, 13, 15)]
       } else {
-        if (pal == "coty") {mediocre_color_vector <- rev(mediocre_color_vector)}
+        if (pal == "coty") {
+          mediocre_color_vector <- rev(mediocre_color_vector)
+        }
         color_vector <- mediocre_color_vector
       }
       the_palette <- grDevices::colorRampPalette(color_vector)
@@ -73,8 +78,8 @@ palette_mediocre_d <- function(pal = "autumn", second_pair = FALSE, ...) {
 #' @rdname scale_mediocre_d
 palette_mediocre_c <- function(pal = "autumn", ...) {
 
-  if (!(pal %in% c("autumn", "rainbow", "green", "hotcold", "blackandwhite", "coty"))) {
-    stop('pal should be either "autumn", "rainbow", "green", "hotcold", "blackandwhite", or "coty"')
+  if (!(pal %in% mediocrethemes::colors_table[["color"]])) {
+    stop("This palette does not exist in this package")
   }
 
   make_palette <- function(...) {

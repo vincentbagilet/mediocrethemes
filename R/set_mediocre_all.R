@@ -1,7 +1,8 @@
 #' Sets the mediocre theme and colors for the whole document.
 #'
 #' @param pal a string. Defines the color palette selected.
-#' Can either be "autumn" or "rainbow"
+#' Can either be either "autumn", "rainbow", "green",
+#'  "hotcold", "blackandwhite", or "coty"
 #' @param background If TRUE, a background is added to the plots
 #' @param second_pair if true sets an alternative pair of colors
 #' for graphs with two colors
