@@ -121,7 +121,7 @@ theme_mediocre <- function(pal = "autumn", background = FALSE) {
       strip.text = ggplot2::element_text(
         size = ggplot2::rel(0.9),
         hjust = 0,
-        face = "italic",
+        face = "bold",
         margin = ggplot2::margin(b = .3, unit = "cm")
       )
     )

@@ -1,0 +1,126 @@
+---
+title: "Using mediocrethemes"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using mediocrethemes}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  # fig.path = "man/figures/README-",
+  out.width = "70%",
+  dpi = 400,
+  fig.align = "center",
+  dev = "png",
+  fig.width = 7,
+  fig.height = 5
+)
+```
+
+This vignette gives a brief introduction to the `mediocrethemes` package. After installing the package from GitHub, load the package. For simplicity, we also load packages from the tidyverse.
+
+```{r setup, message = FALSE, warning = FALSE}
+library(tidyverse)
+library(mediocrethemes)
+```
+
+# Main use
+
+## The easiest way to use this theme
+
+The easiest way to use the `mediocrethemes` package is through the `set_mediocre_all` function. It enables to set both the theme and the color scale for all graphs in a document. The user can call this function at the beginning of the document. Then, plots can be created using the standard ggplot commands.
+
+```{r set_mediocre_all}
+set_mediocre_all()
+
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
+    geom_col() +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+```
+
+This function takes several arguments: `pal`, `background` and `second_pair`.
+
+### Changing the palette
+
+The following palettes are available: `r mediocrethemes::colors_table[[1]]`. A palette defines the color of the theme and the color scale used in the graphs. Here is a comparison of the different palettes:
+
+```{r palettes, echo=FALSE}
+for (palette in mediocrethemes::colors_table[[1]]) {
+  print(palette)
+  set_mediocre_all(pal = palette)
+
+  graph <- ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
+      geom_col() +
+      labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+
+  print(graph)
+}
+```
+
+### Setting a background
+
+Users can also easily set a background for all their plots by setting the parameter `background` to `TRUE`. The color of the background is predefined to  fit nicely the theme palette. One can of course still modify the background color by adding a layer to the ggplot theme: `theme(plot.background = element_rect(fill = "red"))`.
+
+```{r background}
+set_mediocre_all(background = TRUE)
+
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
+    geom_point() +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+```
+
+### Using another pair of colors
+
+Oftentimes, users build graphs with two categories.
+
+```{r}
+set_mediocre_all()
+```
+
+
+```{r echo=FALSE}
+ggplot(data = ggplot2::mpg, aes(x = drv)) +
+    geom_bar(aes(fill = factor(year)), position = "dodge") +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+```
+
+In a same project, they may have to consider two sets of pairs, *eg* for two different production years and the number of cylinders in a car. They may not want to use the same color pair since the colors would not represent the same thing. They can therefore set the `second_pair` parameter to `TRUE`.
+
+```{r}
+set_mediocre_all(second_pair = TRUE)
+```
+
+```{r echo=FALSE}
+ggplot2::mpg %>%
+  filter(cyl > 5) %>%
+  mutate(cyl = factor(cyl)) %>%
+  ggplot(aes(x = drv)) +
+  geom_bar(aes(fill = cyl), position = "dodge") +
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+```
+
+## Underlying functions
+
+The function `set_all_mediocre` is built on the `theme_mediocre` and `scale_mediocre_d`/`scale_mediocre_c` functions. The former, `theme_mediocre` sets the theme and a baseline color and the later set scales.
+
+# Acessing the color used in a scale
+
+All the colors used are stored in the table `colors_table`:
+
+```{r}
+colors_table
+```
+
+For instance, one can access the "base" color for the palette "coty", in a HEX format, using the following command:
+
+```{r}
+mediocrethemes::colors_table[[6, "base"]]
+```
+
+
+
+

@@ -46,6 +46,18 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="articles/using-mediocrethemes.html">Using mediocrethemes</a>
+    </li>
+  </ul>
+</li>
       </ul>
 <ul class="nav navbar-nav navbar-right"></ul>
 </div>
@@ -71,7 +83,7 @@
 <p>You can install the development version of <code>mediocrethemes</code> from <a href="https://github.com/">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
-<span class="co"># devtools::install_github("vincentbagilet/mediocrethemes")</span></code></pre></div>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"vincentbagilet/mediocrethemes"</span><span class="op">)</span></code></pre></div>
 <p>Note that you may need to restart your R session once the installation is complete to be able to use the package.</p>
 </div>
 <div id="usage" class="section level2">
@@ -108,22 +120,10 @@
 <div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">#&gt; `geom_smooth()` using method = 'loess' and formula 'y ~ x'</span></span></code></pre></div>
 <p><img src="reference/figures/README-examples-4.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-examples-5.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-examples-6.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-examples-7.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
-<div id="setting-a-background" class="section level3">
-<h3 class="hasAnchor">
-<a href="#setting-a-background" class="anchor"></a>Setting a background</h3>
-<p>You can also easily set a background for all their plots by setting the parameter <code>background</code> of the functions <code>theme_mediocre</code> or <code>set_mediocre_all</code> to <code>TRUE</code>. The color of the background is predefined to fit nicely the theme palette. One can of course still modify the background color by adding a layer to the ggplot theme: <code><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme(plot.background = element_rect(fill = "red"))</a></code>.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span>background <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html">mpg</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cty</span>, y <span class="op">=</span> <span class="va">displ</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></code></pre></div>
-<p><img src="reference/figures/README-background-1.png" width="70%" style="display: block; margin: auto;"></p>
-</div>
 <div id="additional-palettes" class="section level3">
 <h3 class="hasAnchor">
 <a href="#additional-palettes" class="anchor"></a>Additional palettes</h3>
-<p>Note that additional palettes are available (<code>rainbow</code> and <code>green</code> for now).</p>
+<p>Note that additional palettes are available.</p>
 <div id="rainbow" class="section level4">
 <h4 class="hasAnchor">
 <a href="#rainbow" class="anchor"></a>rainbow</h4>

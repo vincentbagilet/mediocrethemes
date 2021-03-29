@@ -17,7 +17,7 @@ You can install the development version of `mediocrethemes` from
 
 ``` r
 # install.packages("devtools")
-# devtools::install_github("vincentbagilet/mediocrethemes")
+devtools::install_github("vincentbagilet/mediocrethemes")
 ```
 
 Note that you may need to restart your R session once the installation
@@ -67,29 +67,9 @@ A couple of example plots obtained with this theme:
 
 <img src="man/figures/README-examples-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-5.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-6.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-7.png" width="70%" style="display: block; margin: auto;" />
 
-### Setting a background
-
-You can also easily set a background for all their plots by setting the
-parameter `background` of the functions `theme_mediocre` or
-`set_mediocre_all` to `TRUE`. The color of the background is predefined
-to fit nicely the theme palette. One can of course still modify the
-background color by adding a layer to the ggplot theme:
-`theme(plot.background = element_rect(fill = "red"))`.
-
-``` r
-set_mediocre_all(background = TRUE)
-
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
-    geom_point() +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-```
-
-<img src="man/figures/README-background-1.png" width="70%" style="display: block; margin: auto;" />
-
 ### Additional palettes
 
-Note that additional palettes are available (`rainbow` and `green` for
-now).
+Note that additional palettes are available.
 
 #### rainbow
 

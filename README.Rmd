@@ -27,9 +27,9 @@ This package provides not particularly nice and, hopefully, not particularly ugl
 
 You can install the development version of `mediocrethemes` from [GitHub](https://github.com/) with:
 
-```{r}
+```{r eval=FALSE}
 # install.packages("devtools")
-# devtools::install_github("vincentbagilet/mediocrethemes")
+devtools::install_github("vincentbagilet/mediocrethemes")
 ```
 
 Note that you may need to restart your R session once the installation is complete to be able to use the package. 
@@ -104,21 +104,9 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
   labs(title = "A very nice title", subtitle = "A disappointing subtitle") 
 ```
 
-### Setting a background
-
-You can also easily set a background for all their plots by setting the parameter `background` of the functions `theme_mediocre` or `set_mediocre_all` to `TRUE`. The color of the background is predefined to  fit nicely the theme palette. One can of course still modify the background color by adding a layer to the ggplot theme: `theme(plot.background = element_rect(fill = "red"))`.
-
-```{r background}
-set_mediocre_all(background = TRUE)
-
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
-    geom_point() +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-```
-
 ### Additional palettes
 
-Note that additional palettes are available (`rainbow` and `green` for now).
+Note that additional palettes are available.
 
 #### rainbow
 
