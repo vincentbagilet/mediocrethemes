@@ -2,6 +2,6 @@ pandoc: 2.7.3
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
-  using-mediocrethemes: using-mediocrethemes.html
-last_built: 2021-03-29T16:04Z
+  mediocrethemes: mediocrethemes.html
+last_built: 2021-03-31T09:24Z
 
