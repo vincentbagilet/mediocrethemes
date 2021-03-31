@@ -106,7 +106,7 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
 
 ### Additional palettes
 
-Note that additional palettes are available.
+Note that additional palettes are available. The palettes "autumn" and "coty" are colorblind friendly.
 
 #### rainbow
 

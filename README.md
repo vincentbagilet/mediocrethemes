@@ -69,7 +69,8 @@ A couple of example plots obtained with this theme:
 
 ### Additional palettes
 
-Note that additional palettes are available.
+Note that additional palettes are available. The palettes “autumn” and
+“coty” are colorblind friendly.
 
 #### rainbow
 
