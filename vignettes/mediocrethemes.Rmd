@@ -2,7 +2,7 @@
 title: "Using mediocrethemes"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Using mediocrethemes}
+  %\VignetteIndexEntry{mediocrethemes}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
