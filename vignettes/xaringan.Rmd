@@ -1,5 +1,5 @@
 ---
-title: "Mediocre xaringan"
+title: "Xaringan mediocre"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Mediocre xaringan}
@@ -75,7 +75,7 @@ date: "April 34, 2103"
 output:
   xaringan::moon_reader:
     lib_dir: libs
-    css: mediocre-xaringan.css
+    css: xaringan-mediocre.css
     nature:
       countIncrementalSlides: no
       highlightLines: yes
