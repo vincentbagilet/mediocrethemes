@@ -49,6 +49,18 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="../articles/xaringan.html">Mediocre xaringan</a>
+    </li>
+  </ul>
+</li>
       </ul>
 <ul class="nav navbar-nav navbar-right"></ul>
 </div>
@@ -75,8 +87,7 @@
     
 <p>This vignette gives a brief introduction to the <code>mediocrethemes</code> package. After installing the package from GitHub, load the package. For simplicity, we also load packages from the tidyverse.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentbagilet.github.io/mediocrethemes/">mediocrethemes</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentbagilet.github.io/mediocrethemes/">mediocrethemes</a></span><span class="op">)</span></code></pre></div>
 <div id="main-use" class="section level1">
 <h1 class="hasAnchor">
 <a href="#main-use" class="anchor"></a>Main use</h1>
@@ -87,9 +98,9 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span><span class="op">)</span>
 
-<span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html">mpg</a></span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">cty</span>, y <span class="op">=</span> <span class="va">displ</span>, fill <span class="op">=</span> <span class="va">manufacturer</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu">geom_col</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html">mpg</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cty</span>, y <span class="op">=</span> <span class="va">displ</span>, fill <span class="op">=</span> <span class="va">manufacturer</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></code></pre></div>
 <p><img src="mediocrethemes_files/figure-html/set_mediocre_all-1.png" width="70%" style="display: block; margin: auto;"></p>
 <p>This function takes several arguments: <code>pal</code>, <code>background</code> and <code>second_pair</code>.</p>
 <div id="changing-the-palette" class="section level3">
@@ -112,13 +123,13 @@
 <div id="setting-a-background" class="section level3">
 <h3 class="hasAnchor">
 <a href="#setting-a-background" class="anchor"></a>Setting a background</h3>
-<p>Users can also easily set a background for all their plots by setting the parameter <code>background</code> to <code>TRUE</code>. The color of the background is predefined to fit nicely the theme palette. One can of course still modify the background color by adding a layer to the ggplot theme: <code>theme(plot.background = element_rect(fill = "red"))</code>.</p>
+<p>Users can also easily set a background for all their plots by setting the parameter <code>background</code> to <code>TRUE</code>. The color of the background is predefined to fit nicely the theme palette. One can of course still modify the background color by adding a layer to the ggplot theme: <code><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme(plot.background = element_rect(fill = "red"))</a></code>.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span>background <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 
-<span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html">mpg</a></span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">cty</span>, y <span class="op">=</span> <span class="va">displ</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html">mpg</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cty</span>, y <span class="op">=</span> <span class="va">displ</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></code></pre></div>
 <p><img src="mediocrethemes_files/figure-html/background-1.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div id="using-another-pair-of-colors" class="section level3">
@@ -149,7 +160,7 @@
 <span class="co">#&gt; # A tibble: 6 x 8</span>
 <span class="co">#&gt;   color   base   text   light background dark  complementary vector             </span>
 <span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;              </span>
-<span class="co">#&gt; 1 autumn  #0031… #0031… #1F4… #F9FAF7    #1D2… #81402C       #00313C, #183C41, …</span>
+<span class="co">#&gt; 1 autumn  #0031… #0031… #1F4… #F9FAF7    #1D2… #FB9637       #00313C, #183C41, …</span>
 <span class="co">#&gt; 2 rainbow #D867… #213C… #F4A… #FCFAF7    #652… #44ACC5       #1B3037, #213C47, …</span>
 <span class="co">#&gt; 3 green   #1B43… #1627… #7A9… #F5FAF6    #0F1… #6C2B46       #D8F3DC, #C3E0C9, …</span>
 <span class="co">#&gt; 4 hotcold #1D35… #1425… #457… #FAFCFC    #0F1… #AC7E39       #1D3557, #2E5375, …</span>

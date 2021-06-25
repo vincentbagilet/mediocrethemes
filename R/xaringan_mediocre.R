@@ -9,6 +9,8 @@
 #' @param pal a string. Defines the color palette selected.
 #' Can either be either "autumn", "rainbow", "green",
 #'  "hotcold", "blackandwhite", or "coty"
+#' @param mediocre_plots if TRUE, sets the plots of the .Rmd document
+#' to be made with mediocrethemes (calls \code{set_mediocre_all(pal)})
 #'
 #' @return This function adds a CSS file to your current working directory.
 #'
@@ -20,10 +22,11 @@
 #'
 #' xaringan_mediocre(pal = "rainbow")
 #'}
-xaringan_mediocre <- function(pal = "autumn") {
+xaringan_mediocre <- function(pal = "autumn", mediocre_plots = TRUE) {
 
-  mediocrethemes::set_mediocre_all(pal = pal, background = TRUE)
+  if(mediocre_plots) {mediocrethemes::set_mediocre_all(pal = pal, background = TRUE)}
 
+  colors_table <- mediocrethemes::colors_table
   text_color <- ifelse(
     pal %in% c("rainbow", "coty"),
     colors_table[[which(colors_table$color == pal), "text"]],

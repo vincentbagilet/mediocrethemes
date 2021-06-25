@@ -15,7 +15,6 @@ subtitle: "A disappointing subtitle"
 ---
 
 ```{r themer, include=FALSE}
-library(tidyverse)
 library(mediocrethemes)
 
 xaringan_mediocre(pal = "autumn")
@@ -28,9 +27,7 @@ xaringan_mediocre(pal = "autumn")
 - Ut elementum **efficitur penatibus**, taciti diam risus, donec.
 
 ```{r echo=FALSE, fig.asp=0.6, fig.width=5, out.width=650, dpi=300, fig.align='center'}
-ggplot2::mpg %>% 
-  mutate(year = factor(year)) %>% 
-  ggplot(aes(x = displ, y = hwy)) +
+ggplot(data = ggplot2::mpg, aes(x = displ, y = hwy)) +
   geom_point()
 ```
 

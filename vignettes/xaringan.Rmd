@@ -25,9 +25,9 @@ This vignette illustrates how to build [`xaringan`](https://github.com/yihui/xar
 
 This vignette assumes that you are familiar with `xaringan` slides. If not, please refer to [this presentation](https://slides.yihui.org/xaringan/#1) by Yihui Xie, the creator of the `xaringan` package.
 
-## Example
+## Preview of the styles
 
-Before anything, let's have a look at the type of slides this theme can produce:
+Before anything, here are examples of the type of slides this theme can produce:
 
 ```{r echo=FALSE, fig.align="center", dpi=500, out.width="100%"} 
 knitr::include_graphics("images/example_xaringan.gif")
@@ -35,7 +35,7 @@ knitr::include_graphics("images/example_xaringan.gif")
 
 ## Simple use
 
-To build similar a similar template, add this to the YAML header of your slides:
+To build similar a mediocre/xaringan template, you simply need to add this to the YAML header of your slides:
 
 ```{YAML, eval=FALSE}
 output:
@@ -48,9 +48,7 @@ output:
       ratio: '16:9'
 ```
 
-Note that `countIncrementalSlides`, `highlightLines` and `highlightStyle` are not necessary. However, `ratio` is necessary as font sizes are defined for 16:9 slides.
-
-Then, add this to your set up chunk:
+And this to your set up chunk:
 
 ```{r create_css, eval=FALSE}
 library(mediocrethemes)
@@ -58,9 +56,12 @@ library(mediocrethemes)
 xaringan_mediocre(pal = "coty")
 ```
 
-You can use the palette of your choice. You may also need to add `knitr::opts_chunk$set(fig.showtext = TRUE)` to your setup chunk for the fonts to work properly.
-
 You are all set!
+
+
+Note that `countIncrementalSlides`, `highlightLines` and `highlightStyle` are not necessary. However, `ratio` is necessary as font sizes are defined for 16:9 slides. 
+
+You can use the palette of your choice. Also note that you may also need to add `knitr::opts_chunk$set(fig.showtext = TRUE)` to your set up chunk for the fonts to work properly.
 
 ## Example `.Rmd` file
 
@@ -84,7 +85,6 @@ subtitle: "A disappointing subtitle"
 ---
 
 `r ''````{r themer, include=FALSE}
-library(tidyverse)
 library(mediocrethemes)
 
 xaringan_mediocre(pal = "coty")
@@ -98,15 +98,9 @@ xaringan_mediocre(pal = "coty")
 
 ````
 
-## Nice xaringan features
+## Nice transition slides
 
-Xaringan provides nice transition slides:
-
-```{r echo=FALSE, fig.align="center", dpi=500, out.width="100%"} 
-knitr::include_graphics("images/transition_slide.png")
-```
-
-They can be created by adding the following lines to your code:
+Xaringanthemer provides nice transition slides that can be created by adding the following lines to your code:
 
 ````markdown
 ---
@@ -115,6 +109,14 @@ class: inverse, middle, center
 # Title of the transition slide
 ---
 ````
+
+Here is what these transition slides look like with mediocrethemes:
+
+```{r echo=FALSE, fig.align="center", dpi=700, out.width="100%"} 
+knitr::include_graphics("images/transition_slide.png")
+```
+
+
 
 
 

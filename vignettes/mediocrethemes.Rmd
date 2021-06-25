@@ -24,7 +24,6 @@ knitr::opts_chunk$set(
 This vignette gives a brief introduction to the `mediocrethemes` package. After installing the package from GitHub, load the package. For simplicity, we also load packages from the tidyverse.
 
 ```{r setup, message = FALSE, warning = FALSE}
-library(tidyverse)
 library(mediocrethemes)
 ```
 
@@ -95,11 +94,8 @@ set_mediocre_all(second_pair = TRUE)
 ```
 
 ```{r echo=FALSE}
-ggplot2::mpg %>%
-  filter(cyl > 5) %>%
-  mutate(cyl = factor(cyl)) %>%
-  ggplot(aes(x = drv)) +
-  geom_bar(aes(fill = cyl), position = "dodge") +
+ggplot(data = ggplot2::presidential, aes(x = party)) +
+  geom_bar(aes(fill = party), position = "dodge") +
   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 

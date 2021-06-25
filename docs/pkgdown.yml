@@ -3,5 +3,6 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   mediocrethemes: mediocrethemes.html
-last_built: 2021-03-31T13:58Z
+  xaringan: xaringan.html
+last_built: 2021-06-25T12:01Z
 

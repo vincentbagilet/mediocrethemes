@@ -4,12 +4,15 @@
 \alias{xaringan_mediocre}
 \title{Mediocre xanringan theme}
 \usage{
-xaringan_mediocre(pal = "autumn")
+xaringan_mediocre(pal = "autumn", mediocre_plots = TRUE)
 }
 \arguments{
 \item{pal}{a string. Defines the color palette selected.
 Can either be either "autumn", "rainbow", "green",
  "hotcold", "blackandwhite", or "coty"}
+
+\item{mediocre_plots}{if TRUE, sets the plots of the .Rmd document
+to be made with mediocrethemes (calls \code{set_mediocre_all(pal)})}
 }
 \value{
 This function adds a CSS file to your current working directory.
