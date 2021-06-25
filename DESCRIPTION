@@ -23,4 +23,5 @@ Imports:
     grDevices,
     showtext,
     sysfonts,
-    showtextdb
+    showtextdb,
+    xaringanthemer

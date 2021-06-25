@@ -91,7 +91,7 @@ theme_mediocre <- function(pal = "autumn", background = FALSE) {
       axis.text = ggplot2::element_text(size = ggplot2::rel(0.8)),
       axis.ticks.x = ggplot2::element_line(size = ggplot2::rel(0.2)),
       axis.title.x = ggplot2::element_text(
-        hjust = 0.97,
+        hjust = 1,
         margin = ggplot2::margin(t = .35, unit = "cm"),
         size = ggplot2::rel(1)
       ),
@@ -114,7 +114,7 @@ theme_mediocre <- function(pal = "autumn", background = FALSE) {
         margin = ggplot2::margin(t = -.5, b = .7, l = 0.2, unit = "cm")
       ),
       legend.position = "top",
-      legend.title.align = 0,
+      legend.margin = ggplot2::margin(t = -.2, unit = "cm"),
       legend.title = ggplot2::element_text(size = ggplot2::rel(0.8)),
       legend.text = ggplot2::element_text(size = ggplot2::rel(0.7)),
       legend.key.size = ggplot2::unit(1, "lines"),
