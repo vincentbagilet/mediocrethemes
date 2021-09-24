@@ -25,27 +25,16 @@ is complete to be able to use the package.
 
 ## Usage
 
-This package provides both a ggplot theme and a color palette. Users can
-set the theme and color palette independently.
+This package provides both a ggplot theme and a color palette.
+
+Users can set the theme and color palette for all plots in a document
+with the function `set_mediocre_all` placed at the top of their
+document:
 
 ``` r
 library(ggplot2)
 library(mediocrethemes)
 
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
-    geom_point() +
-    theme_mediocre() +
-    scale_mediocre_d() +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-```
-
-<img src="man/figures/README-base_graph-1.png" width="70%" style="display: block; margin: auto;" />
-
-Users can also set the theme and color palette for all plots in a
-document with the function `set_mediocre_all` placed at the top of their
-document:
-
-``` r
 set_mediocre_all()
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
@@ -54,6 +43,18 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
 ```
 
 <img src="man/figures/README-set_mediocre_all-1.png" width="70%" style="display: block; margin: auto;" />
+
+Users also can set the theme and color palette independently.
+
+``` r
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
+    geom_point() +
+    theme_mediocre() +
+    scale_mediocre_d() +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+```
+
+<img src="man/figures/README-base_graph-1.png" width="70%" style="display: block; margin: auto;" />
 
 ## Examples
 

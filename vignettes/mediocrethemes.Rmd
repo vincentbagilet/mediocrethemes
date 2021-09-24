@@ -31,7 +31,7 @@ library(mediocrethemes)
 
 ## The easiest way to use this theme
 
-The easiest way to use the `mediocrethemes` package is through the `set_mediocre_all` function. It enables to set both the theme and the color scale for all graphs in a document. The user can call this function at the beginning of the document. Then, plots can be created using the standard ggplot commands.
+The easiest way to use the `mediocrethemes` package is through the `set_mediocre_all` function. It enables to set both the theme and the color scale for all graphs in a document. The user can call this function at the beginning of the document. Subsequent plots can be created using the standard ggplot commands, no additional commands are required. The user does not need to add `+ theme_mediocre()` or `+ scale_mediocre_d()` to their plots to set the theme and the color, if they called `set_mediocre_all()` before. The following example illustrates this feature:
 
 ```{r set_mediocre_all}
 set_mediocre_all()
@@ -41,21 +41,31 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
-This function takes several arguments: `pal`, `background` and `second_pair`.
+The function `set_mediocre_all` takes several arguments: `pal`, `background` and `second_pair`. The following subsections describe the use of these arguments.
 
 ### Changing the palette
 
-The following palettes are available: `r mediocrethemes::colors_table[[1]]`. A palette defines the color of the theme and the color scale used in the graphs. Here is a comparison of the different palettes:
+Available palettes are: `r mediocrethemes::colors_table[[1]]`. A palette defines the color of the theme and the color scale used in the graphs, *ie* the color of the axes and text for the theme and the colors used in the legend for the color scale. To change the palette to "coty" for instance, just set the argument `pal` equal to "coty" when calling the function `set_mediocre_all` at the beginning of the document. All subsequent graphs will be created using similar code, the only difference is the name of the palette in `set_mediocre_all` 
+ 
+```{r set_mediocre_all_coty}
+set_mediocre_all(pal = "coty")
+
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
+    geom_col() +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+```
+
+Here is a comparison of the different palettes:
 
 ```{r palettes, echo=FALSE}
 for (palette in mediocrethemes::colors_table[[1]]) {
-  print(palette)
   set_mediocre_all(pal = palette)
 
   graph <- ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
       geom_col() +
       labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 
+  print(paste("set_mediocre_all(pal = '", palette, "')", sep = ""))
   print(graph)
 }
 ```
@@ -74,26 +84,21 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
 
 ### Using another pair of colors
 
-Oftentimes, users build graphs with two categories.
+Graphs with two categories, as the following one for instance, are ubiquitous.
 
 ```{r}
 set_mediocre_all()
-```
 
-
-```{r echo=FALSE}
 ggplot(data = ggplot2::mpg, aes(x = drv)) +
     geom_bar(aes(fill = factor(year)), position = "dodge") +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
-In a same project, they may have to consider two sets of pairs, *eg* for two different production years and the number of cylinders in a car. They may not want to use the same color pair since the colors would not represent the same thing. They can therefore set the `second_pair` parameter to `TRUE`.
+In a same project, users may have to consider different sets of pairs. For instance, they may want to separate observations in years as in the previous graph and later use other categories such as Republicans and Democrats. User may not want to use the same color pair to denote year and party. For instance they may not want Republicans to be coded with the same color as the year 1999. To access a second color pair, users can therefore set the `second_pair` parameter of `set_mediocre_all` to `TRUE` and keep on writing standard ggplot code. Subsequent bi-color graphs will use a second pair of colors, different from the base one but still consistent with the color scale used.
 
 ```{r}
 set_mediocre_all(second_pair = TRUE)
-```
 
-```{r echo=FALSE}
 ggplot(data = ggplot2::presidential, aes(x = party)) +
   geom_bar(aes(fill = party), position = "dodge") +
   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
@@ -101,7 +106,7 @@ ggplot(data = ggplot2::presidential, aes(x = party)) +
 
 ## Underlying functions
 
-The function `set_all_mediocre` is built on the `theme_mediocre` and `scale_mediocre_d`/`scale_mediocre_c` functions. The former, `theme_mediocre` sets the theme and a baseline color and the later set scales.
+The function `set_all_mediocre` is built on the `theme_mediocre` and `scale_mediocre_d`/`scale_mediocre_c` functions. `theme_mediocre` sets the theme and a baseline color (font and axis colors) and `scale_mediocre_d` or `scale_mediocre_c` set the categories colors.
 
 # Acessing the color used in a scale
 

@@ -92,25 +92,26 @@
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<p>This package provides both a ggplot theme and a color palette. Users can set the theme and color palette independently.</p>
+<p>This package provides both a ggplot theme and a color palette.</p>
+<p>Users can set the theme and color palette for all plots in a document with the function <code>set_mediocre_all</code> placed at the top of their document:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentbagilet.github.io/mediocrethemes/">mediocrethemes</a></span><span class="op">)</span>
 
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html">mpg</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cty</span>, y <span class="op">=</span> <span class="va">displ</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="reference/theme_mediocre.html">theme_mediocre</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="reference/palette_mediocre_c.html">scale_mediocre_d</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></code></pre></div>
-<p><img src="reference/figures/README-base_graph-1.png" width="70%" style="display: block; margin: auto;"></p>
-<p>Users can also set the theme and color palette for all plots in a document with the function <code>set_mediocre_all</code> placed at the top of their document:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html">mpg</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cty</span>, y <span class="op">=</span> <span class="va">displ</span>, fill <span class="op">=</span> <span class="va">manufacturer</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
     <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
     <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-set_mediocre_all-1.png" width="70%" style="display: block; margin: auto;"></p>
+<p>Users also can set the theme and color palette independently.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html">mpg</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cty</span>, y <span class="op">=</span> <span class="va">displ</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="reference/theme_mediocre.html">theme_mediocre</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="reference/palette_mediocre_c.html">scale_mediocre_d</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></code></pre></div>
+<p><img src="reference/figures/README-base_graph-1.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div id="examples" class="section level2">
 <h2 class="hasAnchor">

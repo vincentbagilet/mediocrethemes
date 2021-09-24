@@ -36,26 +36,28 @@ Note that you may need to restart your R session once the installation is comple
 
 ## Usage
 
-This package provides both a ggplot theme and a color palette. Users can set the theme and color palette independently.
+This package provides both a ggplot theme and a color palette.
 
-```{r base_graph}
+Users can set the theme and color palette for all plots in a document with the function `set_mediocre_all` placed at the top of their document:
+
+```{r set_mediocre_all}
 library(ggplot2)
 library(mediocrethemes)
 
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
-    geom_point() +
-    theme_mediocre() +
-    scale_mediocre_d() +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-```
-
-Users can also set the theme and color palette for all plots in a document with the function `set_mediocre_all` placed at the top of their document:
-
-```{r set_mediocre_all}
 set_mediocre_all()
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
     geom_col() +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+```
+
+Users also can set the theme and color palette independently.
+
+```{r base_graph}
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
+    geom_point() +
+    theme_mediocre() +
+    scale_mediocre_d() +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 

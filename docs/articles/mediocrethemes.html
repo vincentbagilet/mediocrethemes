@@ -94,7 +94,7 @@
 <div id="the-easiest-way-to-use-this-theme" class="section level2">
 <h2 class="hasAnchor">
 <a href="#the-easiest-way-to-use-this-theme" class="anchor"></a>The easiest way to use this theme</h2>
-<p>The easiest way to use the <code>mediocrethemes</code> package is through the <code>set_mediocre_all</code> function. It enables to set both the theme and the color scale for all graphs in a document. The user can call this function at the beginning of the document. Then, plots can be created using the standard ggplot commands.</p>
+<p>The easiest way to use the <code>mediocrethemes</code> package is through the <code>set_mediocre_all</code> function. It enables to set both the theme and the color scale for all graphs in a document. The user can call this function at the beginning of the document. Subsequent plots can be created using the standard ggplot commands, no additional commands are required. The user does not need to add <code>+ theme_mediocre()</code> or <code>+ scale_mediocre_d()</code> to their plots to set the theme and the color, if they called <code><a href="../reference/set_mediocre_all.html">set_mediocre_all()</a></code> before. The following example illustrates this feature:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span><span class="op">)</span>
 
@@ -102,29 +102,37 @@
     <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
     <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></code></pre></div>
 <p><img src="mediocrethemes_files/figure-html/set_mediocre_all-1.png" width="70%" style="display: block; margin: auto;"></p>
-<p>This function takes several arguments: <code>pal</code>, <code>background</code> and <code>second_pair</code>.</p>
+<p>The function <code>set_mediocre_all</code> takes several arguments: <code>pal</code>, <code>background</code> and <code>second_pair</code>. The following subsections describe the use of these arguments.</p>
 <div id="changing-the-palette" class="section level3">
 <h3 class="hasAnchor">
 <a href="#changing-the-palette" class="anchor"></a>Changing the palette</h3>
-<p>The following palettes are available: autumn, rainbow, green, hotcold, blackandwhite, coty. A palette defines the color of the theme and the color scale used in the graphs. Here is a comparison of the different palettes:</p>
-<pre><code>#&gt; [1] "autumn"</code></pre>
+<p>Available palettes are: autumn, rainbow, green, hotcold, blackandwhite, coty. A palette defines the color of the theme and the color scale used in the graphs, <em>ie</em> the color of the axes and text for the theme and the colors used in the legend for the color scale. To change the palette to “coty” for instance, just set the argument <code>pal</code> equal to “coty” when calling the function <code>set_mediocre_all</code> at the beginning of the document. All subsequent graphs will be created using similar code, the only difference is the name of the palette in <code>set_mediocre_all</code></p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span>pal <span class="op">=</span> <span class="st">"coty"</span><span class="op">)</span>
+
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html">mpg</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cty</span>, y <span class="op">=</span> <span class="va">displ</span>, fill <span class="op">=</span> <span class="va">manufacturer</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></code></pre></div>
+<p><img src="mediocrethemes_files/figure-html/set_mediocre_all_coty-1.png" width="70%" style="display: block; margin: auto;"></p>
+<p>Here is a comparison of the different palettes:</p>
+<pre><code>#&gt; [1] "set_mediocre_all(pal = 'autumn')"</code></pre>
 <p><img src="mediocrethemes_files/figure-html/palettes-1.png" width="70%" style="display: block; margin: auto;"></p>
-<pre><code>#&gt; [1] "rainbow"</code></pre>
+<pre><code>#&gt; [1] "set_mediocre_all(pal = 'rainbow')"</code></pre>
 <p><img src="mediocrethemes_files/figure-html/palettes-2.png" width="70%" style="display: block; margin: auto;"></p>
-<pre><code>#&gt; [1] "green"</code></pre>
+<pre><code>#&gt; [1] "set_mediocre_all(pal = 'green')"</code></pre>
 <p><img src="mediocrethemes_files/figure-html/palettes-3.png" width="70%" style="display: block; margin: auto;"></p>
-<pre><code>#&gt; [1] "hotcold"</code></pre>
+<pre><code>#&gt; [1] "set_mediocre_all(pal = 'hotcold')"</code></pre>
 <p><img src="mediocrethemes_files/figure-html/palettes-4.png" width="70%" style="display: block; margin: auto;"></p>
-<pre><code>#&gt; [1] "blackandwhite"</code></pre>
+<pre><code>#&gt; [1] "set_mediocre_all(pal = 'blackandwhite')"</code></pre>
 <p><img src="mediocrethemes_files/figure-html/palettes-5.png" width="70%" style="display: block; margin: auto;"></p>
-<pre><code>#&gt; [1] "coty"</code></pre>
+<pre><code>#&gt; [1] "set_mediocre_all(pal = 'coty')"</code></pre>
 <p><img src="mediocrethemes_files/figure-html/palettes-6.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div id="setting-a-background" class="section level3">
 <h3 class="hasAnchor">
 <a href="#setting-a-background" class="anchor"></a>Setting a background</h3>
 <p>Users can also easily set a background for all their plots by setting the parameter <code>background</code> to <code>TRUE</code>. The color of the background is predefined to fit nicely the theme palette. One can of course still modify the background color by adding a layer to the ggplot theme: <code><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme(plot.background = element_rect(fill = "red"))</a></code>.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span>background <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html">mpg</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cty</span>, y <span class="op">=</span> <span class="va">displ</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
@@ -135,27 +143,35 @@
 <div id="using-another-pair-of-colors" class="section level3">
 <h3 class="hasAnchor">
 <a href="#using-another-pair-of-colors" class="anchor"></a>Using another pair of colors</h3>
-<p>Oftentimes, users build graphs with two categories.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<p><img src="mediocrethemes_files/figure-html/unnamed-chunk-3-1.png" width="70%" style="display: block; margin: auto;"></p>
-<p>In a same project, they may have to consider two sets of pairs, <em>eg</em> for two different production years and the number of cylinders in a car. They may not want to use the same color pair since the colors would not represent the same thing. They can therefore set the <code>second_pair</code> parameter to <code>TRUE</code>.</p>
+<p>Graphs with two categories, as the following one for instance, are ubiquitous.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span>second_pair <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
-<p><img src="mediocrethemes_files/figure-html/unnamed-chunk-5-1.png" width="70%" style="display: block; margin: auto;"></p>
+<code class="sourceCode R"><span class="fu"><a href="../reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span><span class="op">)</span>
+
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html">mpg</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">drv</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">)</span>, position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></code></pre></div>
+<p><img src="mediocrethemes_files/figure-html/unnamed-chunk-2-1.png" width="70%" style="display: block; margin: auto;"></p>
+<p>In a same project, users may have to consider different sets of pairs. For instance, they may want to separate observations in years as in the previous graph and later use other categories such as Republicans and Democrats. User may not want to use the same color pair to denote year and party. For instance they may not want Republicans to be coded with the same color as the year 1999. To access a second color pair, users can therefore set the <code>second_pair</code> parameter of <code>set_mediocre_all</code> to <code>TRUE</code> and keep on writing standard ggplot code. Subsequent bi-color graphs will use a second pair of colors, different from the base one but still consistent with the color scale used.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span>second_pair <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/presidential.html">presidential</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">party</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">party</span><span class="op">)</span>, position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></code></pre></div>
+<p><img src="mediocrethemes_files/figure-html/unnamed-chunk-3-1.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 </div>
 <div id="underlying-functions" class="section level2">
 <h2 class="hasAnchor">
 <a href="#underlying-functions" class="anchor"></a>Underlying functions</h2>
-<p>The function <code>set_all_mediocre</code> is built on the <code>theme_mediocre</code> and <code>scale_mediocre_d</code>/<code>scale_mediocre_c</code> functions. The former, <code>theme_mediocre</code> sets the theme and a baseline color and the later set scales.</p>
+<p>The function <code>set_all_mediocre</code> is built on the <code>theme_mediocre</code> and <code>scale_mediocre_d</code>/<code>scale_mediocre_c</code> functions. <code>theme_mediocre</code> sets the theme and a baseline color (font and axis colors) and <code>scale_mediocre_d</code> or <code>scale_mediocre_c</code> set the categories colors.</p>
 </div>
 </div>
 <div id="acessing-the-color-used-in-a-scale" class="section level1">
 <h1 class="hasAnchor">
 <a href="#acessing-the-color-used-in-a-scale" class="anchor"></a>Acessing the color used in a scale</h1>
 <p>All the colors used are stored in the table <code>colors_table</code>:</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">colors_table</span>
 <span class="co">#&gt; # A tibble: 6 x 8</span>
 <span class="co">#&gt;   color   base   text   light background dark  complementary vector             </span>
@@ -167,7 +183,7 @@
 <span class="co">#&gt; 5 blacka… #2125… #2125… #CED… #F9FAFA    #1D1… #6C757D       #DEE2E6, #D0D4D7, …</span>
 <span class="co">#&gt; 6 coty    #1C6C… #1D47… #E1D… #F9F8F1    #112… #EA9534       #1D4749, #1C5659, …</span></code></pre></div>
 <p>For instance, one can access the “base” color for the palette “coty”, in a HEX format, using the following command:</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">mediocrethemes</span><span class="fu">::</span><span class="va"><a href="../reference/colors_table.html">colors_table</a></span><span class="op">[[</span><span class="fl">6</span>, <span class="st">"base"</span><span class="op">]</span><span class="op">]</span>
 <span class="co">#&gt; [1] "#1C6C6F"</span></code></pre></div>
 </div>
