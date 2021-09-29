@@ -59,7 +59,7 @@ xaringan_mediocre(pal = "coty")
 You are all set!
 
 
-Note that `countIncrementalSlides`, `highlightLines` and `highlightStyle` are not necessary. However, `ratio` is necessary as font sizes are defined for 16:9 slides. 
+Note that `countIncrementalSlides`, `highlightLines` and `highlightStyle` are not necessary. However, `ratio` is necessary as font sizes are defined for 16:9 slides. Also note, to be able to use this xaringan theme without internet connection, you may want to locally install the Google Fonts [Lato](https://fonts.google.com/specimen/Lato?query=lato), [Josefin Sans](https://fonts.google.com/specimen/Josefin+Sans?query=josefin) and [Source Code Pro](https://fonts.google.com/specimen/Source+Code+Pro?query=source+code+pro). This is however not required.
 
 You can use the palette of your choice. Also note that you may also need to add `knitr::opts_chunk$set(fig.showtext = TRUE)` to your set up chunk for the fonts to work properly.
 

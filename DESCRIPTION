@@ -24,4 +24,6 @@ Imports:
     showtext,
     sysfonts,
     showtextdb,
-    xaringanthemer
+    xaringanthemer,
+    curl,
+    systemfonts

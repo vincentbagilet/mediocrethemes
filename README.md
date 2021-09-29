@@ -21,7 +21,9 @@ devtools::install_github("vincentbagilet/mediocrethemes")
 ```
 
 Note that you may need to restart your R session once the installation
-is complete to be able to use the package.
+is complete to be able to use the package. You will also need an active
+internet connection the first time you call `set_mediocre_all` or
+`theme_mediocre`.
 
 ## Usage
 
