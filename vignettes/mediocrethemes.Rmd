@@ -41,7 +41,7 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
-The function `set_mediocre_all` takes several arguments: `pal`, `background` and `second_pair`. The following subsections describe the use of these arguments.
+The function `set_mediocre_all` takes several arguments: `pal`, `background` and `second_pair` along with the usual `base_size`, `base_family`, `base_line_size` and `base_rect_size`. The following subsections describe the use of the three first arguments.
 
 ### Changing the palette
 

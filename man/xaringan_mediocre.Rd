@@ -19,11 +19,12 @@ This function adds a CSS file to your current working directory.
 }
 \description{
 This function creates a CSS file \code{mediocre-xaringan.css} to build
-\href{https://pkg.garrickadenbuie.com/xaringanthemer/}{\code{xaringanthemer}} slides,
-based on mediocrethemes style, fonts and colors.
+\href{https://pkg.garrickadenbuie.com/xaringanthemer/}{\code{xaringanthemer}}
+slides, based on mediocrethemes style, fonts and colors.
 }
 \details{
-For more information on how to use this function, please refer to the associated vignette.
+For more information on how to use this function,
+please refer to the associated vignette.
 }
 \examples{
 \dontrun{

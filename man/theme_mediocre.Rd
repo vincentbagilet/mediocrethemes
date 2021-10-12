@@ -4,7 +4,14 @@
 \alias{theme_mediocre}
 \title{Defines the ggplot theme with the default R colors.}
 \usage{
-theme_mediocre(pal = "autumn", background = FALSE)
+theme_mediocre(
+  pal = "autumn",
+  background = FALSE,
+  base_size = 12,
+  base_family = "Lato",
+  base_line_size = base_size/170,
+  base_rect_size = base_size/170
+)
 }
 \arguments{
 \item{pal}{a string. Defines the color palette selected.
@@ -12,6 +19,14 @@ Can either be either "autumn", "rainbow", "green",
  "hotcold", "blackandwhite", or "coty"}
 
 \item{background}{If TRUE, a background is added to the plots}
+
+\item{base_size}{Base font size, given in pts.}
+
+\item{base_family}{Base font family}
+
+\item{base_line_size}{Base size for line elements}
+
+\item{base_rect_size}{Base size for rect elements}
 }
 \description{
 Defines the ggplot theme with the default R colors.

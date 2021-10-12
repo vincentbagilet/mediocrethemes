@@ -6,16 +6,30 @@
 #' @param background If TRUE, a background is added to the plots
 #' @param second_pair if true sets an alternative pair of colors
 #' for graphs with two colors
+#' @param base_size Base font size, given in pts.
+#' @param base_family Base font family
+#' @param base_line_size Base size for line elements
+#' @param base_rect_size Base size for rect elements
 #'
 #' @export
 #' @examples
 #' set_mediocre_all()
 #'
 set_mediocre_all <-
-  function(pal = "autumn", background = FALSE, second_pair = FALSE) {
+  function(pal = "autumn",
+           background = FALSE,
+           second_pair = FALSE,
+           base_size = 12,
+           base_family = "Lato",
+           base_line_size = base_size/170,
+           base_rect_size = base_size/170) {
     ggplot2::theme_set(mediocrethemes::theme_mediocre(
       pal = pal,
-      background = background)
+      background = background,
+      base_size = base_size,
+      base_family = base_family,
+      base_line_size = base_line_size,
+      base_rect_size = base_rect_size)
     )
     options(ggplot2.continuous.fill = mediocrethemes::palette_mediocre_c(
       pal = pal)

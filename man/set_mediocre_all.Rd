@@ -4,7 +4,15 @@
 \alias{set_mediocre_all}
 \title{Sets the mediocre theme and colors for the whole document.}
 \usage{
-set_mediocre_all(pal = "autumn", background = FALSE, second_pair = FALSE)
+set_mediocre_all(
+  pal = "autumn",
+  background = FALSE,
+  second_pair = FALSE,
+  base_size = 12,
+  base_family = "Lato",
+  base_line_size = base_size/170,
+  base_rect_size = base_size/170
+)
 }
 \arguments{
 \item{pal}{a string. Defines the color palette selected.
@@ -15,6 +23,14 @@ Can either be either "autumn", "rainbow", "green",
 
 \item{second_pair}{if true sets an alternative pair of colors
 for graphs with two colors}
+
+\item{base_size}{Base font size, given in pts.}
+
+\item{base_family}{Base font family}
+
+\item{base_line_size}{Base size for line elements}
+
+\item{base_rect_size}{Base size for rect elements}
 }
 \description{
 Sets the mediocre theme and colors for the whole document.

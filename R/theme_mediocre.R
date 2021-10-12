@@ -4,6 +4,10 @@
 #' @param pal a string. Defines the color palette selected.
 #' Can either be either "autumn", "rainbow", "green",
 #'  "hotcold", "blackandwhite", or "coty"
+#' @param base_size Base font size, given in pts.
+#' @param base_family Base font family
+#' @param base_line_size Base size for line elements
+#' @param base_rect_size Base size for rect elements
 #'
 #' @importFrom ggplot2 %+replace%
 #'
@@ -19,7 +23,12 @@
 #'   theme_mediocre() +
 #'   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 #'
-theme_mediocre <- function(pal = "autumn", background = FALSE) {
+theme_mediocre <- function(pal = "autumn",
+                           background = FALSE,
+                           base_size = 12,
+                           base_family = "Lato",
+                           base_line_size = base_size/170,
+                           base_rect_size = base_size/170) {
 
   if (!is.logical(background)) {
     stop("background should be logical")
@@ -74,20 +83,26 @@ theme_mediocre <- function(pal = "autumn", background = FALSE) {
   showtext::showtext_auto()
 
   theme_custom <-
-    ggplot2::theme_minimal(base_size = 12, base_family = "Lato") %+replace%
+    ggplot2::theme_minimal(
+      base_size = base_size,
+      base_family = base_family,
+      base_line_size = base_line_size,
+      base_rect_size = base_rect_size
+    ) +
     ggplot2::theme(
+      text = ggplot2::element_text(
+        size = base_size,
+        family = base_family,
+        colour = color_type[["text"]]
+      ),
       panel.grid.major.y = ggplot2::element_line(
         colour = color_type[["text"]],
-        size = 0.07
+        size = base_line_size
       ),
       panel.grid.minor.x = ggplot2::element_blank(),
       panel.grid.major.x =  ggplot2::element_blank(),
       panel.grid.minor.y = ggplot2::element_blank(),
       plot.margin = ggplot2::unit(c(0.5, 0.5, 0.5, 0.5), "cm"),
-      text = ggplot2::element_text(
-        family = "Lato",
-        colour = color_type[["text"]]
-      ),
       axis.text = ggplot2::element_text(size = ggplot2::rel(0.8)),
       axis.ticks.x = ggplot2::element_line(size = ggplot2::rel(0.2)),
       axis.title.x = ggplot2::element_text(
