@@ -41,7 +41,7 @@ palette_mediocre_d <- function(pal = "autumn", second_pair = FALSE, ...) {
     }
 
     if (pal == "autumn" ) {
-      set_colors <- c(1, 8, 15)
+      set_colors <- c(1, 8, 14)
     } else if (pal == "coty") {
       set_colors <- c(3, 9, 15)
     } else if (pal == "hotcold") {
