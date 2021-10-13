@@ -76,6 +76,10 @@ ggplot(data = ggplot2::mpg, aes(x = drv)) +
     geom_bar(aes(fill = factor(year)), position = "dodge") +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 
+ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
+    geom_point(aes(color = factor(year))) +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
   geom_col() +
   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
@@ -113,33 +117,47 @@ Note that additional palettes are available.
 #### rainbow
 
 ```{r rainbow, echo=FALSE}
-set_mediocre_all(pal = "rainbow")
-
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
+plot_all_examples <- function(pal) {
+  set_mediocre_all(pal = pal)
+  
+  plot1 <- ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
     geom_col() +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
+  
+  print(plot1)
+  
+  plot2 <- ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
+      geom_col() +
+      labs(title = "A very nice title", subtitle = "A disappointing subtitle") 
+  
+  print(plot2)
+  
+  plot3 <- ggplot(data = ggplot2::mpg, aes(x = drv)) +
+      geom_bar(aes(fill = factor(year)), position = "dodge") +
+      labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+  
+  print(plot3)
+  
+  plot4 <- ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
     geom_col() +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle") 
+  
+  print(plot4)
+  
+  df <- data.frame(
+    x = rnorm(10000),
+    y = rnorm(10000)
+  )
+  
+  plot5 <- ggplot(df, aes(x, y)) +
+    geom_hex() +
+    coord_fixed() +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle") 
+  
+  print(plot5)
+} 
 
-ggplot(data = ggplot2::mpg, aes(x = drv)) +
-    geom_bar(aes(fill = factor(year)), position = "dodge") +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
-  geom_col() +
-  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-
-df <- data.frame(
-  x = rnorm(10000),
-  y = rnorm(10000)
-)
-
-ggplot(df, aes(x, y)) +
-  geom_hex() +
-  coord_fixed() +
-  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+plot_all_examples(pal = "rainbow")
 ```
 
 #### coty
@@ -147,95 +165,17 @@ ggplot(df, aes(x, y)) +
 A (tentatively) colorblind friendly palette, based on a NPR map.
 
 ```{r coty, echo=FALSE}
-set_mediocre_all(pal = "coty")
-
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
-    geom_col() +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
-    geom_col() +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-
-ggplot(data = ggplot2::mpg, aes(x = drv)) +
-    geom_bar(aes(fill = factor(year)), position = "dodge") +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
-  geom_col() +
-  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-
-df <- data.frame(
-  x = rnorm(10000),
-  y = rnorm(10000)
-)
-
-ggplot(df, aes(x, y)) +
-  geom_hex() +
-  coord_fixed() +
-  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+plot_all_examples(pal = "coty")
 ```
 
 #### hotcold
 
 ```{r hotcold, echo=FALSE}
-set_mediocre_all(pal = "hotcold")
-
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
-    geom_col() +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
-    geom_col() +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-
-ggplot(data = ggplot2::mpg, aes(x = drv)) +
-    geom_bar(aes(fill = factor(year)), position = "dodge") +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
-  geom_col() +
-  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-
-df <- data.frame(
-  x = rnorm(10000),
-  y = rnorm(10000)
-)
-
-ggplot(df, aes(x, y)) +
-  geom_hex() +
-  coord_fixed() +
-  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+plot_all_examples(pal = "hotcold")
 ```
 
 #### blackandwhite
 
 ```{r blackandwhite, echo=FALSE}
-set_mediocre_all(pal = "blackandwhite")
-
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
-    geom_col() +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
-    geom_col() +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-
-ggplot(data = ggplot2::mpg, aes(x = drv)) +
-    geom_bar(aes(fill = factor(year)), position = "dodge") +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
-  geom_col() +
-  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-
-df <- data.frame(
-  x = rnorm(10000),
-  y = rnorm(10000)
-)
-
-ggplot(df, aes(x, y)) +
-  geom_hex() +
-  coord_fixed() +
-  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+plot_all_examples(pal = "blackandwhite")
 ```

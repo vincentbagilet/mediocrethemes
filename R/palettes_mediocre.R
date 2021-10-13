@@ -36,23 +36,34 @@ palette_mediocre_d <- function(pal = "autumn", second_pair = FALSE, ...) {
       strsplit(color_theme[["vector"]], split = ", ")
     )
 
-    if (pal == "coty") {
+    if (pal %in% c("green", "blackandwhite")) {
       mediocre_color_vector <- rev(mediocre_color_vector)
+    }
+
+    if (pal == "autumn" ) {
+      set_colors <- c(1, 8, 15)
+    } else if (pal == "coty") {
+      set_colors <- c(3, 9, 15)
+    } else if (pal == "hotcold") {
+      set_colors <- c(1, 10, 15)
+    } else {
+      set_colors <- c(1, 9, 15)
     }
 
     mediocre_pal <- function(n) {
       if (n == 2) {
-        #cannot tell apart extreme values of the scale
-        color_vector <- mediocre_color_vector[
-          c(1 + 5 * second_pair + (pal %in% c("hotcold", "blackandwhite")),
-            8 + 5 * second_pair + (pal %in% c("hotcold", "blackandwhite"))
-          )]
+        if (pal %in% c("coty", "rainbow")) {
+          set_colors <- set_colors + 2 * second_pair
+        } else {
+          set_colors <- set_colors + 5 * second_pair
+        }
+        color_vector <- mediocre_color_vector[set_colors[1:2]]
       } else if (n == 3) {
-        color_vector <- mediocre_color_vector[-c(2, 15)]
+        color_vector <- mediocre_color_vector[set_colors]
       } else if (n == 4) {
         color_vector <- mediocre_color_vector[-c(12, 13, 15)]
       } else {
-        if (pal == "coty") {
+        if (pal %in% c("green", "blackandwhite")) {
           mediocre_color_vector <- rev(mediocre_color_vector)
         }
         color_vector <- mediocre_color_vector

@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">mediocrethemes</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
       </span>
     </div>
 
@@ -127,7 +127,15 @@
     <p>Sets the mediocre theme and colors for the whole document.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>set_mediocre_all</span><span class='op'>(</span>pal <span class='op'>=</span> <span class='st'>"autumn"</span>, background <span class='op'>=</span> <span class='cn'>FALSE</span>, second_pair <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>set_mediocre_all</span><span class='op'>(</span>
+  pal <span class='op'>=</span> <span class='st'>"autumn"</span>,
+  background <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  second_pair <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  base_size <span class='op'>=</span> <span class='fl'>12</span>,
+  base_family <span class='op'>=</span> <span class='st'>"Lato"</span>,
+  base_line_size <span class='op'>=</span> <span class='va'>base_size</span><span class='op'>/</span><span class='fl'>170</span>,
+  base_rect_size <span class='op'>=</span> <span class='va'>base_size</span><span class='op'>/</span><span class='fl'>170</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -146,6 +154,22 @@ Can either be either "autumn", "rainbow", "green",
       <th>second_pair</th>
       <td><p>if true sets an alternative pair of colors
 for graphs with two colors</p></td>
+    </tr>
+    <tr>
+      <th>base_size</th>
+      <td><p>Base font size, given in pts.</p></td>
+    </tr>
+    <tr>
+      <th>base_family</th>
+      <td><p>Base font family</p></td>
+    </tr>
+    <tr>
+      <th>base_line_size</th>
+      <td><p>Base size for line elements</p></td>
+    </tr>
+    <tr>
+      <th>base_rect_size</th>
+      <td><p>Base size for rect elements</p></td>
     </tr>
     </table>
 
