@@ -40,7 +40,7 @@ palette_mediocre_d <- function(pal = "autumn", second_pair = FALSE, ...) {
       mediocre_color_vector <- rev(mediocre_color_vector)
     }
 
-    if (pal == "autumn" ) {
+    if (pal == "autumn") {
       set_colors <- c(1, 8, 14)
     } else if (pal == "coty") {
       set_colors <- c(3, 9, 15)

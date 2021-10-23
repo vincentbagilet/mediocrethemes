@@ -88,7 +88,7 @@ theme_mediocre <- function(pal = "autumn",
       base_family = base_family,
       base_line_size = base_line_size,
       base_rect_size = base_rect_size
-    ) +
+    ) %+replace%
     ggplot2::theme(
       text = ggplot2::element_text(
         size = base_size,
