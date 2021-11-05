@@ -2,9 +2,12 @@
 % Please edit documentation in R/palettes_mediocre.R
 \name{palette_mediocre_d}
 \alias{palette_mediocre_d}
+\alias{palette_mediocre_c}
 \title{Mediocre color palette}
 \usage{
-palette_mediocre_d(pal = "autumn", second_pair = FALSE, ...)
+palette_mediocre_d(pal = "autumn", second_pair = FALSE, gradient = NULL, ...)
+
+palette_mediocre_c(pal = "autumn", gradient = NULL, ...)
 }
 \arguments{
 \item{pal}{a string. Defines the color palette selected.
@@ -13,6 +16,12 @@ Can either be either "autumn", "rainbow", "green",
 
 \item{second_pair}{if true sets an alternative pair of colors
 for graphs with two colors}
+
+\item{gradient}{a string, either "left" or "right".
+Turns divergent palettes into gradient ones by splitting it in two.
+If equal to "right", the gradient palette is built with the right hand
+side part of the divergent palette. If equal to "left", uses the left
+hand side but flipping so that light values are on the left.}
 
 \item{...}{Other arguments passed on to
 \code{\link[ggplot2]{discrete_scale}},
@@ -33,6 +42,9 @@ palette_mediocre_c(pal = "rainbow")
 }
 \seealso{
 Other color scales: 
-\code{\link{palette_mediocre_c}()}
+\code{\link{scale_mediocre_d}()}
+
+Other color scales: 
+\code{\link{scale_mediocre_d}()}
 }
 \concept{color scales}

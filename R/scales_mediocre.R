@@ -4,16 +4,8 @@
 #' These functions enable to create such palettes.
 #' The main color palettes have been defined using \url{https://coolors.co/}.
 #'
-#' @param pal a string. Defines the color palette selected.
-#' Can either be either "autumn", "rainbow", "green",
-#'  "hotcold", "blackandwhite", or "coty"
-#' @param second_pair if true sets an alternative pair of colors
-#' for graphs with two colors
-#' @param ... Other arguments passed on to
-#' \code{\link[ggplot2]{discrete_scale}},
-#' \code{\link[ggplot2]{continuous_scale}},
-#' or \code{\link[ggplot2]{binned_scale}} to control name, limits, breaks,
-#' labels and so forth.
+#' @inheritParams palette_mediocre_d
+#' @inheritParams palette_mediocre_c
 #'
 #' @family color scales
 #' @export
@@ -29,7 +21,10 @@
 #'   theme_mediocre() +
 #'   scale_mediocre_c()
 #'
-scale_mediocre_d <- function(pal = "autumn", second_pair = FALSE, ...) {
+scale_mediocre_d <- function(pal = "autumn",
+                             second_pair = FALSE,
+                             gradient = NULL,
+                             ...) {
 
   if (!(pal %in% mediocrethemes::colors_table[["color"]])) {
     stop("This palette does not exist in this package")
@@ -40,11 +35,11 @@ scale_mediocre_d <- function(pal = "autumn", second_pair = FALSE, ...) {
 
 #' @export
 #' @rdname scale_mediocre_d
-scale_mediocre_c <- function(pal = "autumn", ...) {
+scale_mediocre_c <- function(pal = "autumn", gradient = NULL, ...) {
 
   if (!(pal %in% mediocrethemes::colors_table[["color"]])) {
     stop("This palette does not exist in this package")
   }
 
-  mediocrethemes::palette_mediocre_c(pal = pal)()
+  mediocrethemes::palette_mediocre_c(pal = pal, gradient = gradient)()
 }

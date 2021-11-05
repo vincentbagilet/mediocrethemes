@@ -42,8 +42,9 @@ theme_mediocre <- function(pal = "autumn",
 
   #setting default colors
   geoms_color <- c("point", "line", "contour", "text",
-                   "curve", "function", "spoke", "rug")
-  geoms_complementary <- c("abline", "vline", "hline", "errorbar", "errorbarh")
+                   "curve", "function", "spoke", "rug",
+                   "errorbar", "errorbarh", "pointrange")
+  geoms_complementary <- c("abline", "vline", "hline")
   geoms_fill <- c("area", "bar", "col", "dotplot", "hex", "tile")
   geoms_density <- c("boxplot", "density", "violin", "contour_filled", "ribbon")
 

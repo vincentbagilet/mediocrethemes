@@ -9,6 +9,11 @@
 #'  "hotcold", "blackandwhite", or "coty"
 #' @param second_pair if true sets an alternative pair of colors
 #' for graphs with two colors
+#' @param gradient a string, either "left" or "right".
+#' Turns divergent palettes into gradient ones by splitting it in two.
+#' If equal to "right", the gradient palette is built with the right hand
+#' side part of the divergent palette. If equal to "left", uses the left
+#' hand side but flipping so that light values are on the left.
 #' @param ... Other arguments passed on to
 #' \code{\link[ggplot2]{discrete_scale}},
 #' \code{\link[ggplot2]{continuous_scale}},
@@ -23,10 +28,18 @@
 #'
 #' palette_mediocre_c(pal = "rainbow")
 #'
-palette_mediocre_d <- function(pal = "autumn", second_pair = FALSE, ...) {
+palette_mediocre_d <- function(pal = "autumn",
+                               second_pair = FALSE,
+                               gradient = NULL,
+                               ...) {
 
   if (!(pal %in% mediocrethemes::colors_table[["color"]])) {
     stop("This palette does not exist in this package")
+  }
+  if (!is.null(gradient)) {
+    if (!(gradient %in% c("left", "right"))) {
+      warning("If provided, gradient must be either 'left' or 'right'")
+    }
   }
 
   make_palette <- function(...) {
@@ -35,6 +48,14 @@ palette_mediocre_d <- function(pal = "autumn", second_pair = FALSE, ...) {
     mediocre_color_vector <- unlist(
       strsplit(color_theme[["vector"]], split = ", ")
     )
+
+    if (!is.null(gradient)) {
+      if (gradient == "right") {
+        mediocre_color_vector <- mediocre_color_vector[8:15]
+      } else if (gradient == "left") {
+        mediocre_color_vector <- rev(mediocre_color_vector[1:7])
+      }
+    }
 
     if (pal %in% c("green", "blackandwhite")) {
       mediocre_color_vector <- rev(mediocre_color_vector)
@@ -85,12 +106,19 @@ palette_mediocre_d <- function(pal = "autumn", second_pair = FALSE, ...) {
   return(make_palette)
 }
 
+#' @family color scales
 #' @export
-#' @rdname scale_mediocre_d
-palette_mediocre_c <- function(pal = "autumn", ...) {
+#'
+#' @rdname palette_mediocre_d
+palette_mediocre_c <- function(pal = "autumn", gradient = NULL, ...) {
 
   if (!(pal %in% mediocrethemes::colors_table[["color"]])) {
     stop("This palette does not exist in this package")
+  }
+  if (!is.null(gradient)) {
+    if (!(gradient %in% c("left", "right"))) {
+      warning("If provided, gradient must be either 'left' or 'right'")
+    }
   }
 
   make_palette <- function(...) {
@@ -99,6 +127,14 @@ palette_mediocre_c <- function(pal = "autumn", ...) {
     mediocre_color_vector <- unlist(
       strsplit(color_theme[["vector"]], split = ", ")
     )
+
+    if (!is.null(gradient)) {
+      if (gradient == "right") {
+        mediocre_color_vector <- mediocre_color_vector[8:15]
+      } else if (gradient == "left") {
+        mediocre_color_vector <- rev(mediocre_color_vector[1:7])
+      }
+    }
 
     ggplot2::scale_fill_gradientn(
       ...,

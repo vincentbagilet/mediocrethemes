@@ -11,7 +11,8 @@ set_mediocre_all(
   base_size = 12,
   base_family = "Lato",
   base_line_size = base_size/170,
-  base_rect_size = base_size/170
+  base_rect_size = base_size/170,
+  gradient = NULL
 )
 }
 \arguments{
@@ -31,6 +32,12 @@ for graphs with two colors}
 \item{base_line_size}{Base size for line elements}
 
 \item{base_rect_size}{Base size for rect elements}
+
+\item{gradient}{a string, either "left" or "right".
+Turns divergent palettes into gradient ones by splitting it in two.
+If equal to "right", the gradient palette is built with the right hand
+side part of the divergent palette. If equal to "left", uses the left
+hand side but flipping so that light values are on the left.}
 }
 \description{
 Sets the mediocre theme and colors for the whole document.

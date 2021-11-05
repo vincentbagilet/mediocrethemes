@@ -41,7 +41,7 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
-The function `set_mediocre_all` takes several arguments: `pal`, `background` and `second_pair` along with the usual `base_size`, `base_family`, `base_line_size` and `base_rect_size`. The following subsections describe the use of the three first arguments.
+The function `set_mediocre_all` takes several arguments: `pal`, `background`, `second_pair` and `gradient` along with the usual `base_size`, `base_family`, `base_line_size` and `base_rect_size`. The following subsections describe the use of the three first arguments.
 
 ### Changing the palette
 
@@ -69,6 +69,42 @@ for (palette in mediocrethemes::colors_table[[1]]) {
   print(graph)
 }
 ```
+
+### Using a gradient palette
+
+Each divergent palette (autumn, coty, rainbow and hotcold) can be turned into two gradient palettes. This is done by splitting a divergent palette in the middle, and use either the set of colors on the right or on the left (flipped to get light colors for small values). The example below hopefully clarifies this. To use this palette, one only needs to set the parameter `gradient` to "left" or "right"
+
+```{r gradient, echo=FALSE}
+set_mediocre_all(pal = "coty")
+print("set_mediocre_all(pal = 'coty')")
+
+df <- data.frame(
+  x = runif(10000),
+  y = runif(10000)
+)
+
+ggplot(df, aes(x, y)) +
+  geom_hex() +
+  coord_fixed() +
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+
+set_mediocre_all(pal = "coty", gradient = "left")
+print("set_mediocre_all(pal = 'coty', gradient = 'left')")
+
+ggplot(df, aes(x, y)) +
+  geom_hex() +
+  coord_fixed() +
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+
+set_mediocre_all(pal = "coty", gradient = "right")
+print("set_mediocre_all(pal = 'coty', gradient = 'right')")
+
+ggplot(df, aes(x, y)) +
+  geom_hex() +
+  coord_fixed() +
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+```
+
 
 ### Setting a background
 
