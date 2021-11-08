@@ -109,7 +109,7 @@
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html">mpg</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cty</span>, y <span class="op">=</span> <span class="va">displ</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
     <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
     <span class="fu"><a href="reference/theme_mediocre.html">theme_mediocre</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="reference/palette_mediocre_c.html">scale_mediocre_d</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="reference/scale_mediocre_d.html">scale_mediocre_d</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
     <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-base_graph-1.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
@@ -127,22 +127,22 @@
 <div id="additional-palettes" class="section level3">
 <h3 class="hasAnchor">
 <a href="#additional-palettes" class="anchor"></a>Additional palettes</h3>
-<p>Note that additional palettes are available.</p>
+<p>Note that additional palettes are available. Most palettes are divergent and can be turned into two gradient palettes. This is done by splitting a divergent palette in the middle, and use either the set of colors on the right or on the left (flipped to get light colors for small values).</p>
 <div id="rainbow" class="section level4">
 <h4 class="hasAnchor">
 <a href="#rainbow" class="anchor"></a>rainbow</h4>
-<p><img src="reference/figures/README-rainbow-1.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-rainbow-2.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-rainbow-3.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-rainbow-4.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-rainbow-5.png" width="70%" style="display: block; margin: auto;"></p>
+<p><img src="reference/figures/README-rainbow-1.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-rainbow-2.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-rainbow-3.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-rainbow-4.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-rainbow-5.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-rainbow-6.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-rainbow-7.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div id="coty" class="section level4">
 <h4 class="hasAnchor">
 <a href="#coty" class="anchor"></a>coty</h4>
-<p>A (tentatively) colorblind friendly palette, based on a NPR map.</p>
-<p><img src="reference/figures/README-coty-1.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-coty-2.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-coty-3.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-coty-4.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-coty-5.png" width="70%" style="display: block; margin: auto;"></p>
+<p>A (tentatively) colorblind friendly palette, based on <a href="https://www.npr.org/2016/04/18/474256366/why-americas-schools-have-a-money-problem?t=1614618030346">a NPR map</a>.</p>
+<p><img src="reference/figures/README-coty-1.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-coty-2.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-coty-3.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-coty-4.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-coty-5.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-coty-6.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-coty-7.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div id="hotcold" class="section level4">
 <h4 class="hasAnchor">
 <a href="#hotcold" class="anchor"></a>hotcold</h4>
-<p><img src="reference/figures/README-hotcold-1.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-hotcold-2.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-hotcold-3.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-hotcold-4.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-hotcold-5.png" width="70%" style="display: block; margin: auto;"></p>
+<p><img src="reference/figures/README-hotcold-1.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-hotcold-2.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-hotcold-3.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-hotcold-4.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-hotcold-5.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-hotcold-6.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-hotcold-7.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div id="blackandwhite" class="section level4">
 <h4 class="hasAnchor">

@@ -19,6 +19,7 @@ set_mediocre_all <-
            gradient = NULL) {
     ggplot2::theme_set(mediocrethemes::theme_mediocre(
       pal = pal,
+      gradient = gradient,
       background = background,
       base_size = base_size,
       base_family = base_family,

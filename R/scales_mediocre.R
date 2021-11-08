@@ -30,7 +30,11 @@ scale_mediocre_d <- function(pal = "autumn",
     stop("This palette does not exist in this package")
   }
 
-  mediocrethemes::palette_mediocre_d(pal = pal, second_pair = second_pair)()
+  mediocrethemes::palette_mediocre_d(
+    pal = pal,
+    second_pair = second_pair,
+    gradient = gradient
+  )()
 }
 
 #' @export

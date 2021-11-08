@@ -6,6 +6,7 @@
 \usage{
 theme_mediocre(
   pal = "autumn",
+  gradient = NULL,
   background = FALSE,
   base_size = 12,
   base_family = "Lato",
@@ -17,6 +18,12 @@ theme_mediocre(
 \item{pal}{a string. Defines the color palette selected.
 Can either be either "autumn", "rainbow", "green",
  "hotcold", "blackandwhite", or "coty"}
+
+\item{gradient}{a string, either "left" or "right".
+Turns divergent palettes into gradient ones by splitting it in two.
+If equal to "right", the gradient palette is built with the right hand
+side part of the divergent palette. If equal to "left", uses the left
+hand side but flipping so that light values are on the left.}
 
 \item{background}{If TRUE, a background is added to the plots}
 

@@ -72,21 +72,25 @@ A couple of example plots obtained with this theme:
 
 ### Additional palettes
 
-Note that additional palettes are available.
+Note that additional palettes are available. Most palettes are divergent
+and can be turned into two gradient palettes. This is done by splitting
+a divergent palette in the middle, and use either the set of colors on
+the right or on the left (flipped to get light colors for small values).
 
 #### rainbow
 
-<img src="man/figures/README-rainbow-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-5.png" width="70%" style="display: block; margin: auto;" />
+<img src="man/figures/README-rainbow-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-5.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-6.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-7.png" width="70%" style="display: block; margin: auto;" />
 
 #### coty
 
-A (tentatively) colorblind friendly palette, based on a NPR map.
+A (tentatively) colorblind friendly palette, based on [a NPR
+map](https://www.npr.org/2016/04/18/474256366/why-americas-schools-have-a-money-problem?t=1614618030346).
 
-<img src="man/figures/README-coty-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-coty-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-coty-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-coty-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-coty-5.png" width="70%" style="display: block; margin: auto;" />
+<img src="man/figures/README-coty-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-coty-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-coty-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-coty-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-coty-5.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-coty-6.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-coty-7.png" width="70%" style="display: block; margin: auto;" />
 
 #### hotcold
 
-<img src="man/figures/README-hotcold-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-5.png" width="70%" style="display: block; margin: auto;" />
+<img src="man/figures/README-hotcold-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-5.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-6.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-7.png" width="70%" style="display: block; margin: auto;" />
 
 #### blackandwhite
 

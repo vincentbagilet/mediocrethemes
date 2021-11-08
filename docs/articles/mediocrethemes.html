@@ -102,7 +102,7 @@
     <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
     <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></code></pre></div>
 <p><img src="mediocrethemes_files/figure-html/set_mediocre_all-1.png" width="70%" style="display: block; margin: auto;"></p>
-<p>The function <code>set_mediocre_all</code> takes several arguments: <code>pal</code>, <code>background</code> and <code>second_pair</code> along with the usual <code>base_size</code>, <code>base_family</code>, <code>base_line_size</code> and <code>base_rect_size</code>. The following subsections describe the use of the three first arguments.</p>
+<p>The function <code>set_mediocre_all</code> takes several arguments: <code>pal</code>, <code>background</code>, <code>second_pair</code> and <code>gradient</code> along with the usual <code>base_size</code>, <code>base_family</code>, <code>base_line_size</code> and <code>base_rect_size</code>. The following subsections describe the use of the three first arguments.</p>
 <div id="changing-the-palette" class="section level3">
 <h3 class="hasAnchor">
 <a href="#changing-the-palette" class="anchor"></a>Changing the palette</h3>
@@ -128,11 +128,22 @@
 <pre><code>#&gt; [1] "set_mediocre_all(pal = 'coty')"</code></pre>
 <p><img src="mediocrethemes_files/figure-html/palettes-6.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
+<div id="using-a-gradient-palette" class="section level3">
+<h3 class="hasAnchor">
+<a href="#using-a-gradient-palette" class="anchor"></a>Using a gradient palette</h3>
+<p>Each divergent palette (autumn, coty, rainbow and hotcold) can be turned into two gradient palettes. This is done by splitting a divergent palette in the middle, and use either the set of colors on the right or on the left (flipped to get light colors for small values). The example below hopefully clarifies this. To use these gradient palettes, one only needs to set the parameter <code>gradient</code> to “left” or “right”.</p>
+<pre><code>#&gt; [1] "set_mediocre_all(pal = 'coty')"</code></pre>
+<p><img src="mediocrethemes_files/figure-html/gradient-1.png" width="70%" style="display: block; margin: auto;"></p>
+<pre><code>#&gt; [1] "set_mediocre_all(pal = 'coty', gradient = 'left')"</code></pre>
+<p><img src="mediocrethemes_files/figure-html/gradient-2.png" width="70%" style="display: block; margin: auto;"></p>
+<pre><code>#&gt; [1] "set_mediocre_all(pal = 'coty', gradient = 'right')"</code></pre>
+<p><img src="mediocrethemes_files/figure-html/gradient-3.png" width="70%" style="display: block; margin: auto;"></p>
+</div>
 <div id="setting-a-background" class="section level3">
 <h3 class="hasAnchor">
 <a href="#setting-a-background" class="anchor"></a>Setting a background</h3>
 <p>Users can also easily set a background for all their plots by setting the parameter <code>background</code> to <code>TRUE</code>. The color of the background is predefined to fit nicely the theme palette. One can of course still modify the background color by adding a layer to the ggplot theme: <code><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme(plot.background = element_rect(fill = "red"))</a></code>.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span>background <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html">mpg</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cty</span>, y <span class="op">=</span> <span class="va">displ</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
@@ -144,7 +155,7 @@
 <h3 class="hasAnchor">
 <a href="#using-another-pair-of-colors" class="anchor"></a>Using another pair of colors</h3>
 <p>Graphs with two categories, as the following one for instance, are ubiquitous.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html">mpg</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">drv</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
@@ -152,7 +163,7 @@
     <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></code></pre></div>
 <p><img src="mediocrethemes_files/figure-html/unnamed-chunk-2-1.png" width="70%" style="display: block; margin: auto;"></p>
 <p>In a same project, users may have to consider different sets of pairs. For instance, they may want to separate observations in years as in the previous graph and later use other categories such as Republicans and Democrats. User may not want to use the same color pair to denote year and party. For instance they may not want Republicans to be coded with the same color as the year 1999. To access a second color pair, users can therefore set the <code>second_pair</code> parameter of <code>set_mediocre_all</code> to <code>TRUE</code> and keep on writing standard ggplot code. Subsequent bi-color graphs will use a second pair of colors, different from the base one but still consistent with the color scale used.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span>second_pair <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/presidential.html">presidential</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">party</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
@@ -171,7 +182,7 @@
 <h1 class="hasAnchor">
 <a href="#acessing-the-color-used-in-a-scale" class="anchor"></a>Acessing the color used in a scale</h1>
 <p>All the colors used are stored in the table <code>colors_table</code>:</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">colors_table</span>
 <span class="co">#&gt; # A tibble: 6 x 8</span>
 <span class="co">#&gt;   color   base   text   light background dark  complementary vector             </span>
@@ -183,7 +194,7 @@
 <span class="co">#&gt; 5 blacka… #2125… #2125… #CED… #F9FAFA    #1D1… #6C757D       #DEE2E6, #D0D4D7, …</span>
 <span class="co">#&gt; 6 coty    #1C6C… #1D47… #E1D… #F9F8F1    #112… #1D4749       #1D4749, #1C5659, …</span></code></pre></div>
 <p>For instance, one can access the “base” color for the palette “coty”, in a HEX format, using the following command:</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">mediocrethemes</span><span class="fu">::</span><span class="va"><a href="../reference/colors_table.html">colors_table</a></span><span class="op">[[</span><span class="fl">6</span>, <span class="st">"base"</span><span class="op">]</span><span class="op">]</span>
 <span class="co">#&gt; [1] "#1C6C6F"</span></code></pre></div>
 </div>

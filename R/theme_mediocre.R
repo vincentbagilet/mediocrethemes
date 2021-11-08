@@ -1,9 +1,14 @@
 #' Defines the ggplot theme with the default R colors.
 #'
-#' @param background If TRUE, a background is added to the plots
 #' @param pal a string. Defines the color palette selected.
 #' Can either be either "autumn", "rainbow", "green",
 #'  "hotcold", "blackandwhite", or "coty"
+#' @param gradient a string, either "left" or "right".
+#' Turns divergent palettes into gradient ones by splitting it in two.
+#' If equal to "right", the gradient palette is built with the right hand
+#' side part of the divergent palette. If equal to "left", uses the left
+#' hand side but flipping so that light values are on the left.
+#' @param background If TRUE, a background is added to the plots
 #' @param base_size Base font size, given in pts.
 #' @param base_family Base font family
 #' @param base_line_size Base size for line elements
@@ -24,6 +29,7 @@
 #'   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 #'
 theme_mediocre <- function(pal = "autumn",
+                           gradient = NULL,
                            background = FALSE,
                            base_size = 12,
                            base_family = "Lato",
@@ -38,7 +44,22 @@ theme_mediocre <- function(pal = "autumn",
   }
 
   colors_table <- mediocrethemes::colors_table
-  color_type <- colors_table[which(colors_table$color == pal), ]
+  color_theme <- colors_table[which(colors_table$color == pal), ]
+  if (!is.null(gradient)) {
+    if (gradient == "right") {
+      mediocre_color_vector <- unlist(
+        strsplit(color_theme[["vector"]], split = ", ")
+      )
+      base_color <- mediocre_color_vector[14]
+      light_color <- mediocre_color_vector[10]
+    } else {
+      base_color <- color_theme[["base"]]
+      light_color <- color_theme[["light"]]
+    }
+  } else {
+    base_color <- color_theme[["base"]]
+    light_color <- color_theme[["light"]]
+  }
 
   #setting default colors
   geoms_color <- c("point", "line", "contour", "text",
@@ -51,28 +72,28 @@ theme_mediocre <- function(pal = "autumn",
   lapply(
     geoms_color,
     ggplot2::update_geom_defaults,
-    list(colour = color_type[["base"]])
+    list(colour = base_color)
   )
   lapply(
     geoms_complementary,
     ggplot2::update_geom_defaults,
-    list(colour = color_type[["complementary"]])
+    list(colour = color_theme[["text"]], linetype = "dashed")
   )
   lapply(
     geoms_fill,
     ggplot2::update_geom_defaults,
-    list(fill = color_type[["base"]])
+    list(fill = base_color)
   )
   lapply(
     geoms_density,
     ggplot2::update_geom_defaults,
-    list(fill = color_type[["base"]], color = color_type[["base"]], alpha = 0.2)
+    list(fill = base_color, color = base_color, alpha = 0.2)
   )
 
   ggplot2::update_geom_defaults(
     geom = "smooth",
-    list(colour = color_type[["light"]],
-         fill = color_type[["light"]], alpha = 0.2)
+    list(colour = light_color,
+         fill = light_color, alpha = 0.2)
   )
 
   # set fonts
@@ -94,10 +115,10 @@ theme_mediocre <- function(pal = "autumn",
       text = ggplot2::element_text(
         size = base_size,
         family = base_family,
-        colour = color_type[["text"]]
+        colour = color_theme[["text"]]
       ),
       panel.grid.major.y = ggplot2::element_line(
-        colour = color_type[["text"]],
+        colour = color_theme[["text"]],
         size = base_line_size
       ),
       panel.grid.minor.x = ggplot2::element_blank(),
@@ -105,7 +126,7 @@ theme_mediocre <- function(pal = "autumn",
       panel.grid.minor.y = ggplot2::element_blank(),
       plot.margin = ggplot2::unit(c(0.5, 0.5, 0.5, 0.5), "cm"),
       axis.text = ggplot2::element_text(size = ggplot2::rel(0.8)),
-      axis.ticks.x = ggplot2::element_line(size = ggplot2::rel(0.2)),
+      axis.ticks.x = ggplot2::element_line(size = ggplot2::rel(2)),
       axis.title.x = ggplot2::element_text(
         hjust = 1,
         margin = ggplot2::margin(t = .35, unit = "cm"),
@@ -146,8 +167,8 @@ theme_mediocre <- function(pal = "autumn",
     theme_custom <- theme_custom +
       ggplot2::theme(
         plot.background = ggplot2::element_rect(
-          color = color_type[["background"]],
-          fill = color_type[["background"]]
+          color = color_theme[["background"]],
+          fill = color_theme[["background"]]
         )
       )
   }

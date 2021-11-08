@@ -112,7 +112,8 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
 
 ### Additional palettes
 
-Note that additional palettes are available.
+Note that additional palettes are available. 
+Most palettes are divergent and can be turned into two gradient palettes. This is done by splitting a divergent palette in the middle, and use either the set of colors on the right or on the left (flipped to get light colors for small values).
 
 #### rainbow
 
@@ -155,6 +156,22 @@ plot_all_examples <- function(pal) {
     labs(title = "A very nice title", subtitle = "A disappointing subtitle") 
   
   print(plot5)
+  
+  if (pal != "blackandwhite") {
+    plot6 <- ggplot(data = ggplot2::diamonds, aes(x = price, fill = color)) +
+    geom_histogram(bins = 30) +
+    scale_mediocre_d(pal = pal, gradient = "left") +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+  
+  print(plot6)
+  
+  plot7 <- ggplot(data = ggplot2::diamonds, aes(x = price, fill = color)) +
+    geom_histogram(bins = 30) +
+    scale_mediocre_d(pal = pal, gradient = "right") +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle") 
+  
+  print(plot7)
+  } 
 } 
 
 plot_all_examples(pal = "rainbow")
@@ -162,7 +179,7 @@ plot_all_examples(pal = "rainbow")
 
 #### coty
 
-A (tentatively) colorblind friendly palette, based on a NPR map.
+A (tentatively) colorblind friendly palette, based on [a NPR map](https://www.npr.org/2016/04/18/474256366/why-americas-schools-have-a-money-problem?t=1614618030346).
 
 ```{r coty, echo=FALSE}
 plot_all_examples(pal = "coty")

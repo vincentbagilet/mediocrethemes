@@ -72,7 +72,7 @@ for (palette in mediocrethemes::colors_table[[1]]) {
 
 ### Using a gradient palette
 
-Each divergent palette (autumn, coty, rainbow and hotcold) can be turned into two gradient palettes. This is done by splitting a divergent palette in the middle, and use either the set of colors on the right or on the left (flipped to get light colors for small values). The example below hopefully clarifies this. To use this palette, one only needs to set the parameter `gradient` to "left" or "right"
+Each divergent palette (autumn, coty, rainbow and hotcold) can be turned into two gradient palettes. This is done by splitting a divergent palette in the middle, and use either the set of colors on the right or on the left (flipped to get light colors for small values). The example below hopefully clarifies this. To use these gradient palettes, one only needs to set the parameter `gradient` to "left" or "right".
 
 ```{r gradient, echo=FALSE}
 set_mediocre_all(pal = "coty")

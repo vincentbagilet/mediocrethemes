@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mediocre color scales — palette_mediocre_c • mediocrethemes</title>
+<title>Mediocre color scales — scale_mediocre_d • mediocrethemes</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Mediocre color scales — palette_mediocre_c" />
+<meta property="og:title" content="Mediocre color scales — scale_mediocre_d" />
 <meta property="og:description" content="The `mediocre` scales provide alternative default colors for ggplots.
 These functions enable to create such palettes.
 The main color palettes have been defined using https://coolors.co/." />
@@ -131,11 +131,9 @@ These functions enable to create such palettes.
 The main color palettes have been defined using <a href='https://coolors.co/'>https://coolors.co/</a>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>palette_mediocre_c</span><span class='op'>(</span>pal <span class='op'>=</span> <span class='st'>"autumn"</span>, <span class='va'>...</span><span class='op'>)</span>
+    <pre class="usage"><span class='fu'>scale_mediocre_d</span><span class='op'>(</span>pal <span class='op'>=</span> <span class='st'>"autumn"</span>, second_pair <span class='op'>=</span> <span class='cn'>FALSE</span>, gradient <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>scale_mediocre_d</span><span class='op'>(</span>pal <span class='op'>=</span> <span class='st'>"autumn"</span>, second_pair <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span>
-
-<span class='fu'>scale_mediocre_c</span><span class='op'>(</span>pal <span class='op'>=</span> <span class='st'>"autumn"</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+<span class='fu'>scale_mediocre_c</span><span class='op'>(</span>pal <span class='op'>=</span> <span class='st'>"autumn"</span>, gradient <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -147,17 +145,25 @@ Can either be either "autumn", "rainbow", "green",
  "hotcold", "blackandwhite", or "coty"</p></td>
     </tr>
     <tr>
+      <th>second_pair</th>
+      <td><p>if true sets an alternative pair of colors
+for graphs with two colors</p></td>
+    </tr>
+    <tr>
+      <th>gradient</th>
+      <td><p>a string, either "left" or "right".
+Turns divergent palettes into gradient ones by splitting it in two.
+If equal to "right", the gradient palette is built with the right hand
+side part of the divergent palette. If equal to "left", uses the left
+hand side but flipping so that light values are on the left.</p></td>
+    </tr>
+    <tr>
       <th>...</th>
       <td><p>Other arguments passed on to
 <code><a href='https://ggplot2.tidyverse.org/reference/discrete_scale.html'>discrete_scale</a></code>,
 <code><a href='https://ggplot2.tidyverse.org/reference/continuous_scale.html'>continuous_scale</a></code>,
 or <code><a href='https://ggplot2.tidyverse.org/reference/binned_scale.html'>binned_scale</a></code> to control name, limits, breaks,
 labels and so forth.</p></td>
-    </tr>
-    <tr>
-      <th>second_pair</th>
-      <td><p>if true sets an alternative pair of colors
-for graphs with two colors</p></td>
     </tr>
     </table>
 

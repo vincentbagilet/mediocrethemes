@@ -129,6 +129,7 @@
 
     <pre class="usage"><span class='fu'>theme_mediocre</span><span class='op'>(</span>
   pal <span class='op'>=</span> <span class='st'>"autumn"</span>,
+  gradient <span class='op'>=</span> <span class='cn'>NULL</span>,
   background <span class='op'>=</span> <span class='cn'>FALSE</span>,
   base_size <span class='op'>=</span> <span class='fl'>12</span>,
   base_family <span class='op'>=</span> <span class='st'>"Lato"</span>,
@@ -144,6 +145,14 @@
       <td><p>a string. Defines the color palette selected.
 Can either be either "autumn", "rainbow", "green",
  "hotcold", "blackandwhite", or "coty"</p></td>
+    </tr>
+    <tr>
+      <th>gradient</th>
+      <td><p>a string, either "left" or "right".
+Turns divergent palettes into gradient ones by splitting it in two.
+If equal to "right", the gradient palette is built with the right hand
+side part of the divergent palette. If equal to "left", uses the left
+hand side but flipping so that light values are on the left.</p></td>
     </tr>
     <tr>
       <th>background</th>

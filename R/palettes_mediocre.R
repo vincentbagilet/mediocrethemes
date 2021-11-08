@@ -49,11 +49,11 @@ palette_mediocre_d <- function(pal = "autumn",
       strsplit(color_theme[["vector"]], split = ", ")
     )
 
-    if (!is.null(gradient)) {
+    if (!is.null(gradient) & !(pal %in% c("green", "blackandwhite"))) {
       if (gradient == "right") {
         mediocre_color_vector <- mediocre_color_vector[8:15]
       } else if (gradient == "left") {
-        mediocre_color_vector <- rev(mediocre_color_vector[1:7])
+        mediocre_color_vector <- rev(mediocre_color_vector[1:8])
       }
     }
 
@@ -72,22 +72,31 @@ palette_mediocre_d <- function(pal = "autumn",
     }
 
     mediocre_pal <- function(n) {
-      if (n == 2) {
-        if (pal %in% c("coty", "rainbow")) {
-          set_colors <- set_colors + 2 * second_pair
+      if (is.null(gradient)) {
+        if (n == 2) {
+          if (pal %in% c("coty", "rainbow")) {
+            set_colors <- set_colors + 2 * second_pair
+          } else {
+            set_colors <- set_colors + 5 * second_pair
+          }
+          color_vector <- mediocre_color_vector[set_colors[1:2]]
+        } else if (n == 3) {
+          color_vector <- mediocre_color_vector[set_colors]
+        } else if (n == 4) {
+          color_vector <- mediocre_color_vector[-c(12, 13, 15)]
         } else {
-          set_colors <- set_colors + 5 * second_pair
+          if (pal %in% c("green", "blackandwhite")) {
+            mediocre_color_vector <- rev(mediocre_color_vector)
+          }
+          color_vector <- mediocre_color_vector
         }
-        color_vector <- mediocre_color_vector[set_colors[1:2]]
-      } else if (n == 3) {
-        color_vector <- mediocre_color_vector[set_colors]
-      } else if (n == 4) {
-        color_vector <- mediocre_color_vector[-c(12, 13, 15)]
       } else {
-        if (pal %in% c("green", "blackandwhite")) {
-          mediocre_color_vector <- rev(mediocre_color_vector)
+        if (pal %in% c("hotcold", "coty") & n < 4) {
+          #because light colors too light for these pal
+          color_vector <- mediocre_color_vector[-1]
+        } else {
+          color_vector <- mediocre_color_vector
         }
-        color_vector <- mediocre_color_vector
       }
       the_palette <- grDevices::colorRampPalette(color_vector)
 
@@ -132,7 +141,7 @@ palette_mediocre_c <- function(pal = "autumn", gradient = NULL, ...) {
       if (gradient == "right") {
         mediocre_color_vector <- mediocre_color_vector[8:15]
       } else if (gradient == "left") {
-        mediocre_color_vector <- rev(mediocre_color_vector[1:7])
+        mediocre_color_vector <- rev(mediocre_color_vector[1:8])
       }
     }
 
