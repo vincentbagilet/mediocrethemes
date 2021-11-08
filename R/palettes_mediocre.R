@@ -91,12 +91,12 @@ palette_mediocre_d <- function(pal = "autumn",
           color_vector <- mediocre_color_vector
         }
       } else {
-        if (pal %in% c("hotcold", "coty") & n < 4) {
-          #because light colors too light for these pal
-          color_vector <- mediocre_color_vector[-1]
-        } else {
+        # if (pal %in% c("hotcold", "coty") & n < 4) {
+        #   #because light colors too light for these pal
+        #   color_vector <- mediocre_color_vector[-1]
+        # } else {
           color_vector <- mediocre_color_vector
-        }
+        # }
       }
       the_palette <- grDevices::colorRampPalette(color_vector)
 
@@ -108,7 +108,7 @@ palette_mediocre_d <- function(pal = "autumn",
       aesthetics = c("fill", "color"),
       scale_name = "disc_scale",
       palette = mediocre_pal,
-      na.value = "grey"
+      na.value = "gray91"
     )
   }
 
@@ -149,7 +149,7 @@ palette_mediocre_c <- function(pal = "autumn", gradient = NULL, ...) {
       ...,
       colors = mediocre_color_vector,
       aesthetics = c("fill", "color"),
-      na.value = "grey"
+      na.value = "gray91"
     )
   }
 

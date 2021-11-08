@@ -232,21 +232,16 @@ labels and so forth.</p></td>
 #&gt;             }
 #&gt;         }
 #&gt;         else {
-#&gt;             if (pal %in% c("hotcold", "coty") &amp; n &lt; 4) {
-#&gt;                 color_vector &lt;- mediocre_color_vector[-1]
-#&gt;             }
-#&gt;             else {
-#&gt;                 color_vector &lt;- mediocre_color_vector
-#&gt;             }
+#&gt;             color_vector &lt;- mediocre_color_vector
 #&gt;         }
 #&gt;         the_palette &lt;- grDevices::colorRampPalette(color_vector)
 #&gt;         return(the_palette(n))
 #&gt;     }
 #&gt;     ggplot2::discrete_scale(..., aesthetics = c("fill", "color"), 
-#&gt;         scale_name = "disc_scale", palette = mediocre_pal, na.value = "grey")
+#&gt;         scale_name = "disc_scale", palette = mediocre_pal, na.value = "gray91")
 #&gt; }
-#&gt; &lt;bytecode: 0x7fa02ea0a6e8&gt;
-#&gt; &lt;environment: 0x7fa02ea14170&gt;</div><div class='input'>
+#&gt; &lt;bytecode: 0x7fca77c0f9f0&gt;
+#&gt; &lt;environment: 0x7fca77c18048&gt;</div><div class='input'>
 <span class='fu'>palette_mediocre_c</span><span class='op'>(</span>pal <span class='op'>=</span> <span class='st'>"rainbow"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; function (...) 
 #&gt; {
@@ -264,10 +259,10 @@ labels and so forth.</p></td>
 #&gt;         }
 #&gt;     }
 #&gt;     ggplot2::scale_fill_gradientn(..., colors = mediocre_color_vector, 
-#&gt;         aesthetics = c("fill", "color"), na.value = "grey")
+#&gt;         aesthetics = c("fill", "color"), na.value = "gray91")
 #&gt; }
-#&gt; &lt;bytecode: 0x7fa02f0dabb0&gt;
-#&gt; &lt;environment: 0x7fa02f0dcfa0&gt;</div><div class='input'>
+#&gt; &lt;bytecode: 0x7fca77ca36b0&gt;
+#&gt; &lt;environment: 0x7fca7829ed40&gt;</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
