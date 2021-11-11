@@ -40,7 +40,7 @@ To build similar a mediocre/xaringan template, you simply need to add this to th
 ```{YAML, eval=FALSE}
 output:
   xaringan::moon_reader:
-    css: mediocre-xaringan.css
+    css: mediocre-themer.css
     nature:
       countIncrementalSlides: no
       highlightLines: yes
@@ -57,7 +57,6 @@ xaringan_mediocre(pal = "coty")
 ```
 
 You are all set!
-
 
 Note that `countIncrementalSlides`, `highlightLines` and `highlightStyle` are not necessary. However, `ratio` is necessary as font sizes are defined for 16:9 slides. Also note, to be able to use this xaringan theme without internet connection, you may want to locally install the Google Fonts [Lato](https://fonts.google.com/specimen/Lato?query=lato), [Josefin Sans](https://fonts.google.com/specimen/Josefin+Sans?query=josefin) and [Source Code Pro](https://fonts.google.com/specimen/Source+Code+Pro?query=source+code+pro). This is however not required.
 
