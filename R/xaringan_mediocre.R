@@ -37,18 +37,33 @@ xaringan_mediocre <- function(pal = "autumn", mediocre_plots = TRUE) {
   )
 
   #set fonts
-  if (!("Lato" %in% systemfonts::system_fonts()[["family"]]) |
-    !("Josefin Sans" %in% systemfonts::system_fonts()[["family"]]) |
-    !("Source Code Pro" %in% systemfonts::system_fonts()[["family"]])) {
-    if (curl::has_internet()) {
-      josefin <- xaringanthemer::google_font("Josefin Sans", "400")
-      lato <- xaringanthemer::google_font("Lato", "400", "400i")
-      source_code <- xaringanthemer::google_font("Source Code Pro", "400")
-    } else {
-      warning("Internet connexion or
-         locally installed Google Fonts Lato,
-         Josefin Sans and Source Code Pro required.")
-    }
+  installed_fonts <- systemfonts::system_fonts()[["family"]]
+  fonts_mediocre <- c("Lato", "Josefin Sans", "Source Code Pro")
+  internet_needed <- FALSE
+  if (!("Josefin Sans" %in% installed_fonts)) {
+    header_font_goog <- xaringanthemer::google_font("Josefin Sans", "400")
+    internet_needed <- TRUE
+  } else {
+    header_font_goog <- NULL
+  }
+
+  if (!("Lato" %in% installed_fonts)) {
+    text_font_goog <-xaringanthemer::google_font("Lato", "400", "400i")
+    internet_needed <- TRUE
+  } else {
+    text_font_goog <- NULL
+  }
+
+  if (!("Source Code Pro" %in% installed_fonts)) {
+    code_font_goog <- xaringanthemer::google_font("Source Code Pro", "400")
+    internet_needed <- TRUE
+  } else {
+    code_font_goog <- NULL
+  }
+
+  if (!curl::has_internet() & internet_needed) {
+    warning(paste("Internet connexion or locally installed Google Fonts,
+                  Lato, Josefin Sans and Source Code Pro required."))
   }
 
   xaringanthemer::style_mono_light(
@@ -56,9 +71,21 @@ xaringan_mediocre <- function(pal = "autumn", mediocre_plots = TRUE) {
     text_color = text_color,
     background_color =
       colors_table[[which(colors_table$color == pal), "background"]],
-    header_font_google = josefin,
-    text_font_google   = lato,
-    code_font_google = source_code,
+    header_font_google = header_font_goog,
+    header_font_family = ifelse(
+      "Josefin Sans" %in% installed_fonts,
+      "Josefin Sans",
+      xaringanthemer::xaringanthemer_font_default("header_font_family")),
+    text_font_google = text_font_goog,
+    text_font_family = ifelse(
+      "Lato" %in% installed_fonts,
+      "Lato",
+      xaringanthemer::xaringanthemer_font_default("text_font_family")),
+    code_font_google = code_font_goog,
+    code_font_family = ifelse(
+      "Source Code Pro" %in% installed_fonts,
+      "Source Code Pro",
+      xaringanthemer::xaringanthemer_font_default("code_font_family")),
     header_font_weight = "bold",
     text_bold_color =
       colors_table[[which(colors_table$color == pal), "complementary"]],

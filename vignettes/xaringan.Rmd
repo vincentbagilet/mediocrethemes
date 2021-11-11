@@ -98,6 +98,10 @@ xaringan_mediocre(pal = "coty")
 
 ````
 
+## Mediocrethemes plots in slides
+
+By default, the `xaringan_mediocre` function is built to generate plots in the mediocrethemes format. To turn it of, set the parameter `mediocre_plots` to `FALSE`.
+
 ## Nice transition slides
 
 Xaringanthemer provides nice transition slides that can be created by adding the following lines to your code:
