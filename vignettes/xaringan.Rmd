@@ -75,7 +75,7 @@ date: "April 34, 2103"
 output:
   xaringan::moon_reader:
     lib_dir: libs
-    css: xaringan-mediocre.css
+    css: mediocre-themer.css
     nature:
       countIncrementalSlides: no
       highlightLines: yes

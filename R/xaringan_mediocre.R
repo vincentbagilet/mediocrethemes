@@ -96,6 +96,6 @@ xaringan_mediocre <- function(pal = "autumn", mediocre_plots = TRUE) {
     header_h2_font_size = "42px",
     header_h3_font_size = "32px",
     text_slide_number_font_size = "16px",
-    outfile = "xaringan-mediocre.css"
+    outfile = "mediocre-themer.css"
   )
 }
