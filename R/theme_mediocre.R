@@ -31,7 +31,7 @@
 theme_mediocre <- function(pal = "autumn",
                            gradient = NULL,
                            background = FALSE,
-                           base_size = 12,
+                           base_size = if (.Platform$OS.type == "windows") 14 else 12,
                            base_family = "Lato",
                            base_line_size = base_size/170,
                            base_rect_size = base_size/170) {
