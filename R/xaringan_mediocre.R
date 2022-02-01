@@ -38,7 +38,6 @@ xaringan_mediocre <- function(pal = "autumn", mediocre_plots = TRUE) {
 
   #set fonts
   installed_fonts <- systemfonts::system_fonts()[["family"]]
-  fonts_mediocre <- c("Lato", "Josefin Sans", "Source Code Pro")
   internet_needed <- FALSE
   if (!("Josefin Sans" %in% installed_fonts)) {
     header_font_goog <- xaringanthemer::google_font("Josefin Sans", "400")
@@ -48,7 +47,7 @@ xaringan_mediocre <- function(pal = "autumn", mediocre_plots = TRUE) {
   }
 
   if (!("Lato" %in% installed_fonts)) {
-    text_font_goog <-xaringanthemer::google_font("Lato", "400", "400i")
+    text_font_goog <- xaringanthemer::google_font("Lato", "400", "400i")
     internet_needed <- TRUE
   } else {
     text_font_goog <- NULL

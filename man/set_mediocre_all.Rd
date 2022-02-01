@@ -8,7 +8,7 @@ set_mediocre_all(
   pal = "autumn",
   background = FALSE,
   second_pair = FALSE,
-  base_size = 12,
+  base_size = if (.Platform$OS.type == "windows") 14 else 12,
   base_family = "Lato",
   base_line_size = base_size/170,
   base_rect_size = base_size/170,

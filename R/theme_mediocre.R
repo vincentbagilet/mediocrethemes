@@ -28,13 +28,14 @@
 #'   theme_mediocre() +
 #'   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 #'
-theme_mediocre <- function(pal = "autumn",
-                           gradient = NULL,
-                           background = FALSE,
-                           base_size = if (.Platform$OS.type == "windows") 14 else 12,
-                           base_family = "Lato",
-                           base_line_size = base_size/170,
-                           base_rect_size = base_size/170) {
+theme_mediocre <- function(
+  pal = "autumn",
+  gradient = NULL,
+  background = FALSE,
+  base_size = if (.Platform$OS.type == "windows") 15 else 12,
+  base_family = "Lato",
+  base_line_size = base_size / 170,
+  base_rect_size = base_size / 170) {
 
   if (!is.logical(background)) {
     stop("background should be logical")
