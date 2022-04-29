@@ -15,6 +15,8 @@ A data frame with 644 rows and 3 variables:
   \item{dark}{a darker color}
   \item{complementary}{a complementary color to the base color, for contrast}
   \item{vector}{a vector of colors used in the scale}
+  \item{four_colors}{a vector of 4 colors used when number of colors limited.
+   For 3 colors, the third color in this list is dropped}
   ...
 }
 }

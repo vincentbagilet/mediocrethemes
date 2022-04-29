@@ -43,12 +43,17 @@ palette_mediocre_d <- function(pal = "autumn",
   }
 
   make_palette <- function(...) {
+    #access colors from table
     colors_table <- mediocrethemes::colors_table
     color_theme <- colors_table[which(colors_table$color == pal), ]
     mediocre_color_vector <- unlist(
       strsplit(color_theme[["vector"]], split = ", ")
     )
+    mediocre_color_four <- unlist(
+      strsplit(color_theme[["four_colors"]], split = ", ")
+    )
 
+    #make a gradient palette
     if (!is.null(gradient) & !(pal %in% c("green", "blackandwhite"))) {
       if (gradient == "right") {
         mediocre_color_vector <- mediocre_color_vector[8:15]
@@ -57,42 +62,26 @@ palette_mediocre_d <- function(pal = "autumn",
       }
     }
 
-    if (pal %in% c("green", "blackandwhite")) {
-      mediocre_color_vector <- rev(mediocre_color_vector)
-    }
-
-    if (pal == "autumn") {
-      set_colors <- c(1, 8, 14)
-    } else if (pal == "coty") {
-      set_colors <- c(3, 9, 15)
-    } else if (pal == "hotcold") {
-      set_colors <- c(1, 10, 15)
-    } else {
-      set_colors <- c(1, 9, 15)
+    #set second pair
+    if (second_pair) {
+      mediocre_color_four <- rev(mediocre_color_four)
     }
 
     mediocre_pal <- function(n) {
       if (is.null(gradient)) {
         if (n == 2) {
-          if (pal %in% c("coty", "rainbow")) {
-            set_colors <- set_colors + 2 * second_pair
-          } else {
-            set_colors <- set_colors + 5 * second_pair
-          }
-          color_vector <- mediocre_color_vector[set_colors[1:2]]
+          color_vector <- mediocre_color_four[1:2]
         } else if (n == 3) {
-          color_vector <- mediocre_color_vector[set_colors]
+          color_vector <- mediocre_color_four[-3]
         } else if (n == 4) {
-          color_vector <- mediocre_color_vector[-c(12, 13, 15)]
+          color_vector <- mediocre_color_four
         } else {
-          if (pal %in% c("green", "blackandwhite")) {
-            mediocre_color_vector <- rev(mediocre_color_vector)
-          }
           color_vector <- mediocre_color_vector
         }
       } else {
-          color_vector <- mediocre_color_vector
+        color_vector <- mediocre_color_vector
       }
+
       the_palette <- grDevices::colorRampPalette(color_vector)
 
       return(the_palette(n))
