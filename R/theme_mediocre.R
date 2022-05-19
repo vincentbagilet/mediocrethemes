@@ -34,7 +34,7 @@ theme_mediocre <- function(
   background = FALSE,
   base_size = if (.Platform$OS.type == "windows") 15 else 12,
   base_family = "Lato",
-  base_line_size = base_size / 170,
+  base_line_size = base_size / 50,
   base_rect_size = base_size / 170) {
 
   if (!is.logical(background)) {
@@ -47,6 +47,11 @@ theme_mediocre <- function(
   #quick access to the colors in the palette
   colors_table <- mediocrethemes::colors_table
   color_theme <- colors_table[which(colors_table$color == pal), ]
+  base_color <- color_theme[["base"]]
+  text_color <- color_theme[["text"]]
+  line_color <- grDevices::colorRampPalette(c("white", text_color))(10)[3]
+  light_color <- grDevices::colorRampPalette(c("white", base_color))(10)[7]
+
   if (!is.null(gradient)) {
     if (gradient == "right") {
       mediocre_color_vector <- unlist(
@@ -54,13 +59,7 @@ theme_mediocre <- function(
       )
       base_color <- mediocre_color_vector[14]
       light_color <- mediocre_color_vector[10]
-    } else {
-      base_color <- color_theme[["base"]]
-      light_color <- grDevices::colorRampPalette(c("white", "#00313C"))(20)[17]
     }
-  } else {
-    base_color <- color_theme[["base"]]
-    light_color <- grDevices::colorRampPalette(c("white", "#00313C"))(20)[17]
   }
 
   #setting default colors
@@ -123,7 +122,7 @@ theme_mediocre <- function(
         colour = color_theme[["text"]]
       ),
       panel.grid.major.y = ggplot2::element_line(
-        colour = light_color,
+        colour = line_color,
         size = base_line_size
       ),
       panel.grid.minor.x = ggplot2::element_blank(),

@@ -64,11 +64,7 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
 
 A couple of example plots obtained with this theme:
 
-<img src="man/figures/README-examples-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-4.png" width="70%" style="display: block; margin: auto;" />
-
-    #> `geom_smooth()` using method = 'loess' and formula 'y ~ x'
-
-<img src="man/figures/README-examples-5.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-6.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-7.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-8.png" width="70%" style="display: block; margin: auto;" />
+<img src="man/figures/README-examples-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-5.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-6.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-7.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples-8.png" width="70%" style="display: block; margin: auto;" />
 
 ### Additional palettes
 

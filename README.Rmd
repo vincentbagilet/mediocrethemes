@@ -82,11 +82,12 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
   geom_col() +
+  geom_vline(xintercept = 15) +
   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
   geom_point() +
-  geom_smooth() +
+  geom_smooth(method = 'loess', formula = 'y ~ x') +
   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 
 ggplot(data = ggplot2::mpg, aes(x = cty)) +
@@ -141,6 +142,7 @@ plot_all_examples <- function(pal) {
   
   plot4 <- ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
     geom_col() +
+    geom_vline(xintercept = 15) +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle") 
   
   print(plot4)
