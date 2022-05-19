@@ -10,9 +10,7 @@ A data frame with 644 rows and 3 variables:
   \item{color}{color set name}
   \item{base}{base color, for one color graphs}
   \item{text}{color for text and axes}
-  \item{light}{a lighter color}
   \item{background}{color for the background of plots}
-  \item{dark}{a darker color}
   \item{complementary}{a complementary color to the base color, for contrast}
   \item{vector}{a vector of colors used in the scale}
   \item{four_colors}{a vector of 4 colors used when number of colors limited.

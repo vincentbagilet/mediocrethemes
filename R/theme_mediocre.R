@@ -44,6 +44,7 @@ theme_mediocre <- function(
     stop("This palette does not exist in this package")
   }
 
+  #quick access to the colors in the palette
   colors_table <- mediocrethemes::colors_table
   color_theme <- colors_table[which(colors_table$color == pal), ]
   if (!is.null(gradient)) {
@@ -55,11 +56,11 @@ theme_mediocre <- function(
       light_color <- mediocre_color_vector[10]
     } else {
       base_color <- color_theme[["base"]]
-      light_color <- color_theme[["light"]]
+      light_color <- grDevices::colorRampPalette(c("white", "#00313C"))(20)[17]
     }
   } else {
     base_color <- color_theme[["base"]]
-    light_color <- color_theme[["light"]]
+    light_color <- grDevices::colorRampPalette(c("white", "#00313C"))(20)[17]
   }
 
   #setting default colors
@@ -107,6 +108,7 @@ theme_mediocre <- function(
   }
   showtext::showtext_auto()
 
+  #actual definition of the theme
   theme_custom <-
     ggplot2::theme_minimal(
       base_size = base_size,
@@ -121,7 +123,7 @@ theme_mediocre <- function(
         colour = color_theme[["text"]]
       ),
       panel.grid.major.y = ggplot2::element_line(
-        colour = color_theme[["text"]],
+        colour = light_color,
         size = base_line_size
       ),
       panel.grid.minor.x = ggplot2::element_blank(),
@@ -169,6 +171,7 @@ theme_mediocre <- function(
       )
     )
 
+  #modifications when background included
   if (background) {
     theme_custom <- theme_custom +
       ggplot2::theme(

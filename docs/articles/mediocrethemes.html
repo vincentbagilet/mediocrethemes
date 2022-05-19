@@ -184,15 +184,15 @@
 <p>All the colors used are stored in the table <code>colors_table</code>:</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">colors_table</span>
-<span class="co">#&gt; # A tibble: 6 x 9</span>
-<span class="co">#&gt;   color  base  text  light background dark  complementary vector    four_colors </span>
-<span class="co">#&gt;   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;     &lt;chr&gt;       </span>
-<span class="co">#&gt; 1 autumn #003… #003… #1F4… #F9FAF7    #1D2… #FB9637       #00313C,… #00313C, #F…</span>
-<span class="co">#&gt; 2 rainb… #1B3… #213… #F4A… #FCFAF7    #652… #213C47       #1B3037,… #1B3037, #E…</span>
-<span class="co">#&gt; 3 green  #1B4… #162… #7A9… #F5FAF6    #0F1… #6C2B46       #D8F3DC,… #162720, #8…</span>
-<span class="co">#&gt; 4 hotco… #1D3… #142… #457… #FAFCFC    #0F1… #14253E       #1D3557,… #1D3557, #E…</span>
-<span class="co">#&gt; 5 black… #212… #212… #CED… #F9FAFA    #1D1… #6C757D       #DEE2E6,… #1D1F20, #A…</span>
-<span class="co">#&gt; 6 coty   #1C6… #1D4… #E1D… #F9F8F1    #112… #1D4749       #1D4749,… #1C6669, #E…</span></code></pre></div>
+<span class="co">#&gt; # A tibble: 6 x 7</span>
+<span class="co">#&gt;   color   base   text  background complementary vector            four_colors   </span>
+<span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;         &lt;chr&gt;             &lt;chr&gt;         </span>
+<span class="co">#&gt; 1 autumn  #0031… #003… #F9FAF7    #FB9637       #00313C, #183C41… #00313C, #FB9…</span>
+<span class="co">#&gt; 2 rainbow #1B30… #213… #FCFAF7    #213C47       #1B3037, #213C47… #1B3037, #E9C…</span>
+<span class="co">#&gt; 3 green   #1B43… #162… #F5FAF6    #6C2B46       #D8F3DC, #C3E0C9… #162720, #87A…</span>
+<span class="co">#&gt; 4 hotcold #1D35… #142… #FAFCFC    #14253E       #1D3557, #2E5375… #1D3557, #E8C…</span>
+<span class="co">#&gt; 5 blacka… #2125… #212… #F9FAFA    #6C757D       #DEE2E6, #D0D4D7… #1D1F20, #A6A…</span>
+<span class="co">#&gt; 6 coty    #1C6C… #1D4… #F9F8F1    #1D4749       #1D4749, #1C5659… #1C6669, #E5C…</span></code></pre></div>
 <p>For instance, one can access the “base” color for the palette “coty”, in a HEX format, using the following command:</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">mediocrethemes</span><span class="fu">::</span><span class="va"><a href="../reference/colors_table.html">colors_table</a></span><span class="op">[[</span><span class="fl">6</span>, <span class="st">"base"</span><span class="op">]</span><span class="op">]</span>
