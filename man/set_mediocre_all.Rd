@@ -10,7 +10,7 @@ set_mediocre_all(
   second_pair = FALSE,
   base_size = if (.Platform$OS.type == "windows") 15 else 12,
   base_family = "Lato",
-  base_line_size = base_size/170,
+  base_line_size = base_size/50,
   base_rect_size = base_size/170,
   gradient = NULL
 )
@@ -18,7 +18,7 @@ set_mediocre_all(
 \arguments{
 \item{pal}{a string. Defines the color palette selected.
 Can either be either "autumn", "rainbow", "green",
- "hotcold", "blackandwhite", or "coty"}
+ "hotcold", "blackandwhite", "coty", "leo", "portal" or "pem"}
 
 \item{background}{If TRUE, a background is added to the plots}
 

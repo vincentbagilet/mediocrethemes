@@ -4,7 +4,6 @@
 # mediocrethemes
 
 <!-- badges: start -->
-
 <!-- badges: end -->
 
 This package provides not particularly nice and, hopefully, not
@@ -91,3 +90,15 @@ map](https://www.npr.org/2016/04/18/474256366/why-americas-schools-have-a-money-
 #### blackandwhite
 
 <img src="man/figures/README-blackandwhite-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-blackandwhite-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-blackandwhite-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-blackandwhite-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-blackandwhite-5.png" width="70%" style="display: block; margin: auto;" />
+
+#### leo
+
+<img src="man/figures/README-leo-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-leo-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-leo-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-leo-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-leo-5.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-leo-6.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-leo-7.png" width="70%" style="display: block; margin: auto;" />
+
+#### protal
+
+<img src="man/figures/README-portal-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-portal-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-portal-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-portal-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-portal-5.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-portal-6.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-portal-7.png" width="70%" style="display: block; margin: auto;" />
+
+#### pem
+
+<img src="man/figures/README-pem-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-pem-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-pem-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-pem-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-pem-5.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-pem-6.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-pem-7.png" width="70%" style="display: block; margin: auto;" />

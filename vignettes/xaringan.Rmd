@@ -119,8 +119,9 @@ Here is what these transition slides look like with mediocrethemes:
 knitr::include_graphics("images/transition_slide.png")
 ```
 
+## Export
 
-
+The package `renderthis`[https://jhelvy.github.io/renderthis/] can be used to export the slides. For instance, to export them to pdf, one can use the function   `renderthis::to_pdf`. Setting the parameter `partial_slides` to `TRUE` enables to keep the pauses in the export.  
 
 
 

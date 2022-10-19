@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,18 +33,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">mediocrethemes</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.3</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="../articles/mediocrethemes.html">Get started</a>
 </li>
@@ -50,7 +46,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -72,7 +68,7 @@
 
       
 
-      </header><script src="xaringan_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Xaringan mediocre</h1>
@@ -85,83 +81,112 @@
 
     
     
-<p>This vignette illustrates how to build <a href="https://github.com/yihui/xaringan"><code>xaringan</code></a> slides in a style consistent with <code>mediocrethemes</code>. This is simply an application of the <a href="https://pkg.garrickadenbuie.com/xaringanthemer/"><code>xaringanthemer</code></a> package.</p>
-<p>This vignette assumes that you are familiar with <code>xaringan</code> slides. If not, please refer to <a href="https://slides.yihui.org/xaringan/#1">this presentation</a> by Yihui Xie, the creator of the <code>xaringan</code> package.</p>
-<div id="preview-of-the-styles" class="section level2">
-<h2 class="hasAnchor">
-<a href="#preview-of-the-styles" class="anchor"></a>Preview of the styles</h2>
-<p>Before anything, here are examples of the type of slides this theme can produce:</p>
+<p>This vignette illustrates how to build <a href="https://github.com/yihui/xaringan" class="external-link"><code>xaringan</code></a>
+slides in a style consistent with <code>mediocrethemes</code>. This is
+simply an application of the <a href="https://pkg.garrickadenbuie.com/xaringanthemer/" class="external-link"><code>xaringanthemer</code></a>
+package.</p>
+<p>This vignette assumes that you are familiar with
+<code>xaringan</code> slides. If not, please refer to <a href="https://slides.yihui.org/xaringan/#1" class="external-link">this presentation</a> by
+Yihui Xie, the creator of the <code>xaringan</code> package.</p>
+<div class="section level2">
+<h2 id="preview-of-the-styles">Preview of the styles<a class="anchor" aria-label="anchor" href="#preview-of-the-styles"></a>
+</h2>
+<p>Before anything, here are examples of the type of slides this theme
+can produce:</p>
 <p><img src="images/example_xaringan.gif" width="100%" style="display: block; margin: auto;"></p>
 </div>
-<div id="simple-use" class="section level2">
-<h2 class="hasAnchor">
-<a href="#simple-use" class="anchor"></a>Simple use</h2>
-<p>To build similar a mediocre/xaringan template, you simply need to add this to the YAML header of your slides:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="at">  xaringan:</span><span class="fu">:moon_reader</span><span class="kw">:</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> mediocre-themer.css</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="at">    </span><span class="fu">nature</span><span class="kw">:</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="at">      </span><span class="fu">countIncrementalSlides</span><span class="kw">:</span><span class="at"> </span><span class="ch">no</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="at">      </span><span class="fu">highlightLines</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="at">      </span><span class="fu">highlightStyle</span><span class="kw">:</span><span class="at"> github</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="at">      </span><span class="fu">ratio</span><span class="kw">:</span><span class="at"> </span><span class="st">'16:9'</span></span></code></pre></div>
+<div class="section level2">
+<h2 id="simple-use">Simple use<a class="anchor" aria-label="anchor" href="#simple-use"></a>
+</h2>
+<p>To build similar a mediocre/xaringan template, you simply need to add
+this to the YAML header of your slides:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  xaringan:</span><span class="fu">:moon_reader</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> mediocre-themer.css</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">nature</span><span class="kw">:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">countIncrementalSlides</span><span class="kw">:</span><span class="at"> </span><span class="ch">no</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">highlightLines</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">highlightStyle</span><span class="kw">:</span><span class="at"> github</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">ratio</span><span class="kw">:</span><span class="at"> </span><span class="st">'16:9'</span></span></code></pre></div>
 <p>And this to your set up chunk:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentbagilet.github.io/mediocrethemes/">mediocrethemes</a></span><span class="op">)</span>
-
-<span class="fu"><a href="../reference/xaringan_mediocre.html">xaringan_mediocre</a></span><span class="op">(</span>pal <span class="op">=</span> <span class="st">"coty"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentbagilet.github.io/mediocrethemes/" class="external-link">mediocrethemes</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/xaringan_mediocre.html">xaringan_mediocre</a></span><span class="op">(</span>pal <span class="op">=</span> <span class="st">"coty"</span><span class="op">)</span></span></code></pre></div>
 <p>You are all set!</p>
-<p>Note that <code>countIncrementalSlides</code>, <code>highlightLines</code> and <code>highlightStyle</code> are not necessary. However, <code>ratio</code> is necessary as font sizes are defined for 16:9 slides. Also note, to be able to use this xaringan theme without internet connection, you may want to locally install the Google Fonts <a href="https://fonts.google.com/specimen/Lato?query=lato">Lato</a>, <a href="https://fonts.google.com/specimen/Josefin+Sans?query=josefin">Josefin Sans</a> and <a href="https://fonts.google.com/specimen/Source+Code+Pro?query=source+code+pro">Source Code Pro</a>. This is however not required.</p>
-<p>You can use the palette of your choice. Also note that you may also need to add <code>knitr::opts_chunk$set(fig.showtext = TRUE)</code> to your set up chunk for the fonts to work properly.</p>
+<p>Note that <code>countIncrementalSlides</code>,
+<code>highlightLines</code> and <code>highlightStyle</code> are not
+necessary. However, <code>ratio</code> is necessary as font sizes are
+defined for 16:9 slides. Also note, to be able to use this xaringan
+theme without internet connection, you may want to locally install the
+Google Fonts <a href="https://fonts.google.com/specimen/Lato?query=lato" class="external-link">Lato</a>, <a href="https://fonts.google.com/specimen/Josefin+Sans?query=josefin" class="external-link">Josefin
+Sans</a> and <a href="https://fonts.google.com/specimen/Source+Code+Pro?query=source+code+pro" class="external-link">Source
+Code Pro</a>. This is however not required.</p>
+<p>You can use the palette of your choice. Also note that you may also
+need to add <code>knitr::opts_chunk$set(fig.showtext = TRUE)</code> to
+your set up chunk for the fonts to work properly.</p>
 </div>
-<div id="example--rmd-file" class="section level2">
-<h2 class="hasAnchor">
-<a href="#example--rmd-file" class="anchor"></a>Example <code>.Rmd</code> file</h2>
+<div class="section level2">
+<h2 id="example--rmd-file">Example <code>.Rmd</code> file<a class="anchor" aria-label="anchor" href="#example--rmd-file"></a>
+</h2>
 <p>Here is an example of a minimal <code>.Rmd</code> slide file:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a>---</span>
-<span id="cb3-2"><a href="#cb3-2"></a>title: "A very nice title"</span>
-<span id="cb3-3"><a href="#cb3-3"></a>author: "Jeffrey Lebowski"</span>
-<span id="cb3-4"><a href="#cb3-4"></a>date: "April 34, 2103"</span>
-<span id="cb3-5"><a href="#cb3-5"></a>output:</span>
-<span id="cb3-6"><a href="#cb3-6"></a>  xaringan::moon_reader:</span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="bn">    lib_dir: libs</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="bn">    css: mediocre-themer.css</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="bn">    nature:</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a><span class="bn">      countIncrementalSlides: no</span></span>
-<span id="cb3-11"><a href="#cb3-11"></a><span class="bn">      highlightLines: yes</span></span>
-<span id="cb3-12"><a href="#cb3-12"></a><span class="bn">      highlightStyle: github</span></span>
-<span id="cb3-13"><a href="#cb3-13"></a><span class="bn">      ratio: '16:9'</span></span>
-<span id="cb3-14"><a href="#cb3-14"></a>subtitle: "A disappointing subtitle"</span>
-<span id="cb3-15"><a href="#cb3-15"></a>---</span>
-<span id="cb3-16"><a href="#cb3-16"></a></span>
-<span id="cb3-17"><a href="#cb3-17"></a><span class="bn">```{r themer, include=FALSE}</span></span>
-<span id="cb3-18"><a href="#cb3-18"></a><span class="bn">library(mediocrethemes)</span></span>
-<span id="cb3-19"><a href="#cb3-19"></a></span>
-<span id="cb3-20"><a href="#cb3-20"></a><span class="bn">xaringan_mediocre(pal = "coty")</span></span>
-<span id="cb3-21"><a href="#cb3-21"></a><span class="bn">```</span></span>
-<span id="cb3-22"><a href="#cb3-22"></a></span>
-<span id="cb3-23"><a href="#cb3-23"></a><span class="fu"># Lipsum latin words</span></span>
-<span id="cb3-24"><a href="#cb3-24"></a></span>
-<span id="cb3-25"><a href="#cb3-25"></a>- <span class="st">Lorem ipsum dolor sit amet, **sed sed sapien ac aliquam sollicitudin dapibus**.</span></span>
-<span id="cb3-26"><a href="#cb3-26"></a></span>
-<span id="cb3-27"><a href="#cb3-27"></a>- <span class="st">Ut elementum **efficitur penatibus**, taciti diam risus, donec.</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "A very nice title"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Jeffrey Lebowski"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "April 34, 2103"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">  xaringan::moon_reader:</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">    lib_dir: libs</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">    css: mediocre-themer.css</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">    nature:</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">      countIncrementalSlides: no</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">      highlightLines: yes</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">      highlightStyle: github</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">      ratio: '16:9'</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "A disappointing subtitle"</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="in">```{r themer, include=FALSE}</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="in">library(mediocrethemes)</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="in">xaringan_mediocre(pal = "coty")</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="fu"># Lipsum latin words</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Lorem ipsum dolor sit amet, **sed sed sapien ac aliquam sollicitudin dapibus**.</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ut elementum **efficitur penatibus**, taciti diam risus, donec.</span></code></pre></div>
 </div>
-<div id="mediocrethemes-plots-in-slides" class="section level2">
-<h2 class="hasAnchor">
-<a href="#mediocrethemes-plots-in-slides" class="anchor"></a>Mediocrethemes plots in slides</h2>
-<p>By default, the <code>xaringan_mediocre</code> function is built to generate plots in the mediocrethemes format. To turn it of, set the parameter <code>mediocre_plots</code> to <code>FALSE</code>.</p>
+<div class="section level2">
+<h2 id="mediocrethemes-plots-in-slides">Mediocrethemes plots in slides<a class="anchor" aria-label="anchor" href="#mediocrethemes-plots-in-slides"></a>
+</h2>
+<p>By default, the <code>xaringan_mediocre</code> function is built to
+generate plots in the mediocrethemes format. To turn it of, set the
+parameter <code>mediocre_plots</code> to <code>FALSE</code>.</p>
 </div>
-<div id="nice-transition-slides" class="section level2">
-<h2 class="hasAnchor">
-<a href="#nice-transition-slides" class="anchor"></a>Nice transition slides</h2>
-<p>Xaringanthemer provides nice transition slides that can be created by adding the following lines to your code:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a>---</span>
-<span id="cb4-2"><a href="#cb4-2"></a>class: inverse, middle, center</span>
-<span id="cb4-3"><a href="#cb4-3"></a></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="fu"># Title of the transition slide</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>---</span></code></pre></div>
-<p>Here is what these transition slides look like with mediocrethemes:</p>
+<div class="section level2">
+<h2 id="nice-transition-slides">Nice transition slides<a class="anchor" aria-label="anchor" href="#nice-transition-slides"></a>
+</h2>
+<p>Xaringanthemer provides nice transition slides that can be created by
+adding the following lines to your code:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">class:</span><span class="co"> inverse, middle, center</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Title of the transition slide</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div>
+<p>Here is what these transition slides look like with
+mediocrethemes:</p>
 <p><img src="images/transition_slide.png" width="100%" style="display: block; margin: auto;"></p>
+</div>
+<div class="section level2">
+<h2 id="export">Export<a class="anchor" aria-label="anchor" href="#export"></a>
+</h2>
+<p>The package <code>renderthis</code>[<a href="https://jhelvy.github.io/renderthis/" class="external-link uri">https://jhelvy.github.io/renderthis/</a>] can be used to
+export the slides. For instance, to export them to pdf, one can use the
+function <code><a href="https://jhelvy.github.io/renderthis/reference/to_pdf.html" class="external-link">renderthis::to_pdf</a></code>. Setting the parameter
+<code>partial_slides</code> to <code>TRUE</code> enables to keep the
+pauses in the export.</p>
 </div>
   </div>
 
@@ -176,11 +201,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Vincent Bagilet.</p>
+  <p></p>
+<p>Developed by Vincent Bagilet.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>
@@ -188,6 +215,8 @@
 
   
 
+
+  
 
   </body>
 </html>

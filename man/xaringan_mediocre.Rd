@@ -9,7 +9,8 @@ xaringan_mediocre(pal = "autumn", mediocre_plots = TRUE)
 \arguments{
 \item{pal}{a string. Defines the color palette selected.
 Can either be either "autumn", "rainbow", "green",
- "hotcold", "blackandwhite", or "coty"}
+ "hotcold", "blackandwhite", "coty", "leo", "portal" or "pem"
+ "hotcold", "blackandwhite", "coty", "leo", "portal" or "pem"}
 
 \item{mediocre_plots}{if TRUE, sets the plots of the .Rmd document
 to be made with mediocrethemes (calls \code{set_mediocre_all(pal)})}

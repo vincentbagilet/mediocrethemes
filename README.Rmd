@@ -198,3 +198,23 @@ plot_all_examples(pal = "hotcold")
 ```{r blackandwhite, echo=FALSE}
 plot_all_examples(pal = "blackandwhite")
 ```
+
+#### leo
+
+```{r leo, echo=FALSE}
+plot_all_examples(pal = "leo")
+```
+
+#### protal
+
+```{r portal, echo=FALSE}
+plot_all_examples(pal = "portal")
+```
+
+#### pem
+
+```{r pem, echo=FALSE}
+plot_all_examples(pal = "pem")
+```
+
+

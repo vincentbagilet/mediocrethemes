@@ -12,7 +12,7 @@ scale_mediocre_c(pal = "autumn", gradient = NULL, ...)
 \arguments{
 \item{pal}{a string. Defines the color palette selected.
 Can either be either "autumn", "rainbow", "green",
- "hotcold", "blackandwhite", or "coty"}
+ "hotcold", "blackandwhite", "coty", "leo", "portal" or "pem"}
 
 \item{second_pair}{if true sets an alternative pair of colors
 for graphs with two colors}

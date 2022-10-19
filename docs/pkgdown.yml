@@ -1,8 +1,8 @@
-pandoc: 2.7.3
-pkgdown: 1.6.1
+pandoc: '2.18'
+pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   mediocrethemes: mediocrethemes.html
   xaringan: xaringan.html
-last_built: 2022-05-19T21:18Z
+last_built: 2022-10-19T00:04Z
 

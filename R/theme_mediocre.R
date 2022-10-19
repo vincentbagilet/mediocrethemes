@@ -2,7 +2,7 @@
 #'
 #' @param pal a string. Defines the color palette selected.
 #' Can either be either "autumn", "rainbow", "green",
-#'  "hotcold", "blackandwhite", or "coty"
+#'  "hotcold", "blackandwhite", "coty", "leo", "portal" or "pem"
 #' @param gradient a string, either "left" or "right".
 #' Turns divergent palettes into gradient ones by splitting it in two.
 #' If equal to "right", the gradient palette is built with the right hand
@@ -65,7 +65,7 @@ theme_mediocre <- function(
   #setting default colors
   geoms_color <- c("point", "line", "contour", "text",
                    "curve", "function", "spoke", "rug",
-                   "errorbar", "errorbarh", "pointrange")
+                   "errorbar", "errorbarh", "pointrange", "segment")
   geoms_complementary <- c("abline", "vline", "hline")
   geoms_fill <- c("area", "bar", "col", "dotplot", "hex", "tile")
   geoms_density <- c("boxplot", "density", "violin", "contour_filled", "ribbon")

@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,18 +33,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">mediocrethemes</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.3</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="articles/mediocrethemes.html">Get started</a>
 </li>
@@ -50,7 +46,7 @@
   <a href="reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -74,78 +70,93 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="mediocrethemes" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#mediocrethemes" class="anchor"></a>mediocrethemes</h1></div>
+<div class="section level1">
+<div class="page-header"><h1 id="mediocrethemes">mediocrethemes<a class="anchor" aria-label="anchor" href="#mediocrethemes"></a>
+</h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
 <p>This package provides not particularly nice and, hopefully, not particularly ugly ggplot themes.</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the development version of <code>mediocrethemes</code> from <a href="https://github.com/">GitHub</a> with:</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>You can install the development version of <code>mediocrethemes</code> from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"vincentbagilet/mediocrethemes"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"vincentbagilet/mediocrethemes"</span><span class="op">)</span></span></code></pre></div>
 <p>Note that you may need to restart your R session once the installation is complete to be able to use the package. You will also need an active internet connection the first time you call <code>set_mediocre_all</code> or <code>theme_mediocre</code>.</p>
 </div>
-<div id="usage" class="section level2">
-<h2 class="hasAnchor">
-<a href="#usage" class="anchor"></a>Usage</h2>
+<div class="section level2">
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h2>
 <p>This package provides both a ggplot theme and a color palette.</p>
 <p>Users can set the theme and color palette for all plots in a document with the function <code>set_mediocre_all</code> placed at the top of their document:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentbagilet.github.io/mediocrethemes/">mediocrethemes</a></span><span class="op">)</span>
-
-<span class="fu"><a href="reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span><span class="op">)</span>
-
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html">mpg</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cty</span>, y <span class="op">=</span> <span class="va">displ</span>, fill <span class="op">=</span> <span class="va">manufacturer</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentbagilet.github.io/mediocrethemes/" class="external-link">mediocrethemes</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html" class="external-link">mpg</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cty</span>, y <span class="op">=</span> <span class="va">displ</span>, fill <span class="op">=</span> <span class="va">manufacturer</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-set_mediocre_all-1.png" width="70%" style="display: block; margin: auto;"></p>
 <p>Users also can set the theme and color palette independently.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html">mpg</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cty</span>, y <span class="op">=</span> <span class="va">displ</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="reference/theme_mediocre.html">theme_mediocre</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="reference/scale_mediocre_d.html">scale_mediocre_d</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html" class="external-link">mpg</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cty</span>, y <span class="op">=</span> <span class="va">displ</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="reference/theme_mediocre.html">theme_mediocre</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="reference/scale_mediocre_d.html">scale_mediocre_d</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-base_graph-1.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
-<div id="examples" class="section level2">
-<h2 class="hasAnchor">
-<a href="#examples" class="anchor"></a>Examples</h2>
-<div id="general-examples" class="section level3">
-<h3 class="hasAnchor">
-<a href="#general-examples" class="anchor"></a>General examples</h3>
+<div class="section level2">
+<h2 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
+</h2>
+<div class="section level3">
+<h3 id="general-examples">General examples<a class="anchor" aria-label="anchor" href="#general-examples"></a>
+</h3>
 <p>A couple of example plots obtained with this theme:</p>
 <p><img src="reference/figures/README-examples-1.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-examples-2.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-examples-3.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-examples-4.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-examples-5.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-examples-6.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-examples-7.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-examples-8.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
-<div id="additional-palettes" class="section level3">
-<h3 class="hasAnchor">
-<a href="#additional-palettes" class="anchor"></a>Additional palettes</h3>
+<div class="section level3">
+<h3 id="additional-palettes">Additional palettes<a class="anchor" aria-label="anchor" href="#additional-palettes"></a>
+</h3>
 <p>Note that additional palettes are available. Most palettes are divergent and can be turned into two gradient palettes. This is done by splitting a divergent palette in the middle, and use either the set of colors on the right or on the left (flipped to get light colors for small values).</p>
-<div id="rainbow" class="section level4">
-<h4 class="hasAnchor">
-<a href="#rainbow" class="anchor"></a>rainbow</h4>
+<div class="section level4">
+<h4 id="rainbow">rainbow<a class="anchor" aria-label="anchor" href="#rainbow"></a>
+</h4>
 <p><img src="reference/figures/README-rainbow-1.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-rainbow-2.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-rainbow-3.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-rainbow-4.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-rainbow-5.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-rainbow-6.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-rainbow-7.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
-<div id="coty" class="section level4">
-<h4 class="hasAnchor">
-<a href="#coty" class="anchor"></a>coty</h4>
-<p>A (tentatively) colorblind friendly palette, based on <a href="https://www.npr.org/2016/04/18/474256366/why-americas-schools-have-a-money-problem?t=1614618030346">a NPR map</a>.</p>
+<div class="section level4">
+<h4 id="coty">coty<a class="anchor" aria-label="anchor" href="#coty"></a>
+</h4>
+<p>A (tentatively) colorblind friendly palette, based on <a href="https://www.npr.org/2016/04/18/474256366/why-americas-schools-have-a-money-problem?t=1614618030346" class="external-link">a NPR map</a>.</p>
 <p><img src="reference/figures/README-coty-1.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-coty-2.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-coty-3.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-coty-4.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-coty-5.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-coty-6.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-coty-7.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
-<div id="hotcold" class="section level4">
-<h4 class="hasAnchor">
-<a href="#hotcold" class="anchor"></a>hotcold</h4>
+<div class="section level4">
+<h4 id="hotcold">hotcold<a class="anchor" aria-label="anchor" href="#hotcold"></a>
+</h4>
 <p><img src="reference/figures/README-hotcold-1.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-hotcold-2.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-hotcold-3.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-hotcold-4.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-hotcold-5.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-hotcold-6.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-hotcold-7.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
-<div id="blackandwhite" class="section level4">
-<h4 class="hasAnchor">
-<a href="#blackandwhite" class="anchor"></a>blackandwhite</h4>
+<div class="section level4">
+<h4 id="blackandwhite">blackandwhite<a class="anchor" aria-label="anchor" href="#blackandwhite"></a>
+</h4>
 <p><img src="reference/figures/README-blackandwhite-1.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-blackandwhite-2.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-blackandwhite-3.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-blackandwhite-4.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-blackandwhite-5.png" width="70%" style="display: block; margin: auto;"></p>
+</div>
+<div class="section level4">
+<h4 id="leo">leo<a class="anchor" aria-label="anchor" href="#leo"></a>
+</h4>
+<p><img src="reference/figures/README-leo-1.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-leo-2.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-leo-3.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-leo-4.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-leo-5.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-leo-6.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-leo-7.png" width="70%" style="display: block; margin: auto;"></p>
+</div>
+<div class="section level4">
+<h4 id="protal">protal<a class="anchor" aria-label="anchor" href="#protal"></a>
+</h4>
+<p><img src="reference/figures/README-portal-1.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-portal-2.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-portal-3.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-portal-4.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-portal-5.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-portal-6.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-portal-7.png" width="70%" style="display: block; margin: auto;"></p>
+</div>
+<div class="section level4">
+<h4 id="pem">pem<a class="anchor" aria-label="anchor" href="#pem"></a>
+</h4>
+<p><img src="reference/figures/README-pem-1.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-pem-2.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-pem-3.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-pem-4.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-pem-5.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-pem-6.png" width="70%" style="display: block; margin: auto;"><img src="reference/figures/README-pem-7.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 </div>
 </div>
@@ -154,29 +165,42 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing mediocrethemes</a></li>
+</ul>
+</div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Vincent Bagilet <br><small class="roles"> Author, maintainer </small>  </li>
 </ul>
 </div>
+
+
 
   </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Vincent Bagilet.</p>
+  <p></p>
+<p>Developed by Vincent Bagilet.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>
@@ -184,6 +208,8 @@
 
   
 
+
+  
 
   </body>
 </html>
