@@ -95,7 +95,7 @@ map](https://www.npr.org/2016/04/18/474256366/why-americas-schools-have-a-money-
 
 <img src="man/figures/README-leo-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-leo-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-leo-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-leo-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-leo-5.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-leo-6.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-leo-7.png" width="70%" style="display: block; margin: auto;" />
 
-#### protal
+#### portal
 
 <img src="man/figures/README-portal-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-portal-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-portal-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-portal-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-portal-5.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-portal-6.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-portal-7.png" width="70%" style="display: block; margin: auto;" />
 

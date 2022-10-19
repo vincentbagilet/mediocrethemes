@@ -205,7 +205,7 @@ plot_all_examples(pal = "blackandwhite")
 plot_all_examples(pal = "leo")
 ```
 
-#### protal
+#### portal
 
 ```{r portal, echo=FALSE}
 plot_all_examples(pal = "portal")
