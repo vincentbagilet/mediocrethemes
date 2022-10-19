@@ -171,7 +171,9 @@ theme_mediocre <- function(
         hjust = 0,
         margin = ggplot2::margin(b = .3, unit = "cm")
       ),
-      strip.text.y = ggplot2::element_text(hjust = 0.95)
+      strip.text.y = ggplot2::element_text(hjust = 0.95),
+      panel.spacing.y = ggplot2::unit(1.8, "lines"),
+      panel.spacing.x = ggplot2::unit(1.3, "lines")
     )
 
   #modifications when background included
