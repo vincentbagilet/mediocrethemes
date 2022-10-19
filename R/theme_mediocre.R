@@ -162,12 +162,16 @@ theme_mediocre <- function(
       legend.title = ggplot2::element_text(size = ggplot2::rel(0.85)),
       legend.text = ggplot2::element_text(size = ggplot2::rel(0.8)),
       legend.key.size = ggplot2::unit(1, "lines"),
+      strip.placement = "outside",
       strip.text = ggplot2::element_text(
         size = ggplot2::rel(0.9),
+        face = "bold"
+      ),
+      strip.text.x = ggplot2::element_text(
         hjust = 0,
-        face = "bold",
         margin = ggplot2::margin(b = .3, unit = "cm")
-      )
+      ),
+      strip.text.y = ggplot2::element_text(hjust = 0.95)
     )
 
   #modifications when background included
