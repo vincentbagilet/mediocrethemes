@@ -25,7 +25,7 @@ This package provides not particularly nice and, hopefully, not particularly ugl
 
 ## Installation
 
-You can install the development version of `mediocrethemes` from [GitHub](https://github.com/) with:
+You can install the development version of `mediocrethemes` from [GitHub](https://github.com/vincentbagilet/mediocrethemes) with:
 
 ```{r eval=FALSE}
 # install.packages("devtools")

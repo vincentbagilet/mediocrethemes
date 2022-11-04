@@ -1,3 +1,11 @@
 template:
   params:
     bootswatch: cosmo
+
+authors:
+  Vincent Bagilet:
+    href: https://vincentbagilet.github.io/
+
+navbar:
+  structure:
+    right: [github]

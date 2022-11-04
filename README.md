@@ -12,7 +12,7 @@ particularly ugly ggplot themes.
 ## Installation
 
 You can install the development version of `mediocrethemes` from
-[GitHub](https://github.com/) with:
+[GitHub](https://github.com/vincentbagilet/mediocrethemes) with:
 
 ``` r
 # install.packages("devtools")

@@ -78,7 +78,7 @@ theme_mediocre <- function(
   lapply(
     geoms_complementary,
     ggplot2::update_geom_defaults,
-    list(colour = color_theme[["text"]], linetype = "dashed")
+    list(colour = color_theme[["complementary"]], linetype = "dashed")
   )
   lapply(
     geoms_fill,
@@ -158,6 +158,7 @@ theme_mediocre <- function(
         margin = ggplot2::margin(t = -.5, b = .7, l = 0.2, unit = "cm")
       ),
       legend.position = "top",
+      legend.justification = "center",
       legend.margin = ggplot2::margin(t = -.2, unit = "cm"),
       legend.title = ggplot2::element_text(size = ggplot2::rel(0.85)),
       legend.text = ggplot2::element_text(size = ggplot2::rel(0.8)),
