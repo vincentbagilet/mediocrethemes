@@ -107,6 +107,20 @@ xaringan_mediocre(pal = "coty")
 
 By default, the `xaringan_mediocre` function is built to generate plots in the mediocrethemes format. To turn it of, set the parameter `mediocre_plots` to `FALSE`.
 
+## Centering text but not title
+
+To center the main text of a slide but keep the title at the top (in a LaTeX beamer fashion), set the class attributes to `titled` and `middle` for the slide of interest:
+
+````markdown
+---
+class: titled, middle
+
+# Title at the top
+
+Text vertically centered
+---
+````
+
 ## Helpful functions for `xaringan` slides
 
 The following functions are not part of the `mediocrethemes` package but are very helpful when working with `xaringan` slides. I compile them here for an easy access.

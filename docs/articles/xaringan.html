@@ -172,6 +172,20 @@ generate plots in the mediocrethemes format. To turn it of, set the
 parameter <code>mediocre_plots</code> to <code>FALSE</code>.</p>
 </div>
 <div class="section level2">
+<h2 id="centering-text-but-not-title">Centering text but not title<a class="anchor" aria-label="anchor" href="#centering-text-but-not-title"></a>
+</h2>
+<p>To center the main text of a slide but keep the title at the top (in
+a LaTeX beamer fashion), set the class attributes to <code>titled</code>
+and <code>middle</code> for the slide of interest:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">class:</span><span class="co"> titled, middle</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Title at the top</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">Text vertically centered</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div>
+</div>
+<div class="section level2">
 <h2 id="helpful-functions-for-xaringan-slides">Helpful functions for <code>xaringan</code> slides<a class="anchor" aria-label="anchor" href="#helpful-functions-for-xaringan-slides"></a>
 </h2>
 <p>The following functions are not part of the
@@ -194,12 +208,12 @@ and many other <code>xaringan</code> features.</p>
 </h2>
 <p>Xaringanthemer provides nice transition slides that can be created by
 adding the following lines to your code:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">class:</span><span class="co"> inverse, middle, right</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">count:</span><span class="co"> false</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Title of the transition slide</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">class:</span><span class="co"> inverse, middle, right</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="an">count:</span><span class="co"> false</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Title of the transition slide</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div>
 <p>Here is what these transition slides look like with
 mediocrethemes:</p>
 <p><img src="images/transition_slide.png" width="100%" style="display: block; margin: auto;"></p>
@@ -208,12 +222,12 @@ mediocrethemes:</p>
 </h3>
 <p>To make two columns in the document, you can use
 <code>.pull-left[]</code> and <code>.pull-right[]</code>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>.pull-left[</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>.pull-right[</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>.pull-left[</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>.pull-right[</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="export">Export<a class="anchor" aria-label="anchor" href="#export"></a>
