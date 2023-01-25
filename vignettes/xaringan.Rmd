@@ -2,7 +2,7 @@
 title: "Xaringan mediocre"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Mediocre xaringan}
+  %\VignetteIndexEntry{Xaringan mediocre}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -37,15 +37,17 @@ knitr::include_graphics("images/example_xaringan.gif")
 
 To build similar a mediocre/xaringan template, you simply need to add this to the YAML header of your slides:
 
-```{YAML, eval=FALSE}
+```{r YAML, eval=FALSE}
 output:
   xaringan::moon_reader:
+    # self_contained: true
     css: mediocre-themer.css
     nature:
       countIncrementalSlides: no
       highlightLines: yes
       highlightStyle: github
       ratio: '16:9'
+      titleSlideClass: [right, middle, inverse]
 ```
 
 And this to your set up chunk:
@@ -62,6 +64,8 @@ Note that `countIncrementalSlides`, `highlightLines` and `highlightStyle` are no
 
 You can use the palette of your choice. Also note that you may also need to add `knitr::opts_chunk$set(fig.showtext = TRUE)` to your set up chunk for the fonts to work properly.
 
+Xaringan `html` slides are not self-contained. Setting `self_contained: true` enables to make them so.
+
 ## Example `.Rmd` file
 
 Here is an example of a minimal `.Rmd` slide file:
@@ -69,10 +73,12 @@ Here is an example of a minimal `.Rmd` slide file:
 ````markdown
 ---
 title: "A very nice title"
+subtitle: "<br />"
 author: "Jeffrey Lebowski"
 date: "April 34, 2103"
 output:
   xaringan::moon_reader:
+    # self_contained: true
     lib_dir: libs
     css: mediocre-themer.css
     nature:
@@ -80,7 +86,7 @@ output:
       highlightLines: yes
       highlightStyle: github
       ratio: '16:9'
-subtitle: "A disappointing subtitle"
+      titleSlideClass: [right, middle, inverse]
 ---
 
 `r ''````{r themer, include=FALSE}
@@ -101,13 +107,24 @@ xaringan_mediocre(pal = "coty")
 
 By default, the `xaringan_mediocre` function is built to generate plots in the mediocrethemes format. To turn it of, set the parameter `mediocre_plots` to `FALSE`.
 
+## Helpful functions for `xaringan` slides
+
+The following functions are not part of the `mediocrethemes` package but are very helpful when working with `xaringan` slides. I compile them here for an easy access.
+
+### Continuous updating of the preview
+
+The super-helpful function `xaringan::inf_mr()` (or the RStudio addin “Infinite Moon Reader”) enables to continuously update the preview of the slides, by only saving the source document. 
+
+In [this presentation](https://arm.rbind.io/slides/xaringan.html#1), Alisson Hill gives an excellent introduction to these and many other `xaringan` features.
+
 ## Nice transition slides
 
 Xaringanthemer provides nice transition slides that can be created by adding the following lines to your code:
 
 ````markdown
 ---
-class: inverse, middle, center
+class: inverse, middle, right
+count: false
 
 # Title of the transition slide
 ---
@@ -119,11 +136,24 @@ Here is what these transition slides look like with mediocrethemes:
 knitr::include_graphics("images/transition_slide.png")
 ```
 
-## Export
+### Two columns
 
-The package `renderthis`[https://jhelvy.github.io/renderthis/] can be used to export the slides. For instance, to export them to pdf, one can use the function   `renderthis::to_pdf`. Setting the parameter `partial_slides` to `TRUE` enables to keep the pauses in the export.  
+To make two columns in the document, you can use `.pull-left[]` and  `.pull-right[]`:
 
+````markdown
+.pull-left[
+Lorem ipsum dolor sit amet
+]
+.pull-right[
+Lorem ipsum dolor sit amet
+]
+````
 
+### Export
+
+The package [`renderthis`](https://jhelvy.github.io/renderthis/) can be used to export the slides. For instance, to export them to pdf, one can use the function   `renderthis::to_pdf`. Setting the parameter `partial_slides` to `TRUE` enables to keep the pauses in the export.  
+
+As mentioned above, `self_contained: true` enables to create self-contained `html` slides.
 
 
 

@@ -91,9 +91,9 @@ xaringan_mediocre <- function(pal = "autumn", mediocre_plots = TRUE) {
       colors_table[[which(colors_table$color == pal), "complementary"]],
     link_color =
       colors_table[[which(colors_table$color == pal), "complementary"]],
-    text_font_size = "30px",
-    header_h1_font_size = "52px",
-    header_h2_font_size = "42px",
+    text_font_size = "27px",
+    header_h1_font_size = "45px",
+    header_h2_font_size = "40px",
     header_h3_font_size = "32px",
     text_slide_number_font_size = "16px",
     outfile = "mediocre-themer.css"
