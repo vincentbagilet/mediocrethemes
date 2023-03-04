@@ -89,8 +89,9 @@ xaringan_mediocre <- function(pal = "autumn", mediocre_plots = TRUE) {
     header_font_weight = "bold",
     text_bold_color =
       colors_table[[which(colors_table$color == pal), "complementary"]],
-    link_color =
-      colors_table[[which(colors_table$color == pal), "complementary"]],
+    # link_color =
+    #   colors_table[[which(colors_table$color == pal), "complementary"]],
+    link_decoration = "underline",
     text_font_size = "27px",
     header_h1_font_size = "45px",
     header_h2_font_size = "40px",

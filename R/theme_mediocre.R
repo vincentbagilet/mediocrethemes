@@ -32,7 +32,7 @@ theme_mediocre <- function(
   pal = "autumn",
   gradient = NULL,
   background = FALSE,
-  base_size = if (.Platform$OS.type == "windows") 15 else 12,
+  base_size = if (.Platform$OS.type == "windows") 17 else 14,
   base_family = "Lato",
   base_line_size = base_size / 50,
   base_rect_size = base_size / 170) {
@@ -148,14 +148,14 @@ theme_mediocre <- function(
       plot.title.position = "plot",
       plot.title = ggplot2::element_text(
         hjust = 0,
-        size = ggplot2::rel(1.25),
+        size = ggplot2::rel(1.1),
         margin = ggplot2::margin(b = .7, l = 0.1, unit = "cm")
       ),
       plot.subtitle = ggplot2::element_text(
         hjust = 0,
         size = ggplot2::rel(1),
         face = "italic",
-        margin = ggplot2::margin(t = -.5, b = .7, l = 0.2, unit = "cm")
+        margin = ggplot2::margin(t = -.6, b = .7, l = 0.2, unit = "cm")
       ),
       legend.position = "top",
       legend.justification = "center",

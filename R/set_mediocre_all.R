@@ -12,7 +12,7 @@ set_mediocre_all <-
   function(pal = "autumn",
            background = FALSE,
            second_pair = FALSE,
-           base_size = if (.Platform$OS.type == "windows") 15 else 12,
+           base_size = if (.Platform$OS.type == "windows") 17 else 14,
            base_family = "Lato",
            base_line_size = base_size / 50,
            base_rect_size = base_size / 170,
