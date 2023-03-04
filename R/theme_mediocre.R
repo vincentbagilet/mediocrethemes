@@ -129,7 +129,7 @@ theme_mediocre <- function(
       panel.grid.major.x =  ggplot2::element_blank(),
       panel.grid.minor.y = ggplot2::element_blank(),
       plot.margin = ggplot2::unit(c(0.5, 0.5, 0.5, 0.5), "cm"),
-      axis.text = ggplot2::element_text(size = ggplot2::rel(0.8)),
+      axis.text = ggplot2::element_text(size = ggplot2::rel(0.75)),
       axis.ticks.x = ggplot2::element_line(
         size = ggplot2::rel(2),
         colour = color_theme[["text"]]
@@ -160,12 +160,12 @@ theme_mediocre <- function(
       legend.position = "top",
       legend.justification = "center",
       legend.margin = ggplot2::margin(t = -.2, unit = "cm"),
-      legend.title = ggplot2::element_text(size = ggplot2::rel(0.85)),
-      legend.text = ggplot2::element_text(size = ggplot2::rel(0.8)),
+      legend.title = ggplot2::element_text(size = ggplot2::rel(0.88)),
+      legend.text = ggplot2::element_text(size = ggplot2::rel(0.78)),
       legend.key.size = ggplot2::unit(1, "lines"),
       strip.placement = "outside",
       strip.text = ggplot2::element_text(
-        size = ggplot2::rel(0.9),
+        size = ggplot2::rel(0.95),
         face = "bold"
       ),
       strip.text.x = ggplot2::element_text(
