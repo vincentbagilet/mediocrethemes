@@ -33,8 +33,8 @@ xaringan_mediocre <- function(pal = "autumn", mediocre_plots = TRUE) {
   colors_table <- mediocrethemes::colors_table
   text_color <- ifelse(
     pal %in% c("rainbow", "coty"),
-    colors_table[[which(colors_table$color == pal), "text"]],
-    colors_table[[which(colors_table$color == pal), "base"]]
+    colors_table[[which(colors_table$pal == pal), "text"]],
+    colors_table[[which(colors_table$pal == pal), "base"]]
   )
 
   #set fonts
@@ -67,10 +67,10 @@ xaringan_mediocre <- function(pal = "autumn", mediocre_plots = TRUE) {
   }
 
   xaringanthemer::style_mono_light(
-    base_color = colors_table[[which(colors_table$color == pal), "base"]],
+    base_color = colors_table[[which(colors_table$pal == pal), "base"]],
     text_color = text_color,
     background_color =
-      colors_table[[which(colors_table$color == pal), "background"]],
+      colors_table[[which(colors_table$pal == pal), "background"]],
     header_font_google = header_font_goog,
     header_font_family = ifelse(
       "Josefin Sans" %in% installed_fonts,
@@ -88,9 +88,9 @@ xaringan_mediocre <- function(pal = "autumn", mediocre_plots = TRUE) {
       xaringanthemer::xaringanthemer_font_default("code_font_family")),
     header_font_weight = "bold",
     text_bold_color =
-      colors_table[[which(colors_table$color == pal), "complementary"]],
+      colors_table[[which(colors_table$pal == pal), "complementary"]],
     # link_color =
-    #   colors_table[[which(colors_table$color == pal), "complementary"]],
+    #   colors_table[[which(colors_table$pal == pal), "complementary"]],
     link_decoration = "underline",
     text_font_size = "27px",
     header_h1_font_size = "45px",

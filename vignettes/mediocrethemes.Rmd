@@ -70,6 +70,21 @@ for (palette in mediocrethemes::colors_table[[1]]) {
 }
 ```
 
+### Accessing the colors in the current palette
+
+As a side effect, the function `set_mediocre_all` returns a one line tibble (`colors_mediocre`) with all the color information relative to the current palette:
+
+```{r colors_mediocre_demo, echo=FALSE}
+colors_mediocre |> 
+  knitr::kable()
+```
+
+Thus, to access the base color for instance, one should use the following command:
+
+```{r colors_mediocre_access}
+colors_mediocre[["base"]]
+```
+
 ### Using a gradient palette
 
 Each divergent palette (autumn, coty, rainbow and hotcold) can be turned into two gradient palettes. This is done by splitting a divergent palette in the middle, and use either the set of colors on the right or on the left (flipped to get light colors for small values). The example below hopefully clarifies this. To use these gradient palettes, one only needs to set the parameter `gradient` to "left" or "right".
@@ -143,21 +158,6 @@ ggplot(data = ggplot2::presidential, aes(x = party)) +
 ## Underlying functions
 
 The function `set_all_mediocre` is built on the `theme_mediocre` and `scale_mediocre_d`/`scale_mediocre_c` functions. `theme_mediocre` sets the theme and a baseline color (font and axis colors) and `scale_mediocre_d` or `scale_mediocre_c` set the categories colors.
-
-# Acessing the color used in a scale
-
-All the colors used are stored in the table `colors_table`:
-
-```{r}
-colors_table
-```
-
-For instance, one can access the "base" color for the palette "coty", in a HEX format, using the following command:
-
-```{r}
-mediocrethemes::colors_table[[6, "base"]]
-```
-
 
 
 

@@ -109,7 +109,7 @@ labels and so forth.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> function (...) </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> {</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     colors_table &lt;- mediocrethemes::colors_table</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     color_theme &lt;- colors_table[which(colors_table$color == pal), </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     color_theme &lt;- colors_table[which(colors_table$pal == pal), </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     mediocre_color_vector &lt;- unlist(strsplit(color_theme[["vector"]], </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         split = ", "))</span>
@@ -150,14 +150,14 @@ labels and so forth.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     ggplot2::discrete_scale(..., aesthetics = c("fill", "color"), </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         scale_name = "disc_scale", palette = mediocre_pal, na.value = "gray91")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> }</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;bytecode: 0x7f996fd77470&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x7f996fd67f60&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;bytecode: 0x7f9711374d88&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x7f971137eb90&gt;</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">palette_mediocre_c</span><span class="op">(</span>pal <span class="op">=</span> <span class="st">"rainbow"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> function (...) </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> {</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     colors_table &lt;- mediocrethemes::colors_table</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     color_theme &lt;- colors_table[which(colors_table$color == pal), </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     color_theme &lt;- colors_table[which(colors_table$pal == pal), </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     mediocre_color_vector &lt;- unlist(strsplit(color_theme[["vector"]], </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         split = ", "))</span>
@@ -172,8 +172,8 @@ labels and so forth.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     ggplot2::scale_fill_gradientn(..., colors = mediocre_color_vector, </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         aesthetics = c("fill", "color"), na.value = "gray91")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> }</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;bytecode: 0x7f996fb13c68&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x7f996fb0dc68&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;bytecode: 0x7f9711490128&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x7f9711494518&gt;</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

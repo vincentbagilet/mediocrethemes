@@ -17,6 +17,12 @@ set_mediocre_all <-
            base_line_size = base_size / 50,
            base_rect_size = base_size / 170,
            gradient = NULL) {
+    #side effect: var of colors corresponding to the palette
+    colors_mediocre <- NULL
+    colors_mediocre <<-
+      mediocrethemes::colors_table[mediocrethemes::colors_table$pal == pal,]
+
+    #set themes
     ggplot2::theme_set(mediocrethemes::theme_mediocre(
       pal = pal,
       gradient = gradient,
