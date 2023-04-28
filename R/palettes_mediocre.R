@@ -33,7 +33,7 @@ palette_mediocre_d <- function(pal = "autumn",
                                gradient = NULL,
                                ...) {
 
-  if (!(pal %in% mediocrethemes::colors_mediocre[["pal"]])) {
+  if (!(pal %in% mediocrethemes::colors_table[["pal"]])) {
     stop("This palette does not exist in this package")
   }
   if (!is.null(gradient)) {
@@ -44,8 +44,8 @@ palette_mediocre_d <- function(pal = "autumn",
 
   make_palette <- function(...) {
     #access colors from table
-    colors_mediocre <- mediocrethemes::colors_mediocre
-    color_theme <- colors_mediocre[which(colors_mediocre$pal == pal), ]
+    colors_table <- mediocrethemes::colors_table
+    color_theme <- colors_table[which(colors_table$pal == pal), ]
     mediocre_color_vector <- unlist(
       strsplit(color_theme[["vector"]], split = ", ")
     )
@@ -105,7 +105,7 @@ palette_mediocre_d <- function(pal = "autumn",
 #' @rdname palette_mediocre_d
 palette_mediocre_c <- function(pal = "autumn", gradient = NULL, ...) {
 
-  if (!(pal %in% mediocrethemes::colors_mediocre[["pal"]])) {
+  if (!(pal %in% mediocrethemes::colors_table[["pal"]])) {
     stop("This palette does not exist in this package")
   }
   if (!is.null(gradient)) {
@@ -115,8 +115,8 @@ palette_mediocre_c <- function(pal = "autumn", gradient = NULL, ...) {
   }
 
   make_palette <- function(...) {
-    colors_mediocre <- mediocrethemes::colors_mediocre
-    color_theme <- colors_mediocre[which(colors_mediocre$pal == pal), ]
+    colors_table <- mediocrethemes::colors_table
+    color_theme <- colors_table[which(colors_table$pal == pal), ]
     mediocre_color_vector <- unlist(
       strsplit(color_theme[["vector"]], split = ", ")
     )

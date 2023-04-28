@@ -4,12 +4,6 @@
 #' @inheritParams scale_mediocre_c
 #' @inheritParams theme_mediocre
 #'
-#' @details
-#' This function has a side effect: it creates a one line tibble
-#' (colors_mediocre) with all the color information relative to the
-#' current palette.
-#'
-#'
 #' @export
 #' @examples
 #' set_mediocre_all()
@@ -23,6 +17,11 @@ set_mediocre_all <-
            base_line_size = base_size / 50,
            base_rect_size = base_size / 170,
            gradient = NULL) {
+    #side effect: var of colors corresponding to the palette
+    colors_mediocre <- NULL
+    colors_mediocre <<-
+      mediocrethemes::colors_table[mediocrethemes::colors_table$pal == pal,]
+
     #set themes
     ggplot2::theme_set(mediocrethemes::theme_mediocre(
       pal = pal,
@@ -33,22 +32,20 @@ set_mediocre_all <-
       base_line_size = base_line_size,
       base_rect_size = base_rect_size)
     )
-    options(
-      ggplot2.continuous.fill =
-        mediocrethemes::palette_mediocre_c(pal = pal, gradient = gradient),
-      ggplot2.continuous.colour =
-        mediocrethemes::palette_mediocre_c(pal = pal, gradient = gradient),
-      ggplot2.discrete.fill =
-        mediocrethemes::palette_mediocre_d(
-          pal = pal,
-          second_pair = second_pair,
-          gradient = gradient
-        ),
-      ggplot2.discrete.colour =
-        mediocrethemes::palette_mediocre_d(
-          pal = pal,
-          second_pair = second_pair,
-          gradient = gradient
-        )
+    options(ggplot2.continuous.fill = mediocrethemes::palette_mediocre_c(
+      pal = pal, gradient = gradient)
+    )
+    options(ggplot2.continuous.colour = mediocrethemes::palette_mediocre_c(
+      pal = pal, gradient = gradient)
+    )
+    options(ggplot2.discrete.fill = mediocrethemes::palette_mediocre_d(
+      pal = pal,
+      second_pair = second_pair,
+      gradient = gradient)
+    )
+    options(ggplot2.discrete.colour = mediocrethemes::palette_mediocre_d(
+      pal = pal,
+      second_pair = second_pair,
+      gradient = gradient)
     )
   }

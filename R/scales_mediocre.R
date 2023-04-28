@@ -26,7 +26,7 @@ scale_mediocre_d <- function(pal = "autumn",
                              gradient = NULL,
                              ...) {
 
-  if (!(pal %in% mediocrethemes::colors_mediocre[["pal"]])) {
+  if (!(pal %in% mediocrethemes::colors_table[["pal"]])) {
     stop("This palette does not exist in this package")
   }
 
@@ -41,7 +41,7 @@ scale_mediocre_d <- function(pal = "autumn",
 #' @rdname scale_mediocre_d
 scale_mediocre_c <- function(pal = "autumn", gradient = NULL, ...) {
 
-  if (!(pal %in% mediocrethemes::colors_mediocre[["pal"]])) {
+  if (!(pal %in% mediocrethemes::colors_table[["pal"]])) {
     stop("This palette does not exist in this package")
   }
 

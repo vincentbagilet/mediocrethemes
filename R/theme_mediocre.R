@@ -40,13 +40,13 @@ theme_mediocre <- function(
   if (!is.logical(background)) {
     stop("background should be logical")
   }
-  if (!(pal %in% mediocrethemes::colors_mediocre[["pal"]])) {
+  if (!(pal %in% mediocrethemes::colors_table[["pal"]])) {
     stop("This palette does not exist in this package")
   }
 
   #quick access to the colors in the palette
-  colors_mediocre <- mediocrethemes::colors_mediocre
-  color_theme <- colors_mediocre[which(colors_mediocre$pal == pal), ]
+  colors_table <- mediocrethemes::colors_table
+  color_theme <- colors_table[which(colors_table$pal == pal), ]
   base_color <- color_theme[["base"]]
   text_color <- color_theme[["text"]]
   line_color <- grDevices::colorRampPalette(c("white", text_color))(10)[3]

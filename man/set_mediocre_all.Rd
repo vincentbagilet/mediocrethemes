@@ -42,11 +42,6 @@ hand side but flipping so that light values are on the left.}
 \description{
 Sets the mediocre theme and colors for the whole document.
 }
-\details{
-This function has a side effect: it creates a one line tibble
-(colors_mediocre) with all the color information relative to the
-current palette.
-}
 \examples{
 set_mediocre_all()
 
