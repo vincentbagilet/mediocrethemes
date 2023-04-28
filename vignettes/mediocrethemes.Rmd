@@ -45,7 +45,7 @@ The function `set_mediocre_all` takes several arguments: `pal`, `background`, `s
 
 ### Changing the palette
 
-Available palettes are: `r mediocrethemes::colors_table[[1]]`. A palette defines the color of the theme and the color scale used in the graphs, *ie* the color of the axes and text for the theme and the colors used in the legend for the color scale. To change the palette to "coty" for instance, just set the argument `pal` equal to "coty" when calling the function `set_mediocre_all` at the beginning of the document. All subsequent graphs will be created using similar code, the only difference is the name of the palette in `set_mediocre_all` 
+Available palettes are: `r mediocrethemes::colors_mediocre[[1]]`. A palette defines the color of the theme and the color scale used in the graphs, *ie* the color of the axes and text for the theme and the colors used in the legend for the color scale. To change the palette to "coty" for instance, just set the argument `pal` equal to "coty" when calling the function `set_mediocre_all` at the beginning of the document. All subsequent graphs will be created using similar code, the only difference is the name of the palette in `set_mediocre_all` 
  
 ```{r set_mediocre_all_coty}
 set_mediocre_all(pal = "coty")
@@ -58,7 +58,7 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
 Here is a comparison of the different palettes:
 
 ```{r palettes, echo=FALSE}
-for (palette in mediocrethemes::colors_table[[1]]) {
+for (palette in mediocrethemes::colors_mediocre[[1]]) {
   set_mediocre_all(pal = palette)
 
   graph <- ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
@@ -72,7 +72,7 @@ for (palette in mediocrethemes::colors_table[[1]]) {
 
 ### Accessing the colors in the current palette
 
-As a side effect, the function `set_mediocre_all` returns a one line tibble (`colors_mediocre`) with all the color information relative to the current palette:
+As a side effect, the function `set_mediocre_all` creates a one line tibble (`colors_mediocre`) with all the color information relative to the current palette:
 
 ```{r colors_mediocre_demo, echo=FALSE}
 colors_mediocre |> 

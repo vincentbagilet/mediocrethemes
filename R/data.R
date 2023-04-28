@@ -15,4 +15,4 @@
 #'    For 3 colors, the third color in this list is dropped}
 #'   ...
 #' }
-"colors_table"
+"colors_mediocre"
