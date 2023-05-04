@@ -113,108 +113,20 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
 
 ### Additional palettes
 
-Note that additional palettes are available. 
-Most palettes are divergent and can be turned into two gradient palettes. This is done by splitting a divergent palette in the middle, and use either the set of colors on the right or on the left (flipped to get light colors for small values).
+Note that additional palettes are available: `r mediocrethemes::colors_table[[1]]`.
 
-#### rainbow
+```{r palettes, echo=FALSE}
+for (palette in mediocrethemes::colors_table[[1]][-1]) {
+  set_mediocre_all(pal = palette)
 
-```{r rainbow, echo=FALSE}
-plot_all_examples <- function(pal) {
-  set_mediocre_all(pal = pal)
-  
-  plot1 <- ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
-    geom_col() +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-  
-  print(plot1)
-  
-  plot2 <- ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
+  graph <- ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
       geom_col() +
-      labs(title = "A very nice title", subtitle = "A disappointing subtitle") 
-  
-  print(plot2)
-  
-  plot3 <- ggplot(data = ggplot2::mpg, aes(x = drv)) +
-      geom_bar(aes(fill = factor(year)), position = "dodge") +
       labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-  
-  print(plot3)
-  
-  plot4 <- ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
-    geom_col() +
-    geom_vline(xintercept = 15) +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle") 
-  
-  print(plot4)
-  
-  df <- data.frame(
-    x = rnorm(10000),
-    y = rnorm(10000)
-  )
-  
-  plot5 <- ggplot(df, aes(x, y)) +
-    geom_hex() +
-    coord_fixed() +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle") 
-  
-  print(plot5)
-  
-  if (pal != "blackandwhite") {
-    plot6 <- ggplot(data = ggplot2::diamonds, aes(x = price, fill = color)) +
-    geom_histogram(bins = 30) +
-    scale_mediocre_d(pal = pal, gradient = "left") +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-  
-  print(plot6)
-  
-  plot7 <- ggplot(data = ggplot2::diamonds, aes(x = price, fill = color)) +
-    geom_histogram(bins = 30) +
-    scale_mediocre_d(pal = pal, gradient = "right") +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle") 
-  
-  print(plot7)
-  } 
-} 
 
-plot_all_examples(pal = "rainbow")
+  print(paste("set_mediocre_all(pal = '", palette, "')", sep = ""))
+  print(graph)
+}
 ```
 
-#### coty
-
-A (tentatively) colorblind friendly palette, based on [a NPR map](https://www.npr.org/2016/04/18/474256366/why-americas-schools-have-a-money-problem?t=1614618030346).
-
-```{r coty, echo=FALSE}
-plot_all_examples(pal = "coty")
-```
-
-#### hotcold
-
-```{r hotcold, echo=FALSE}
-plot_all_examples(pal = "hotcold")
-```
-
-#### blackandwhite
-
-```{r blackandwhite, echo=FALSE}
-plot_all_examples(pal = "blackandwhite")
-```
-
-#### leo
-
-```{r leo, echo=FALSE}
-plot_all_examples(pal = "leo")
-```
-
-#### portal
-
-```{r portal, echo=FALSE}
-plot_all_examples(pal = "portal")
-```
-
-#### pem
-
-```{r pem, echo=FALSE}
-plot_all_examples(pal = "pem")
-```
-
+Most palettes are divergent but can be turned into two gradient palettes, as described in the [vignette](mediocrethemes.html).
 

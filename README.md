@@ -67,38 +67,40 @@ A couple of example plots obtained with this theme:
 
 ### Additional palettes
 
-Note that additional palettes are available. Most palettes are divergent
-and can be turned into two gradient palettes. This is done by splitting
-a divergent palette in the middle, and use either the set of colors on
-the right or on the left (flipped to get light colors for small values).
+Note that additional palettes are available: autumn, rainbow, green,
+hotcold, blackandwhite, coty, leo, portal, pem.
 
-#### rainbow
+    #> [1] "set_mediocre_all(pal = 'rainbow')"
 
-<img src="man/figures/README-rainbow-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-5.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-6.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-rainbow-7.png" width="70%" style="display: block; margin: auto;" />
+<img src="man/figures/README-palettes-1.png" width="70%" style="display: block; margin: auto;" />
 
-#### coty
+    #> [1] "set_mediocre_all(pal = 'green')"
 
-A (tentatively) colorblind friendly palette, based on [a NPR
-map](https://www.npr.org/2016/04/18/474256366/why-americas-schools-have-a-money-problem?t=1614618030346).
+<img src="man/figures/README-palettes-2.png" width="70%" style="display: block; margin: auto;" />
 
-<img src="man/figures/README-coty-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-coty-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-coty-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-coty-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-coty-5.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-coty-6.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-coty-7.png" width="70%" style="display: block; margin: auto;" />
+    #> [1] "set_mediocre_all(pal = 'hotcold')"
 
-#### hotcold
+<img src="man/figures/README-palettes-3.png" width="70%" style="display: block; margin: auto;" />
 
-<img src="man/figures/README-hotcold-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-5.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-6.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-hotcold-7.png" width="70%" style="display: block; margin: auto;" />
+    #> [1] "set_mediocre_all(pal = 'blackandwhite')"
 
-#### blackandwhite
+<img src="man/figures/README-palettes-4.png" width="70%" style="display: block; margin: auto;" />
 
-<img src="man/figures/README-blackandwhite-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-blackandwhite-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-blackandwhite-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-blackandwhite-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-blackandwhite-5.png" width="70%" style="display: block; margin: auto;" />
+    #> [1] "set_mediocre_all(pal = 'coty')"
 
-#### leo
+<img src="man/figures/README-palettes-5.png" width="70%" style="display: block; margin: auto;" />
 
-<img src="man/figures/README-leo-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-leo-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-leo-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-leo-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-leo-5.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-leo-6.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-leo-7.png" width="70%" style="display: block; margin: auto;" />
+    #> [1] "set_mediocre_all(pal = 'leo')"
 
-#### portal
+<img src="man/figures/README-palettes-6.png" width="70%" style="display: block; margin: auto;" />
 
-<img src="man/figures/README-portal-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-portal-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-portal-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-portal-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-portal-5.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-portal-6.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-portal-7.png" width="70%" style="display: block; margin: auto;" />
+    #> [1] "set_mediocre_all(pal = 'portal')"
 
-#### pem
+<img src="man/figures/README-palettes-7.png" width="70%" style="display: block; margin: auto;" />
 
-<img src="man/figures/README-pem-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-pem-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-pem-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-pem-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-pem-5.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-pem-6.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-pem-7.png" width="70%" style="display: block; margin: auto;" />
+    #> [1] "set_mediocre_all(pal = 'pem')"
+
+<img src="man/figures/README-palettes-8.png" width="70%" style="display: block; margin: auto;" />
+
+Most palettes are divergent but can be turned into two gradient
+palettes, as described in the [vignette](mediocrethemes.html).

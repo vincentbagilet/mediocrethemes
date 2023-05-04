@@ -156,20 +156,6 @@ plot_all_examples(pal = "portal")
 plot_all_examples(pal = "pem")
 ```
 
-## Accessing the colors in the current palette
-
-As a side effect, the function `set_mediocre_all` returns a one line tibble (`colors_mediocre`) with all the color information relative to the current palette:
-
-```{r colors_mediocre_demo, echo=FALSE}
-colors_mediocre |> 
-  knitr::kable()
-```
-
-Thus, to access the base color for instance, one should use the following command:
-
-```{r colors_mediocre_access}
-colors_mediocre[["base"]]
-```
 
 ## Using a gradient palette
 
@@ -206,6 +192,27 @@ ggplot(df, aes(x, y)) +
   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
+## Theme for maps
+
+When making maps, one can use the function `theme_mediocre_map()` to apply a theme consistent with the main (mediocre) one but without the unnecessary axis information (text, ticks and panel grids). 
+
+One can remove the axis labels with the command `labs(x = NULL, y = NULL)`.
+
+```{r}
+set_mediocre_all()
+
+map_data("state") |> 
+  ggplot() +
+  geom_polygon(aes(x=long, y=lat, group=group, fill = "A color")) +
+  theme_mediocre_map() +
+  coord_map(projection = "mercator") +
+  labs(
+    title = "A very nice title", 
+    subtitle = "A disappointing subtitle",
+    fill = NULL, 
+    x = NULL, y = NULL
+  )
+```
 
 ## Setting a background
 
@@ -241,26 +248,20 @@ ggplot(data = ggplot2::presidential, aes(x = party)) +
   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
-## Theme for maps
+## Accessing the colors in the current palette
 
-When making maps, one can use the function `theme_mediocre_map()` to apply a theme consistent with the main (mediocre) one but without the unnecessary axis information (text, ticks and panel grids). 
+As a side effect, the function `set_mediocre_all` returns a one line tibble (`colors_mediocre`) with all the color information relative to the current palette:
 
-One can remove the axis labels with the command `labs(x = NULL, y = NULL)`.
-
-```{r}
-map_data("state") |> 
-  ggplot() +
-  geom_polygon(aes(x=long, y=lat, group=group, fill = "A color")) +
-  theme_mediocre_map() +
-  coord_map(projection = "mercator") +
-  labs(
-    title = "A very nice title", 
-    subtitle = "A disappointing subtitle",
-    fill = NA, 
-    x = NULL, y = NULL
-  )
+```{r colors_mediocre_demo, echo=FALSE}
+colors_mediocre |> 
+  knitr::kable()
 ```
 
+Thus, to access the base color for instance, one should use the following command:
+
+```{r colors_mediocre_access}
+colors_mediocre[["base"]]
+```
 
 
 
