@@ -116,9 +116,10 @@ illustrates this feature:</p>
 <code>base_family</code>, <code>base_line_size</code> and
 <code>base_rect_size</code>. The following subsections describe the use
 of the three first arguments.</p>
-<div class="section level4">
-<h4 id="changing-the-palette">Changing the palette<a class="anchor" aria-label="anchor" href="#changing-the-palette"></a>
-</h4>
+</div>
+<div class="section level3">
+<h3 id="changing-the-palette">Changing the palette<a class="anchor" aria-label="anchor" href="#changing-the-palette"></a>
+</h3>
 <p>Available palettes are: autumn, rainbow, green, hotcold,
 blackandwhite, coty, leo, portal, pem. A palette defines the color of
 the theme and the color scale used in the graphs, <em>ie</em> the color
@@ -156,9 +157,10 @@ difference is the name of the palette in
 <pre><code><span><span class="co">#&gt; [1] "set_mediocre_all(pal = 'pem')"</span></span></code></pre>
 <p><img src="mediocrethemes_files/figure-html/palettes-9.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
-<div class="section level4">
-<h4 id="accessing-the-colors-in-the-current-palette">Accessing the colors in the current palette<a class="anchor" aria-label="anchor" href="#accessing-the-colors-in-the-current-palette"></a>
-</h4>
+</div>
+<div class="section level2">
+<h2 id="accessing-the-colors-in-the-current-palette">Accessing the colors in the current palette<a class="anchor" aria-label="anchor" href="#accessing-the-colors-in-the-current-palette"></a>
+</h2>
 <p>As a side effect, the function <code>set_mediocre_all</code> returns
 a one line tibble (<code>colors_mediocre</code>) with all the color
 information relative to the current palette:</p>
@@ -199,9 +201,9 @@ following command:</p>
 <code class="sourceCode R"><span><span class="va">colors_mediocre</span><span class="op">[[</span><span class="st">"base"</span><span class="op">]</span><span class="op">]</span></span>
 <span><span class="co">#&gt; [1] "#4C0C12"</span></span></code></pre></div>
 </div>
-<div class="section level4">
-<h4 id="using-a-gradient-palette">Using a gradient palette<a class="anchor" aria-label="anchor" href="#using-a-gradient-palette"></a>
-</h4>
+<div class="section level2">
+<h2 id="using-a-gradient-palette">Using a gradient palette<a class="anchor" aria-label="anchor" href="#using-a-gradient-palette"></a>
+</h2>
 <p>Each divergent palette (autumn, coty, rainbow and hotcold) can be
 turned into two gradient palettes. This is done by splitting a divergent
 palette in the middle, and use either the set of colors on the right or
@@ -216,9 +218,9 @@ needs to set the parameter <code>gradient</code> to “left” or
 <pre><code><span><span class="co">#&gt; [1] "set_mediocre_all(pal = 'coty', gradient = 'right')"</span></span></code></pre>
 <p><img src="mediocrethemes_files/figure-html/gradient-3.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
-<div class="section level4">
-<h4 id="setting-a-background">Setting a background<a class="anchor" aria-label="anchor" href="#setting-a-background"></a>
-</h4>
+<div class="section level2">
+<h2 id="setting-a-background">Setting a background<a class="anchor" aria-label="anchor" href="#setting-a-background"></a>
+</h2>
 <p>Users can also easily set a background for all their plots by setting
 the parameter <code>background</code> to <code>TRUE</code>. The color of
 the background is predefined to fit nicely the theme palette. One can of
@@ -233,9 +235,9 @@ theme:
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="mediocrethemes_files/figure-html/background-1.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
-<div class="section level4">
-<h4 id="using-another-pair-of-colors">Using another pair of colors<a class="anchor" aria-label="anchor" href="#using-another-pair-of-colors"></a>
-</h4>
+<div class="section level2">
+<h2 id="using-another-pair-of-colors">Using another pair of colors<a class="anchor" aria-label="anchor" href="#using-another-pair-of-colors"></a>
+</h2>
 <p>Graphs with two categories, as the following one for instance, are
 ubiquitous.</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
@@ -244,7 +246,7 @@ ubiquitous.</p>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html" class="external-link">mpg</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">drv</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_bar</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">)</span>, position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="mediocrethemes_files/figure-html/unnamed-chunk-2-1.png" width="70%" style="display: block; margin: auto;"></p>
+<p><img src="mediocrethemes_files/figure-html/two_cat-1.png" width="70%" style="display: block; margin: auto;"></p>
 <p>In a same project, users may have to consider different sets of
 pairs. For instance, they may want to separate observations in years as
 in the previous graph and later use other categories such as Republicans
@@ -262,19 +264,30 @@ color scale used.</p>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/presidential.html" class="external-link">presidential</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">party</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_bar</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">party</span><span class="op">)</span>, position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="mediocrethemes_files/figure-html/unnamed-chunk-3-1.png" width="70%" style="display: block; margin: auto;"></p>
+<p><img src="mediocrethemes_files/figure-html/second_pair-1.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
-</div>
-<div class="section level3">
-<h3 id="underlying-functions">Underlying functions<a class="anchor" aria-label="anchor" href="#underlying-functions"></a>
-</h3>
-<p>The function <code>set_all_mediocre</code> is built on the
-<code>theme_mediocre</code> and
-<code>scale_mediocre_d</code>/<code>scale_mediocre_c</code> functions.
-<code>theme_mediocre</code> sets the theme and a baseline color (font
-and axis colors) and <code>scale_mediocre_d</code> or
-<code>scale_mediocre_c</code> set the categories colors.</p>
-</div>
+<div class="section level2">
+<h2 id="theme-for-maps">Theme for maps<a class="anchor" aria-label="anchor" href="#theme-for-maps"></a>
+</h2>
+<p>When making maps, one can use the function
+<code><a href="../reference/theme_mediocre.html">theme_mediocre_map()</a></code> to apply a theme consistent with the
+main (mediocre) one but without the unnecessary axis information (text,
+ticks and panel grids).</p>
+<p>One can remove the axis labels with the command
+<code>labs(x = NULL, y = NULL)</code>.</p>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/map_data.html" class="external-link">map_data</a></span><span class="op">(</span><span class="st">"state"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_polygon.html" class="external-link">geom_polygon</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">long</span>, y<span class="op">=</span><span class="va">lat</span>, group<span class="op">=</span><span class="va">group</span>, fill <span class="op">=</span> <span class="st">"A color"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="../reference/theme_mediocre.html">theme_mediocre_map</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_map.html" class="external-link">coord_map</a></span><span class="op">(</span>projection <span class="op">=</span> <span class="st">"mercator"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"A very nice title"</span>, </span>
+<span>    subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span>,</span>
+<span>    fill <span class="op">=</span> <span class="cn">NA</span>, </span>
+<span>    x <span class="op">=</span> <span class="cn">NULL</span>, y <span class="op">=</span> <span class="cn">NULL</span></span>
+<span>  <span class="op">)</span></span></code></pre></div>
+<p><img src="mediocrethemes_files/figure-html/unnamed-chunk-2-1.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
   </div>
 

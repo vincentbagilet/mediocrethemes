@@ -2,9 +2,20 @@
 % Please edit documentation in R/theme_mediocre.R
 \name{theme_mediocre}
 \alias{theme_mediocre}
+\alias{theme_mediocre_map}
 \title{Defines the ggplot theme with the default R colors.}
 \usage{
 theme_mediocre(
+  pal = "autumn",
+  gradient = NULL,
+  background = FALSE,
+  base_size = if (.Platform$OS.type == "windows") 17 else 14,
+  base_family = "Lato",
+  base_line_size = base_size/50,
+  base_rect_size = base_size/170
+)
+
+theme_mediocre_map(
   pal = "autumn",
   gradient = NULL,
   background = FALSE,

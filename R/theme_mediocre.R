@@ -190,3 +190,31 @@ theme_mediocre <- function(
 
   return(theme_custom)
 }
+
+
+#' @export
+#' @rdname theme_mediocre
+theme_mediocre_map <- function(
+    pal = "autumn",
+    gradient = NULL,
+    background = FALSE,
+    base_size = if (.Platform$OS.type == "windows") 17 else 14,
+    base_family = "Lato",
+    base_line_size = base_size / 50,
+    base_rect_size = base_size / 170) {
+
+    mediocrethemes::theme_mediocre(
+      pal = pal,
+      gradient = gradient,
+      background = background,
+      base_size = base_size,
+      base_family = base_family,
+      base_line_size = base_line_size,
+      base_rect_size = base_rect_size
+    ) %+replace%
+    ggplot2::theme(
+      axis.text = element_blank(),
+      axis.ticks.x = element_blank(),
+      panel.grid.major.y = element_blank()
+    )
+}
