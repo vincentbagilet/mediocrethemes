@@ -97,7 +97,7 @@ theme_mediocre <- function(
          fill = light_color, alpha = 0.2)
   )
 
-  ggplot2::update_geom_defaults(geom = "line", list(size = 0.8))
+  ggplot2::update_geom_defaults(geom = "line", list(linewidth = 0.8))
 
   # set fonts
   showtextdb::load_showtext_fonts()

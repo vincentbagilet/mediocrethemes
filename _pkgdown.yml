@@ -1,6 +1,11 @@
 template:
-  params:
-    bootswatch: cosmo
+  bootstrap: 5
+  bootswatch: journal
+  bslib:
+    # pkgdown-nav-height: 100px
+    base_font: {google: "Lato"}
+    heading_font: {google: "Lato"}
+    primary: "#00313C"
 
 authors:
   Vincent Bagilet:
