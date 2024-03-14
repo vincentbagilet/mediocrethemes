@@ -2,7 +2,7 @@
 
 library(tidyverse)
 
-color_vect <- c("#112438", "#8C1620", "#EDC385", "#AF5D0F", "#2A361C")
+color_vect <- c("#051629", "#495C2E", "#DEB77D", "#AF5D0F", "#84151F")
 create_palette <- grDevices::colorRampPalette(color_vect)
 create_palette(15) %>%
   cat(sep = ", ")

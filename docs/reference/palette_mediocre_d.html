@@ -102,87 +102,74 @@ labels and so forth.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">palette_mediocre_d</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> function(...) {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     #access colors from table</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> function (...) </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> {</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     colors_table &lt;- mediocrethemes::colors_table</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     color_theme &lt;- colors_table[which(colors_table$pal == pal), ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     mediocre_color_vector &lt;- unlist(</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       strsplit(color_theme[["vector"]], split = ", ")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     )</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     mediocre_color_four &lt;- unlist(</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       strsplit(color_theme[["four_colors"]], split = ", ")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     )</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     #make a gradient palette</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     color_theme &lt;- colors_table[which(colors_table$pal == pal), </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     mediocre_color_vector &lt;- unlist(strsplit(color_theme[["vector"]], </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         split = ", "))</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     mediocre_color_four &lt;- unlist(strsplit(color_theme[["four_colors"]], </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         split = ", "))</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     if (!is.null(gradient) &amp; !(pal %in% c("green", "blackandwhite"))) {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       if (gradient == "right") {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         mediocre_color_vector &lt;- mediocre_color_vector[8:15]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       } else if (gradient == "left") {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         mediocre_color_vector &lt;- rev(mediocre_color_vector[1:8])</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       }</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     }</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     #set second pair</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     if (second_pair) {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       mediocre_color_four &lt;- rev(mediocre_color_four)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     }</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     mediocre_pal &lt;- function(n) {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       if (is.null(gradient)) {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         if (n == 2) {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           color_vector &lt;- mediocre_color_four[1:2]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         } else if (n == 3) {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           color_vector &lt;- mediocre_color_four[-3]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         } else if (n == 4) {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           color_vector &lt;- mediocre_color_four</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         } else {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           color_vector &lt;- mediocre_color_vector</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         if (gradient == "right") {</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             mediocre_color_vector &lt;- mediocre_color_vector[8:15]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         }</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       } else {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         color_vector &lt;- mediocre_color_vector</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       }</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       the_palette &lt;- grDevices::colorRampPalette(color_vector)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       return(the_palette(n))</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         else if (gradient == "left") {</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             mediocre_color_vector &lt;- rev(mediocre_color_vector[1:8])</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         }</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     }</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     ggplot2::discrete_scale(</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       ...,</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       aesthetics = c("fill", "color"),</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       scale_name = "disc_scale",</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       palette = mediocre_pal,</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       na.value = "gray91"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     )</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   }</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;bytecode: 0x10fdaa268&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x10fe00770&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     if (second_pair) {</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         mediocre_color_four &lt;- rev(mediocre_color_four)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     }</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     mediocre_pal &lt;- function(n) {</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         if (is.null(gradient)) {</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             if (n == 2) {</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 color_vector &lt;- mediocre_color_four[1:2]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             }</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             else if (n == 3) {</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 color_vector &lt;- mediocre_color_four[-3]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             }</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             else if (n == 4) {</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 color_vector &lt;- mediocre_color_four</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             }</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             else {</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 color_vector &lt;- mediocre_color_vector</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             }</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         }</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         else {</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             color_vector &lt;- mediocre_color_vector</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         }</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         the_palette &lt;- grDevices::colorRampPalette(color_vector)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         return(the_palette(n))</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     }</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     ggplot2::discrete_scale(..., aesthetics = c("fill", "color"), </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         scale_name = "disc_scale", palette = mediocre_pal, na.value = "gray91")</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> }</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;bytecode: 0x109030470&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x1090394a0&gt;</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">palette_mediocre_c</span><span class="op">(</span>pal <span class="op">=</span> <span class="st">"rainbow"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> function(...) {</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> function (...) </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> {</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     colors_table &lt;- mediocrethemes::colors_table</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     color_theme &lt;- colors_table[which(colors_table$pal == pal), ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     mediocre_color_vector &lt;- unlist(</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       strsplit(color_theme[["vector"]], split = ", ")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     )</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     color_theme &lt;- colors_table[which(colors_table$pal == pal), </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     mediocre_color_vector &lt;- unlist(strsplit(color_theme[["vector"]], </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         split = ", "))</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     if (!is.null(gradient)) {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       if (gradient == "right") {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         mediocre_color_vector &lt;- mediocre_color_vector[8:15]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       } else if (gradient == "left") {</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         mediocre_color_vector &lt;- rev(mediocre_color_vector[1:8])</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       }</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         if (gradient == "right") {</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             mediocre_color_vector &lt;- mediocre_color_vector[8:15]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         }</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         else if (gradient == "left") {</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             mediocre_color_vector &lt;- rev(mediocre_color_vector[1:8])</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         }</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     }</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     ggplot2::scale_fill_gradientn(</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       ...,</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       colors = mediocre_color_vector,</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       aesthetics = c("fill", "color"),</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       na.value = "gray91"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     )</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   }</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;bytecode: 0x10fe996f8&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x10fea6150&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     ggplot2::scale_fill_gradientn(..., colors = mediocre_color_vector, </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         aesthetics = c("fill", "color"), na.value = "gray91")</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> }</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;bytecode: 0x1090b7a18&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x1090b9e08&gt;</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
