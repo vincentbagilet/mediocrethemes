@@ -133,7 +133,16 @@ palette_mediocre_c <- function(pal = "autumn", gradient = NULL, ...) {
       ...,
       colors = mediocre_color_vector,
       aesthetics = c("fill", "color"),
-      na.value = "gray91"
+      na.value = "gray91",
+      guide = guide_colourbar(
+        theme = theme(
+          legend.key.width  = unit(5, "cm"),
+          legend.key.height = unit(0.25, "cm"),
+          legend.ticks.length = unit(0.125, "cm"), #= legend.key.height/2
+          legend.title.position = "top",
+          legend.margin = ggplot2::margin(t = -.4, unit = "cm")
+        )
+      )
     )
   }
 

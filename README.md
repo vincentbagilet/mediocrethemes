@@ -41,6 +41,11 @@ set_mediocre_all()
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
     geom_col() +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+#> Warning: The `scale_name` argument of `discrete_scale()` is deprecated as of ggplot2
+#> 3.5.0.
+#> This warning is displayed once every 8 hours.
+#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+#> generated.
 ```
 
 <img src="man/figures/README-set_mediocre_all-1.png" width="70%" style="display: block; margin: auto;" />

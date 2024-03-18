@@ -113,7 +113,7 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
 
 ### Additional palettes
 
-Note that additional palettes are available: `r mediocrethemes::colors_table[[1]]`.
+Note that additional palettes are available: `r mediocrethemes::colors_table[[1]]`. 
 
 ```{r palettes, echo=FALSE}
 for (palette in mediocrethemes::colors_table[[1]][-1]) {

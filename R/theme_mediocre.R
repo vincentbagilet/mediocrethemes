@@ -149,20 +149,21 @@ theme_mediocre <- function(
       plot.title = ggplot2::element_text(
         hjust = 0,
         size = ggplot2::rel(1.1),
-        margin = ggplot2::margin(b = .7, l = 0.1, unit = "cm")
+        margin = ggplot2::margin(b = .7, unit = "cm")
       ),
       plot.subtitle = ggplot2::element_text(
         hjust = 0,
         size = ggplot2::rel(1),
         face = "italic",
-        margin = ggplot2::margin(t = -.6, b = .7, l = 0.2, unit = "cm")
+        margin = ggplot2::margin(t = -.58, b = .7, unit = "cm")
       ),
       legend.position = "top",
-      legend.justification = "center",
+      legend.justification = c(0, 0),
+      legend.location = "plot",
       legend.margin = ggplot2::margin(t = -.2, unit = "cm"),
+      legend.key.spacing.y = ggplot2::unit(0.01, "cm"),
       legend.title = ggplot2::element_text(size = ggplot2::rel(0.88)),
       legend.text = ggplot2::element_text(size = ggplot2::rel(0.78)),
-      legend.key.size = ggplot2::unit(1, "lines"),
       strip.placement = "outside",
       strip.text = ggplot2::element_text(
         size = ggplot2::rel(0.95),
