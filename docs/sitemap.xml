@@ -1,48 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>/articles/mediocrethemes.html</loc>
-  </url>
-  <url>
-    <loc>/articles/xaringan.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/colors_table.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/palette_mediocre_d.html</loc>
-  </url>
-  <url>
-    <loc>/reference/scale_mediocre_d.html</loc>
-  </url>
-  <url>
-    <loc>/reference/set_mediocre_all.html</loc>
-  </url>
-  <url>
-    <loc>/reference/theme_mediocre.html</loc>
-  </url>
-  <url>
-    <loc>/reference/xaringan_mediocre.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>/404.html</loc></url>
+<url><loc>/LICENSE-text.html</loc></url>
+<url><loc>/LICENSE.html</loc></url>
+<url><loc>/articles/index.html</loc></url>
+<url><loc>/articles/mediocrethemes.html</loc></url>
+<url><loc>/articles/xaringan.html</loc></url>
+<url><loc>/authors.html</loc></url>
+<url><loc>/index.html</loc></url>
+<url><loc>/reference/colors_table.html</loc></url>
+<url><loc>/reference/index.html</loc></url>
+<url><loc>/reference/palette_mediocre_d.html</loc></url>
+<url><loc>/reference/scale_mediocre_d.html</loc></url>
+<url><loc>/reference/set_mediocre_all.html</loc></url>
+<url><loc>/reference/theme_mediocre.html</loc></url>
+<url><loc>/reference/xaringan_mediocre.html</loc></url>
 </urlset>
+

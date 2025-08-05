@@ -92,7 +92,7 @@ plot_all_examples <- function(pal) {
   )
   
   plot5 <- ggplot(df, aes(x, y)) +
-    geom_hex() +
+    geom_bin2d() +
     coord_fixed() +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle") 
   
@@ -171,7 +171,7 @@ df <- data.frame(
 )
 
 ggplot(df, aes(x, y)) +
-  geom_hex() +
+  geom_bin2d() +
   coord_fixed() +
   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 
@@ -179,7 +179,7 @@ set_mediocre_all(pal = "coty", gradient = "left")
 print("set_mediocre_all(pal = 'coty', gradient = 'left')")
 
 ggplot(df, aes(x, y)) +
-  geom_hex() +
+  geom_bin2d() +
   coord_fixed() +
   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 
@@ -187,7 +187,7 @@ set_mediocre_all(pal = "coty", gradient = "right")
 print("set_mediocre_all(pal = 'coty', gradient = 'right')")
 
 ggplot(df, aes(x, y)) +
-  geom_hex() +
+  geom_bin2d() +
   coord_fixed() +
   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```

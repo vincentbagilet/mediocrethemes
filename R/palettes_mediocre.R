@@ -56,9 +56,13 @@ palette_mediocre_d <- function(pal = "autumn",
     #make a gradient palette
     if (!is.null(gradient) & !(pal %in% c("green", "blackandwhite"))) {
       if (gradient == "right") {
-        mediocre_color_vector <- mediocre_color_vector[8:15]
+        create_pal <- mediocre_color_vector[8:15] |>
+          grDevices::colorRampPalette(bias = 0.8)
+        mediocre_color_vector <- create_pal(8)
       } else if (gradient == "left") {
-        mediocre_color_vector <- rev(mediocre_color_vector[1:8])
+        create_pal <- rev(mediocre_color_vector[1:8]) |>
+          grDevices::colorRampPalette(bias = 0.8)
+        mediocre_color_vector <- create_pal(8)
       }
     }
 
@@ -90,7 +94,6 @@ palette_mediocre_d <- function(pal = "autumn",
     ggplot2::discrete_scale(
       ...,
       aesthetics = c("fill", "color"),
-      scale_name = "disc_scale",
       palette = mediocre_pal,
       na.value = "gray91"
     )
@@ -123,9 +126,13 @@ palette_mediocre_c <- function(pal = "autumn", gradient = NULL, ...) {
 
     if (!is.null(gradient)) {
       if (gradient == "right") {
-        mediocre_color_vector <- mediocre_color_vector[8:15]
+        create_pal <- mediocre_color_vector[8:15] |>
+          grDevices::colorRampPalette(bias = 0.75)
+        mediocre_color_vector <- create_pal(8)
       } else if (gradient == "left") {
-        mediocre_color_vector <- rev(mediocre_color_vector[1:8])
+        create_pal <- rev(mediocre_color_vector[1:8]) |>
+          grDevices::colorRampPalette(bias = 0.75)
+        mediocre_color_vector <- create_pal(8)
       }
     }
 
@@ -134,11 +141,12 @@ palette_mediocre_c <- function(pal = "autumn", gradient = NULL, ...) {
       colors = mediocre_color_vector,
       aesthetics = c("fill", "color"),
       na.value = "gray91",
-      guide = guide_colourbar(
-        theme = theme(
-          legend.key.width  = unit(5, "cm"),
-          legend.key.height = unit(0.25, "cm"),
-          legend.ticks.length = unit(0.125, "cm"), #= legend.key.height/2
+      guide = ggplot2::guide_colourbar(
+        theme = ggplot2::theme(
+          legend.key.width  = ggplot2::unit(5, "cm"),
+          legend.key.height = ggplot2::unit(0.25, "cm"),
+          legend.ticks.length = ggplot2::unit(0.125, "cm"),
+          #= legend.key.height/2
           legend.title.position = "top",
           legend.margin = ggplot2::margin(t = -.4, unit = "cm")
         )

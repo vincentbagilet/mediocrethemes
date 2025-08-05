@@ -158,6 +158,7 @@ theme_mediocre <- function(
         margin = ggplot2::margin(t = -.58, b = .7, unit = "cm")
       ),
       legend.position = "top",
+      legend.direction = "horizontal",
       legend.justification = c(0, 0),
       legend.location = "plot",
       legend.margin = ggplot2::margin(t = -.2, unit = "cm"),
@@ -214,8 +215,9 @@ theme_mediocre_map <- function(
       base_rect_size = base_rect_size
     ) %+replace%
     ggplot2::theme(
-      axis.text = element_blank(),
-      axis.ticks.x = element_blank(),
+      axis.text = ggplot2::element_blank(),
+      axis.ticks.x = ggplot2::element_blank(),
+      panel.grid.minor.y = element_blank(),
       panel.grid.major.y = element_blank()
     )
 }
