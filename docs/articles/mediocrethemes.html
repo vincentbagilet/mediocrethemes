@@ -85,6 +85,13 @@ their plots to set the theme and the color, if they called
 illustrates this feature:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning: The `size` argument of `element_line()` is deprecated as of ggplot2 3.4.0.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Please use the `linewidth` argument instead.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> The deprecated feature was likely used in the <span style="color: #0000BB;">mediocrethemes</span> package.</span></span>
+<span><span class="co">#&gt;   Please report the issue to the authors.</span></span>
+<span><span class="co">#&gt; <span style="color: #555555;">This warning is displayed once every 8 hours.</span></span></span>
+<span><span class="co">#&gt; <span style="color: #555555;">Call `lifecycle::last_lifecycle_warnings()` to see where this warning was</span></span></span>
+<span><span class="co">#&gt; <span style="color: #555555;">generated.</span></span></span>
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html" class="external-link">mpg</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cty</span>, y <span class="op">=</span> <span class="va">displ</span>, fill <span class="op">=</span> <span class="va">manufacturer</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
@@ -120,39 +127,53 @@ difference is the name of the palette in
 <div class="section level4">
 <h4 id="rainbow">rainbow<a class="anchor" aria-label="anchor" href="#rainbow"></a>
 </h4>
-<p><img src="mediocrethemes_files/figure-html/rainbow-1.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/rainbow-2.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/rainbow-3.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/rainbow-4.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/rainbow-5.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/rainbow-6.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/rainbow-7.png" width="70%" style="display: block; margin: auto;"></p>
+<p><img src="mediocrethemes_files/figure-html/rainbow-1.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/rainbow-2.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/rainbow-3.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/rainbow-4.png" width="70%" style="display: block; margin: auto;"></p>
+<pre><code><span><span class="co">#&gt; `stat_bin2d()` using `bins = 30`. Pick better value `binwidth`.</span></span></code></pre>
+<p><img src="mediocrethemes_files/figure-html/rainbow-5.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/rainbow-6.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/rainbow-7.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level4">
 <h4 id="coty">coty<a class="anchor" aria-label="anchor" href="#coty"></a>
 </h4>
 <p>A (tentatively) colorblind friendly palette, based on <a href="https://www.npr.org/2016/04/18/474256366/why-americas-schools-have-a-money-problem?t=1614618030346" class="external-link">a
 NPR map</a>.</p>
-<p><img src="mediocrethemes_files/figure-html/coty-1.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/coty-2.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/coty-3.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/coty-4.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/coty-5.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/coty-6.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/coty-7.png" width="70%" style="display: block; margin: auto;"></p>
+<p><img src="mediocrethemes_files/figure-html/coty-1.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/coty-2.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/coty-3.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/coty-4.png" width="70%" style="display: block; margin: auto;"></p>
+<pre><code><span><span class="co">#&gt; `stat_bin2d()` using `bins = 30`. Pick better value `binwidth`.</span></span></code></pre>
+<p><img src="mediocrethemes_files/figure-html/coty-5.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/coty-6.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/coty-7.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level4">
 <h4 id="hotcold">hotcold<a class="anchor" aria-label="anchor" href="#hotcold"></a>
 </h4>
-<p><img src="mediocrethemes_files/figure-html/hotcold-1.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/hotcold-2.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/hotcold-3.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/hotcold-4.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/hotcold-5.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/hotcold-6.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/hotcold-7.png" width="70%" style="display: block; margin: auto;"></p>
+<p><img src="mediocrethemes_files/figure-html/hotcold-1.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/hotcold-2.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/hotcold-3.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/hotcold-4.png" width="70%" style="display: block; margin: auto;"></p>
+<pre><code><span><span class="co">#&gt; `stat_bin2d()` using `bins = 30`. Pick better value `binwidth`.</span></span></code></pre>
+<p><img src="mediocrethemes_files/figure-html/hotcold-5.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/hotcold-6.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/hotcold-7.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level4">
 <h4 id="blackandwhite">blackandwhite<a class="anchor" aria-label="anchor" href="#blackandwhite"></a>
 </h4>
-<p><img src="mediocrethemes_files/figure-html/blackandwhite-1.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/blackandwhite-2.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/blackandwhite-3.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/blackandwhite-4.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/blackandwhite-5.png" width="70%" style="display: block; margin: auto;"></p>
+<p><img src="mediocrethemes_files/figure-html/blackandwhite-1.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/blackandwhite-2.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/blackandwhite-3.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/blackandwhite-4.png" width="70%" style="display: block; margin: auto;"></p>
+<pre><code><span><span class="co">#&gt; `stat_bin2d()` using `bins = 30`. Pick better value `binwidth`.</span></span></code></pre>
+<p><img src="mediocrethemes_files/figure-html/blackandwhite-5.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level4">
 <h4 id="leo">leo<a class="anchor" aria-label="anchor" href="#leo"></a>
 </h4>
-<p><img src="mediocrethemes_files/figure-html/leo-1.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/leo-2.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/leo-3.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/leo-4.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/leo-5.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/leo-6.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/leo-7.png" width="70%" style="display: block; margin: auto;"></p>
+<p><img src="mediocrethemes_files/figure-html/leo-1.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/leo-2.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/leo-3.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/leo-4.png" width="70%" style="display: block; margin: auto;"></p>
+<pre><code><span><span class="co">#&gt; `stat_bin2d()` using `bins = 30`. Pick better value `binwidth`.</span></span></code></pre>
+<p><img src="mediocrethemes_files/figure-html/leo-5.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/leo-6.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/leo-7.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level4">
 <h4 id="portal">portal<a class="anchor" aria-label="anchor" href="#portal"></a>
 </h4>
-<p><img src="mediocrethemes_files/figure-html/portal-1.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/portal-2.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/portal-3.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/portal-4.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/portal-5.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/portal-6.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/portal-7.png" width="70%" style="display: block; margin: auto;"></p>
+<p><img src="mediocrethemes_files/figure-html/portal-1.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/portal-2.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/portal-3.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/portal-4.png" width="70%" style="display: block; margin: auto;"></p>
+<pre><code><span><span class="co">#&gt; `stat_bin2d()` using `bins = 30`. Pick better value `binwidth`.</span></span></code></pre>
+<p><img src="mediocrethemes_files/figure-html/portal-5.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/portal-6.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/portal-7.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level4">
 <h4 id="pem">pem<a class="anchor" aria-label="anchor" href="#pem"></a>
 </h4>
-<p><img src="mediocrethemes_files/figure-html/pem-1.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/pem-2.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/pem-3.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/pem-4.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/pem-5.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/pem-6.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/pem-7.png" width="70%" style="display: block; margin: auto;"></p>
+<p><img src="mediocrethemes_files/figure-html/pem-1.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/pem-2.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/pem-3.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/pem-4.png" width="70%" style="display: block; margin: auto;"></p>
+<pre><code><span><span class="co">#&gt; `stat_bin2d()` using `bins = 30`. Pick better value `binwidth`.</span></span></code></pre>
+<p><img src="mediocrethemes_files/figure-html/pem-5.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/pem-6.png" width="70%" style="display: block; margin: auto;"><img src="mediocrethemes_files/figure-html/pem-7.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 </div>
 </div>
@@ -166,11 +187,14 @@ on the left (flipped to get light colors for small values). The example
 below hopefully clarifies this. To use these gradient palettes, one only
 needs to set the parameter <code>gradient</code> to “left” or
 “right”.</p>
-<pre><code><span><span class="co">#&gt; [1] "set_mediocre_all(pal = 'coty')"</span></span></code></pre>
+<pre><code><span><span class="co">#&gt; [1] "set_mediocre_all(pal = 'coty')"</span></span>
+<span><span class="co">#&gt; `stat_bin2d()` using `bins = 30`. Pick better value `binwidth`.</span></span></code></pre>
 <p><img src="mediocrethemes_files/figure-html/gradient-1.png" width="70%" style="display: block; margin: auto;"></p>
-<pre><code><span><span class="co">#&gt; [1] "set_mediocre_all(pal = 'coty', gradient = 'left')"</span></span></code></pre>
+<pre><code><span><span class="co">#&gt; [1] "set_mediocre_all(pal = 'coty', gradient = 'left')"</span></span>
+<span><span class="co">#&gt; `stat_bin2d()` using `bins = 30`. Pick better value `binwidth`.</span></span></code></pre>
 <p><img src="mediocrethemes_files/figure-html/gradient-2.png" width="70%" style="display: block; margin: auto;"></p>
-<pre><code><span><span class="co">#&gt; [1] "set_mediocre_all(pal = 'coty', gradient = 'right')"</span></span></code></pre>
+<pre><code><span><span class="co">#&gt; [1] "set_mediocre_all(pal = 'coty', gradient = 'right')"</span></span>
+<span><span class="co">#&gt; `stat_bin2d()` using `bins = 30`. Pick better value `binwidth`.</span></span></code></pre>
 <p><img src="mediocrethemes_files/figure-html/gradient-3.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2">
@@ -182,10 +206,10 @@ main (mediocre) one but without the unnecessary axis information (text,
 ticks and panel grids).</p>
 <p>One can remove the axis labels with the command
 <code>labs(x = NULL, y = NULL)</code>.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/map_data.html" class="external-link">map_data</a></span><span class="op">(</span><span class="st">"state"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/map_data.html" class="external-link">map_data</a></span><span class="op">(</span><span class="st">"state"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_polygon.html" class="external-link">geom_polygon</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">long</span>, y<span class="op">=</span><span class="va">lat</span>, group<span class="op">=</span><span class="va">group</span>, fill <span class="op">=</span> <span class="st">"A color"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/theme_mediocre.html">theme_mediocre_map</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
@@ -207,7 +231,7 @@ the background is predefined to fit nicely the theme palette. One can of
 course still modify the background color by adding a layer to the ggplot
 theme:
 <code>theme(plot.background = element_rect(fill = "red"))</code>.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span>background <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html" class="external-link">mpg</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cty</span>, y <span class="op">=</span> <span class="va">displ</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -220,10 +244,13 @@ theme:
 </h2>
 <p>Graphs with two categories, as the following one for instance, are
 ubiquitous.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html" class="external-link">mpg</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">drv</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html" class="external-link">mpg</a></span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">drv</span> <span class="op">==</span> <span class="st">"f"</span>, <span class="cn">NA</span>, <span class="va">year</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">dat</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">drv</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_bar</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">)</span>, position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"A very nice title"</span>, subtitle <span class="op">=</span> <span class="st">"A disappointing subtitle"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="mediocrethemes_files/figure-html/two_cat-1.png" width="70%" style="display: block; margin: auto;"></p>
@@ -238,7 +265,7 @@ users can therefore set the <code>second_pair</code> parameter of
 standard ggplot code. Subsequent bi-color graphs will use a second pair
 of colors, different from the base one but still consistent with the
 color scale used.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/set_mediocre_all.html">set_mediocre_all</a></span><span class="op">(</span>second_pair <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/presidential.html" class="external-link">presidential</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">party</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -285,7 +312,7 @@ information relative to the current palette:</p>
 </table>
 <p>Thus, to access the base color for instance, one should use the
 following command:</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">colors_mediocre</span><span class="op">[[</span><span class="st">"base"</span><span class="op">]</span><span class="op">]</span></span>
 <span><span class="co">#&gt; [1] "#00313C"</span></span></code></pre></div>
 </div>
@@ -300,7 +327,7 @@ following command:</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
     </footer>

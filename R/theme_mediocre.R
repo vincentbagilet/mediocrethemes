@@ -176,7 +176,8 @@ theme_mediocre <- function(
       ),
       strip.text.y = ggplot2::element_text(hjust = 0.95),
       panel.spacing.y = ggplot2::unit(1.8, "lines"),
-      panel.spacing.x = ggplot2::unit(1.3, "lines")
+      panel.spacing.x = ggplot2::unit(1.3, "lines"),
+      complete = TRUE
     )
 
   #modifications when background included
@@ -218,6 +219,7 @@ theme_mediocre_map <- function(
       axis.text = ggplot2::element_blank(),
       axis.ticks.x = ggplot2::element_blank(),
       panel.grid.minor.y = element_blank(),
-      panel.grid.major.y = element_blank()
+      panel.grid.major.y = element_blank(),
+      complete = TRUE
     )
 }

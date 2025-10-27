@@ -17,7 +17,8 @@ Suggests:
     knitr,
     rmarkdown,
     lintr,
-    testthat
+    testthat,
+    maps
 VignetteBuilder: knitr
 Imports: 
     grDevices,

@@ -14,10 +14,10 @@
 #' If equal to "right", the gradient palette is built with the right hand
 #' side part of the divergent palette. If equal to "left", uses the left
 #' hand side but flipping so that light values are on the left.
+#' @param na.value a characther string. The name of the color used for missing
+#' values.
 #' @param ... Other arguments passed on to
-#' \code{\link[ggplot2]{discrete_scale}},
-#' \code{\link[ggplot2]{continuous_scale}},
-#' or \code{\link[ggplot2]{binned_scale}} to control name, limits, breaks,
+#' \code{\link[ggplot2]{binned_scale}} to control name, limits, breaks,
 #' labels and so forth.
 #'
 #' @family color scales
@@ -31,6 +31,7 @@
 palette_mediocre_d <- function(pal = "autumn",
                                second_pair = FALSE,
                                gradient = NULL,
+                               na.value = "gray91",
                                ...) {
 
   if (!(pal %in% mediocrethemes::colors_table[["pal"]])) {
@@ -92,10 +93,9 @@ palette_mediocre_d <- function(pal = "autumn",
     }
 
     ggplot2::discrete_scale(
-      ...,
       aesthetics = c("fill", "color"),
       palette = mediocre_pal,
-      na.value = "gray91"
+      na.value = na.value
     )
   }
 
@@ -106,7 +106,10 @@ palette_mediocre_d <- function(pal = "autumn",
 #' @export
 #'
 #' @rdname palette_mediocre_d
-palette_mediocre_c <- function(pal = "autumn", gradient = NULL, ...) {
+palette_mediocre_c <- function(pal = "autumn",
+                               gradient = NULL,
+                               na.value = "gray91",
+                               ...) {
 
   if (!(pal %in% mediocrethemes::colors_table[["pal"]])) {
     stop("This palette does not exist in this package")
@@ -137,10 +140,9 @@ palette_mediocre_c <- function(pal = "autumn", gradient = NULL, ...) {
     }
 
     ggplot2::scale_fill_gradientn(
-      ...,
       colors = mediocre_color_vector,
       aesthetics = c("fill", "color"),
-      na.value = "gray91",
+      na.value = na.value,
       guide = ggplot2::guide_colourbar(
         theme = ggplot2::theme(
           legend.key.width  = ggplot2::unit(5, "cm"),

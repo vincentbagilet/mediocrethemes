@@ -201,7 +201,7 @@ One can remove the axis labels with the command `labs(x = NULL, y = NULL)`.
 ```{r}
 set_mediocre_all()
 
-map_data("state") |> 
+ggplot2::map_data("state") |> 
   ggplot() +
   geom_polygon(aes(x=long, y=lat, group=group, fill = "A color")) +
   theme_mediocre_map() +
@@ -233,7 +233,10 @@ Graphs with two categories, as the following one for instance, are ubiquitous.
 ```{r two_cat}
 set_mediocre_all()
 
-ggplot(data = ggplot2::mpg, aes(x = drv)) +
+dat <- ggplot2::mpg |> 
+  dplyr::mutate(year = ifelse(drv == "f", NA, year))
+
+ggplot(data = dat, aes(x = drv)) +
     geom_bar(aes(fill = factor(year)), position = "dodge") +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
