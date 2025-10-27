@@ -123,7 +123,7 @@ theme_mediocre <- function(
       ),
       panel.grid.major.y = ggplot2::element_line(
         colour = line_color,
-        size = base_line_size
+        linewidth = base_line_size
       ),
       panel.grid.minor.x = ggplot2::element_blank(),
       panel.grid.major.x =  ggplot2::element_blank(),
@@ -131,7 +131,7 @@ theme_mediocre <- function(
       plot.margin = ggplot2::unit(c(0.5, 0.5, 0.5, 0.5), "cm"),
       axis.text = ggplot2::element_text(size = ggplot2::rel(0.75)),
       axis.ticks.x = ggplot2::element_line(
-        size = ggplot2::rel(2),
+        linewidth = ggplot2::rel(2),
         colour = color_theme[["text"]]
       ),
       axis.title.x = ggplot2::element_text(
