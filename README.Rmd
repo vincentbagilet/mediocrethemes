@@ -19,6 +19,7 @@ knitr::opts_chunk$set(
 # mediocrethemes
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
 This package provides not particularly nice and, hopefully, not particularly ugly ggplot themes.
@@ -40,7 +41,7 @@ This package provides both a ggplot theme and a color palette.
 
 Users can set the theme and color palette for all plots in a document with the function `set_mediocre_all` placed at the top of their document:
 
-```{r set_mediocre_all}
+```{r set_mediocre_all, warning=FALSE}
 library(ggplot2)
 library(mediocrethemes)
 
