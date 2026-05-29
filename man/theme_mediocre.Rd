@@ -9,6 +9,7 @@ theme_mediocre(
   pal = "autumn",
   gradient = NULL,
   background = FALSE,
+  black_text = FALSE,
   base_size = if (.Platform$OS.type == "windows") 17 else 14,
   base_family = "Lato",
   base_line_size = base_size/50,
@@ -19,6 +20,7 @@ theme_mediocre_map(
   pal = "autumn",
   gradient = NULL,
   background = FALSE,
+  black_text = FALSE,
   base_size = if (.Platform$OS.type == "windows") 17 else 14,
   base_family = "Lato",
   base_line_size = base_size/50,
@@ -37,6 +39,9 @@ side part of the divergent palette. If equal to "left", uses the left
 hand side but flipping so that light values are on the left.}
 
 \item{background}{If TRUE, a background is added to the plots}
+
+\item{black_text}{If TRUE, the text will be in black, overriding the palette
+text color}
 
 \item{base_size}{Base font size, given in pts.}
 

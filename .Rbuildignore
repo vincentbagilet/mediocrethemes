@@ -9,3 +9,5 @@
 ^doc$
 ^Meta$
 ^inst/data-raw$
+^\.positai$
+^\.claude$

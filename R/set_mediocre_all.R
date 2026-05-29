@@ -10,13 +10,14 @@
 #'
 set_mediocre_all <-
   function(pal = "autumn",
+           gradient = NULL,
            background = FALSE,
+           black_text = FALSE,
            second_pair = FALSE,
            base_size = if (.Platform$OS.type == "windows") 17 else 14,
            base_family = "Lato",
            base_line_size = base_size / 50,
-           base_rect_size = base_size / 170,
-           gradient = NULL) {
+           base_rect_size = base_size / 170) {
     #side effect: var of colors corresponding to the palette
     colors_mediocre <- NULL
     colors_mediocre <<-
@@ -27,6 +28,7 @@ set_mediocre_all <-
       pal = pal,
       gradient = gradient,
       background = background,
+      black_text = black_text,
       base_size = base_size,
       base_family = base_family,
       base_line_size = base_line_size,

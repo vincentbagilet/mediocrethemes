@@ -5,9 +5,15 @@
 \alias{palette_mediocre_c}
 \title{Mediocre color palette}
 \usage{
-palette_mediocre_d(pal = "autumn", second_pair = FALSE, gradient = NULL, ...)
+palette_mediocre_d(
+  pal = "autumn",
+  second_pair = FALSE,
+  gradient = NULL,
+  na.value = "gray91",
+  ...
+)
 
-palette_mediocre_c(pal = "autumn", gradient = NULL, ...)
+palette_mediocre_c(pal = "autumn", gradient = NULL, na.value = "gray91", ...)
 }
 \arguments{
 \item{pal}{a string. Defines the color palette selected.
@@ -23,10 +29,11 @@ If equal to "right", the gradient palette is built with the right hand
 side part of the divergent palette. If equal to "left", uses the left
 hand side but flipping so that light values are on the left.}
 
+\item{na.value}{a characther string. The name of the color used for missing
+values.}
+
 \item{...}{Other arguments passed on to
-\code{\link[ggplot2]{discrete_scale}},
-\code{\link[ggplot2]{continuous_scale}},
-or \code{\link[ggplot2]{binned_scale}} to control name, limits, breaks,
+\code{\link[ggplot2]{binned_scale}} to control name, limits, breaks,
 labels and so forth.}
 }
 \description{

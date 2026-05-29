@@ -9,6 +9,8 @@
 #' side part of the divergent palette. If equal to "left", uses the left
 #' hand side but flipping so that light values are on the left.
 #' @param background If TRUE, a background is added to the plots
+#' @param black_text If TRUE, the text will be in black, overriding the palette
+#' text color
 #' @param base_size Base font size, given in pts.
 #' @param base_family Base font family
 #' @param base_line_size Base size for line elements
@@ -32,6 +34,7 @@ theme_mediocre <- function(
   pal = "autumn",
   gradient = NULL,
   background = FALSE,
+  black_text = FALSE,
   base_size = if (.Platform$OS.type == "windows") 17 else 14,
   base_family = "Lato",
   base_line_size = base_size / 50,
@@ -48,7 +51,7 @@ theme_mediocre <- function(
   colors_table <- mediocrethemes::colors_table
   color_theme <- colors_table[which(colors_table$pal == pal), ]
   base_color <- color_theme[["base"]]
-  text_color <- color_theme[["text"]]
+  text_color <- if (black_text) "black" else color_theme[["text"]]
   line_color <- grDevices::colorRampPalette(c("white", text_color))(10)[3]
   light_color <- grDevices::colorRampPalette(c("white", base_color))(10)[7]
 
@@ -119,7 +122,7 @@ theme_mediocre <- function(
       text = ggplot2::element_text(
         size = base_size,
         family = base_family,
-        colour = color_theme[["text"]]
+        colour = text_color
       ),
       panel.grid.major.y = ggplot2::element_line(
         colour = line_color,
@@ -132,7 +135,7 @@ theme_mediocre <- function(
       axis.text = ggplot2::element_text(size = ggplot2::rel(0.75)),
       axis.ticks.x = ggplot2::element_line(
         linewidth = ggplot2::rel(2),
-        colour = color_theme[["text"]]
+        colour = text_color
       ),
       axis.title.x = ggplot2::element_text(
         hjust = 1,
@@ -201,6 +204,7 @@ theme_mediocre_map <- function(
     pal = "autumn",
     gradient = NULL,
     background = FALSE,
+    black_text = FALSE,
     base_size = if (.Platform$OS.type == "windows") 17 else 14,
     base_family = "Lato",
     base_line_size = base_size / 50,
@@ -210,6 +214,7 @@ theme_mediocre_map <- function(
       pal = pal,
       gradient = gradient,
       background = background,
+      black_text = black_text,
       base_size = base_size,
       base_family = base_family,
       base_line_size = base_line_size,
@@ -218,8 +223,8 @@ theme_mediocre_map <- function(
     ggplot2::theme(
       axis.text = ggplot2::element_blank(),
       axis.ticks.x = ggplot2::element_blank(),
-      panel.grid.minor.y = element_blank(),
-      panel.grid.major.y = element_blank(),
+      panel.grid.minor.y = ggplot2::element_blank(),
+      panel.grid.major.y = ggplot2::element_blank(),
       complete = TRUE
     )
 }

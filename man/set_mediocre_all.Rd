@@ -6,13 +6,14 @@
 \usage{
 set_mediocre_all(
   pal = "autumn",
+  gradient = NULL,
   background = FALSE,
+  black_text = FALSE,
   second_pair = FALSE,
   base_size = if (.Platform$OS.type == "windows") 17 else 14,
   base_family = "Lato",
   base_line_size = base_size/50,
-  base_rect_size = base_size/170,
-  gradient = NULL
+  base_rect_size = base_size/170
 )
 }
 \arguments{
@@ -20,7 +21,16 @@ set_mediocre_all(
 Can either be either "autumn", "rainbow", "green",
  "hotcold", "blackandwhite", "coty", "leo", "portal" or "pem"}
 
+\item{gradient}{a string, either "left" or "right".
+Turns divergent palettes into gradient ones by splitting it in two.
+If equal to "right", the gradient palette is built with the right hand
+side part of the divergent palette. If equal to "left", uses the left
+hand side but flipping so that light values are on the left.}
+
 \item{background}{If TRUE, a background is added to the plots}
+
+\item{black_text}{If TRUE, the text will be in black, overriding the palette
+text color}
 
 \item{second_pair}{if true sets an alternative pair of colors
 for graphs with two colors}
@@ -32,12 +42,6 @@ for graphs with two colors}
 \item{base_line_size}{Base size for line elements}
 
 \item{base_rect_size}{Base size for rect elements}
-
-\item{gradient}{a string, either "left" or "right".
-Turns divergent palettes into gradient ones by splitting it in two.
-If equal to "right", the gradient palette is built with the right hand
-side part of the divergent palette. If equal to "left", uses the left
-hand side but flipping so that light values are on the left.}
 }
 \description{
 Sets the mediocre theme and colors for the whole document.
