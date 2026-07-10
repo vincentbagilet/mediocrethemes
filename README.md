@@ -28,9 +28,7 @@ internet connection the first time you call `set_mediocre_all`,
 ## Usage
 
 This package provides both `ggplot` themes and a breadth of color
-palettes. The package has been updated with a more modern theme (`idid`)
-but the initial theme (`mediocre`) is still available (and remains the
-default).
+palettes.
 
 Users can set the theme and color palette for all plots in a document
 with the function `set_mediocre_all` placed at the top of their
@@ -71,6 +69,8 @@ A couple of example plots obtained with this theme:
 
 ### mediocre theme
 
+The package has been updated with a more modern theme (`idid`) but the
+initial theme (`mediocre`) is still available (and remains the default).
 Here are the same example graphs but with the original `mediocre` theme.
 
 <img src="man/figures/README-examples_mediocre-1.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples_mediocre-2.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples_mediocre-3.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples_mediocre-4.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples_mediocre-5.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples_mediocre-6.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples_mediocre-7.png" width="70%" style="display: block; margin: auto;" /><img src="man/figures/README-examples_mediocre-8.png" width="70%" style="display: block; margin: auto;" />
