@@ -3,7 +3,7 @@
 \name{theme_mediocre}
 \alias{theme_mediocre}
 \alias{theme_mediocre_map}
-\title{Defines the ggplot theme with the default R colors.}
+\title{Defines the ggplot mediocretheme with the default R colors.}
 \usage{
 theme_mediocre(
   pal = "autumn",
@@ -52,7 +52,7 @@ text color}
 \item{base_rect_size}{Base size for rect elements}
 }
 \description{
-Defines the ggplot theme with the default R colors.
+Defines the ggplot mediocretheme with the default R colors.
 }
 \examples{
 ggplot(ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +

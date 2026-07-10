@@ -10,7 +10,7 @@ Encoding: UTF-8
 URL: https://vincentbagilet.github.io/mediocrethemes/
 LazyData: true
 Depends: 
-    R (>= 2.10),
+    R (>= 3.5),
     ggplot2 (>= 3.3.2)
 RoxygenNote: 7.3.3
 Suggests: 

@@ -33,11 +33,11 @@ You can install the development version of `mediocrethemes` from [GitHub](https:
 devtools::install_github("vincentbagilet/mediocrethemes")
 ```
 
-Note that you may need to restart your R session once the installation is complete to be able to use the package. You will also need an active internet connection the first time you call `set_mediocre_all` or `theme_mediocre`.
+Note that you may need to restart your R session once the installation is complete to be able to use the package. You will also need an active internet connection the first time you call `set_mediocre_all`, `theme_mediocre`, or `theme_idid`.
 
 ## Usage
 
-This package provides both a ggplot theme and a color palette.
+This package provides both `ggplot` themes and a breadth of color palettes. The package has been updated with a more modern theme (`idid`) but the initial theme (`mediocre`) is still available (and remains the default).
 
 Users can set the theme and color palette for all plots in a document with the function `set_mediocre_all` placed at the top of their document:
 
@@ -45,7 +45,7 @@ Users can set the theme and color palette for all plots in a document with the f
 library(ggplot2)
 library(mediocrethemes)
 
-set_mediocre_all()
+set_mediocre_all(pal = "idid", theme = "idid")
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
     geom_col() +
@@ -57,7 +57,7 @@ Users also can set the theme and color palette independently.
 ```{r base_graph}
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
     geom_point() +
-    theme_mediocre() +
+    theme_idid() +
     scale_mediocre_d() +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
@@ -69,47 +69,82 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
 A couple of example plots obtained with this theme:
 
 ```{r examples, echo=FALSE}
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
+make_example_plots <- function() {
+  g1 <- ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
     geom_col() +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+  
+  print(g1)
 
-ggplot(data = ggplot2::mpg, aes(x = drv)) +
-    geom_bar(aes(fill = factor(year)), position = "dodge") +
+  g2 <- ggplot(data = ggplot2::mpg, aes(x = drv)) +
+      geom_bar(aes(fill = factor(year)), position = "dodge") +
+      labs(
+        title = "A very nice title", 
+        subtitle = "A disappointing subtitle",
+        fill = "Year of Manufacture", 
+        x = "Type of Drive Train",
+        y = "Number of released models"
+      )
+  
+  print(g2)
+  
+  g3 <- ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
+      geom_point(aes(color = factor(year))) +
+      labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+  
+  print(g3)
+  
+  g4 <- ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
+    geom_col() +
+    geom_vline(xintercept = 15, linewidth = 1) +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
-    geom_point(aes(color = factor(year))) +
+  
+  print(g4)
+  
+  g5 <- ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
+    geom_point() +
+    geom_smooth(method = 'loess', formula = 'y ~ x') +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = drv)) +
-  geom_col() +
-  geom_vline(xintercept = 15) +
-  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
-  geom_point() +
-  geom_smooth(method = 'loess', formula = 'y ~ x') +
-  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
-
-ggplot(data = ggplot2::mpg, aes(x = cty)) +
-    geom_density() +
+  
+  print(g5)
+  
+  g6 <- ggplot(data = ggplot2::mpg, aes(x = cty)) +
+      geom_density() +
+      labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+  
+  print(g6)
+  
+  df <- data.frame(
+    x = rnorm(10000),
+    y = rnorm(10000)
+  )
+  
+  g7 <- ggplot(df, aes(x, y)) +
+    geom_hex() +
+    coord_fixed() +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+  
+  print(g7)
+  
+  g8 <- ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
+    geom_point() +
+    facet_wrap(~ year) +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle") 
+  
+  print(g8)
+}
 
-df <- data.frame(
-  x = rnorm(10000),
-  y = rnorm(10000)
-)
+make_example_plots()
+```
 
-ggplot(df, aes(x, y)) +
-  geom_hex() +
-  coord_fixed() +
-  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+### mediocre theme
 
-ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
-  geom_point() +
-  facet_wrap(~ year) +
-  theme_mediocre() +
-  labs(title = "A very nice title", subtitle = "A disappointing subtitle") 
+Here are the same example graphs but with the original `mediocre` theme.
+
+```{r examples_mediocre, echo=FALSE}
+set_mediocre_all()
+
+make_example_plots()
 ```
 
 ### Additional palettes
@@ -118,7 +153,7 @@ Note that additional palettes are available: `r mediocrethemes::colors_table[[1]
 
 ```{r palettes, echo=FALSE}
 for (palette in mediocrethemes::colors_table[[1]][-1]) {
-  set_mediocre_all(pal = palette)
+  set_mediocre_all(pal = palette, theme = "idid")
 
   graph <- ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
       geom_col() +

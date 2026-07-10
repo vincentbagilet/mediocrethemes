@@ -6,20 +6,23 @@
 \usage{
 set_mediocre_all(
   pal = "autumn",
+  theme = "mediocre",
   gradient = NULL,
   background = FALSE,
   black_text = FALSE,
   second_pair = FALSE,
-  base_size = if (.Platform$OS.type == "windows") 17 else 14,
-  base_family = "Lato",
-  base_line_size = base_size/50,
-  base_rect_size = base_size/170
+  base_size = NULL,
+  base_family = NULL,
+  base_line_size = NULL,
+  base_rect_size = NULL
 )
 }
 \arguments{
 \item{pal}{a string. Defines the color palette selected.
 Can either be either "autumn", "rainbow", "green",
  "hotcold", "blackandwhite", "coty", "leo", "portal" or "pem"}
+
+\item{theme}{a string. Defines the theme used, either "mediocre" or "idid"}
 
 \item{gradient}{a string, either "left" or "right".
 Turns divergent palettes into gradient ones by splitting it in two.

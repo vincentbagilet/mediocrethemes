@@ -1,5 +1,12 @@
+#' Unsets the mediocre theme and colors, reverting to the ggplot2 defaults.
+#'
+#' @export
+#' @examples
+#' unset_mediocre_all()
+#'
 unset_mediocre_all <- function() {
   ggplot2::theme_set(ggplot2::theme_gray())
+  showtext::showtext_auto(FALSE)
 
   geoms <- c("point", "line", "contour", "text", "curve", "function", "spoke",
              "rug", "errorbar", "errorbarh", "pointrange", "segment", "abline",

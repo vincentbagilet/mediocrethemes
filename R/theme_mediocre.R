@@ -1,4 +1,4 @@
-#' Defines the ggplot theme with the default R colors.
+#' Defines the ggplot mediocretheme with the default R colors.
 #'
 #' @param pal a string. Defines the color palette selected.
 #' Can either be either "autumn", "rainbow", "green",
