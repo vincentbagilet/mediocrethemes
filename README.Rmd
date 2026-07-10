@@ -78,13 +78,7 @@ make_example_plots <- function() {
 
   g2 <- ggplot(data = ggplot2::mpg, aes(x = drv)) +
       geom_bar(aes(fill = factor(year)), position = "dodge") +
-      labs(
-        title = "A very nice title", 
-        subtitle = "A disappointing subtitle",
-        fill = "Year of Manufacture", 
-        x = "Type of Drive Train",
-        y = "Number of released models"
-      )
+      labs(title = "A very nice title", subtitle = "A disappointing subtitle")
   
   print(g2)
   

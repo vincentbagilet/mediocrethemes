@@ -150,13 +150,13 @@ theme_idid <- function(
       plot.title = ggplot2::element_text(
         face = "bold",
         hjust = 0,
-        size = ggplot2::rel(1.7),
-        margin = ggplot2::margin(b = 8)
+        size = ggplot2::rel(1.6),
+        margin = ggplot2::margin(b = 7)
       ),
       plot.subtitle = ggplot2::element_text(
         hjust = 0,
         size = ggplot2::rel(1.2),
-        margin = ggplot2::margin(b = 8)
+        margin = ggplot2::margin(b = 7, t = -2)
       ),
       plot.caption = ggplot2::element_text(
         hjust = 1,
@@ -172,7 +172,7 @@ theme_idid <- function(
       legend.key.height = ggplot2::unit(0.4, "cm"),
       legend.key.width = ggplot2::unit(0.4, "cm"),
       legend.title = ggplot2::element_text(
-        margin = ggplot2::margin(t = 0.3, b = 0.1, unit = "cm"),
+        margin = ggplot2::margin(t = 0.3, b = 0.3, unit = "cm"),
         size = ggplot2::rel(1)
       ),
       legend.title.position = "top",
