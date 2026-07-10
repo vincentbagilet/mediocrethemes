@@ -156,7 +156,8 @@ theme_idid <- function(
       plot.subtitle = ggplot2::element_text(
         hjust = 0,
         size = ggplot2::rel(1.2),
-        margin = ggplot2::margin(b = 7, t = -2)
+        margin = ggplot2::margin(b = 7, t = -2
+                                 )
       ),
       plot.caption = ggplot2::element_text(
         hjust = 1,

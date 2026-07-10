@@ -34,7 +34,7 @@ library(mediocrethemes)
 The easiest way to use the `mediocrethemes` package is through the `set_mediocre_all` function. It enables to set both the theme and the color scale for all graphs in a document. The user can call this function at the beginning of the document. Subsequent plots can be created using the standard ggplot commands, no additional commands are required. The user does not need to add `+ theme_mediocre()`, `+ theme_idid()` or `+ scale_mediocre_d()` to their plots to set the theme and the color, if they called `set_mediocre_all()` before. The following example illustrates this feature:
 
 ```{r set_mediocre_all}
-set_mediocre_all(pal = "idid", theme = "idid")
+set_mediocre_all(pal = "idid", theme = theme_idid)
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
   geom_col() +
@@ -48,7 +48,7 @@ The function `set_mediocre_all` takes several arguments: `pal`, `theme`, `backgr
 Available palettes are: `r mediocrethemes::colors_table[[1]]`. A palette defines the color of the theme and the color scale used in the graphs, *ie* the color of the axes and text for the theme and the colors used in the legend for the color scale. To change the palette to "coty" for instance, just set the argument `pal` equal to "coty" when calling the function `set_mediocre_all` at the beginning of the document. All subsequent graphs will be created using similar code, the only difference is the name of the palette in `set_mediocre_all` 
  
 ```{r set_mediocre_all_coty}
-set_mediocre_all(pal = "coty", theme = "idid")
+set_mediocre_all(pal = "coty", theme = theme_idid)
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
   geom_col() +
@@ -59,7 +59,7 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
 
 ```{r rainbow, echo=FALSE}
 plot_all_examples <- function(pal) {
-  set_mediocre_all(pal = pal, theme = "idid")
+  set_mediocre_all(pal = pal, theme = theme_idid)
   
   plot1 <- ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
     geom_col() +
@@ -101,14 +101,14 @@ plot_all_examples <- function(pal) {
   if (pal != "blackandwhite") {
     plot6 <- ggplot(data = ggplot2::diamonds, aes(x = price, fill = color)) +
     geom_histogram(bins = 30) +
-    scale_mediocre_d(pal = pal, theme = "idid", gradient = "left") +
+    scale_mediocre_d(pal = pal, theme = theme_idid, gradient = "left") +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle")
   
   print(plot6)
   
   plot7 <- ggplot(data = ggplot2::diamonds, aes(x = price, fill = color)) +
     geom_histogram(bins = 30) +
-    scale_mediocre_d(pal = pal, theme = "idid", gradient = "right") +
+    scale_mediocre_d(pal = pal, theme = theme_idid, gradient = "right") +
     labs(title = "A very nice title", subtitle = "A disappointing subtitle") 
   
   print(plot7)
@@ -162,7 +162,7 @@ plot_all_examples(pal = "pem")
 Each divergent palette (autumn, coty, rainbow and hotcold) can be turned into two gradient palettes. This is done by splitting a divergent palette in the middle, and use either the set of colors on the right or on the left (flipped to get light colors for small values). The example below hopefully clarifies this. To use these gradient palettes, one only needs to set the parameter `gradient` to "left" or "right".
 
 ```{r gradient, echo=FALSE}
-set_mediocre_all(pal = "idid", theme = "idid")
+set_mediocre_all(pal = "idid", theme = theme_idid)
 print("set_mediocre_all(pal = 'idid', theme = 'idid')")
 
 df <- data.frame(
@@ -175,7 +175,7 @@ ggplot(df, aes(x, y)) +
   coord_fixed() +
   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 
-set_mediocre_all(pal = "idid", theme = "idid", gradient = "left")
+set_mediocre_all(pal = "idid", theme = theme_idid, gradient = "left")
 print("set_mediocre_all(pal = 'coty', gradient = 'left')")
 
 ggplot(df, aes(x, y)) +
@@ -183,7 +183,7 @@ ggplot(df, aes(x, y)) +
   coord_fixed() +
   labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 
-set_mediocre_all(pal = "idid", theme = "idid", gradient = "right")
+set_mediocre_all(pal = "idid", theme = theme_idid, gradient = "right")
 print("set_mediocre_all(pal = 'coty', gradient = 'right')")
 
 ggplot(df, aes(x, y)) +
@@ -199,7 +199,7 @@ When making maps, one can use the function `theme_mediocre_map()` to apply a the
 One can remove the axis labels with the command `labs(x = NULL, y = NULL)`.
 
 ```{r}
-set_mediocre_all(pal = "idid", theme = "idid")
+set_mediocre_all(pal = "idid", theme = theme_idid)
 
 ggplot2::map_data("state") |> 
   ggplot() +
@@ -219,7 +219,7 @@ ggplot2::map_data("state") |>
 Users can also easily set a background for all their plots by setting the parameter `background` to `TRUE`. The color of the background is predefined to  fit nicely the theme palette. One can of course still modify the background color by adding a layer to the ggplot theme: `theme(plot.background = element_rect(fill = "red"))`.
 
 ```{r background}
-set_mediocre_all(pal = "idid", theme = "idid", background = TRUE)
+set_mediocre_all(pal = "idid", theme = theme_idid, background = TRUE)
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
     geom_point() +
@@ -231,7 +231,7 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
 Graphs with two categories, as the following one for instance, are ubiquitous.
 
 ```{r two_cat}
-set_mediocre_all(pal = "idid", theme = "idid")
+set_mediocre_all(pal = "idid", theme = theme_idid)
 
 dat <- ggplot2::mpg |> 
   dplyr::mutate(year = ifelse(drv == "f", NA, year))
@@ -244,7 +244,7 @@ ggplot(data = dat, aes(x = drv)) +
 In a same project, users may have to consider different sets of pairs. For instance, they may want to separate observations in years as in the previous graph and later use other categories such as Republicans and Democrats. User may not want to use the same color pair to denote year and party. For instance they may not want Republicans to be coded with the same color as the year 1999. To access a second color pair, users can therefore set the `second_pair` parameter of `set_mediocre_all` to `TRUE` and keep on writing standard ggplot code. Subsequent bi-color graphs will use a second pair of colors, different from the base one but still consistent with the color scale used.
 
 ```{r second_pair}
-set_mediocre_all(pal = "idid", theme = "idid", second_pair = TRUE)
+set_mediocre_all(pal = "idid", theme = theme_idid, second_pair = TRUE)
 
 ggplot(data = ggplot2::presidential, aes(x = party)) +
   geom_bar(aes(fill = party), position = "dodge") +

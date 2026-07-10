@@ -29,8 +29,8 @@ This package provides not particularly nice and, hopefully, not particularly ugl
 You can install the development version of `mediocrethemes` from [GitHub](https://github.com/vincentbagilet/mediocrethemes) with:
 
 ```{r eval=FALSE}
-# install.packages("devtools")
-devtools::install_github("vincentbagilet/mediocrethemes")
+# install.packages("pak")
+pak::pak("vincentbagilet/mediocrethemes")
 ```
 
 Note that you may need to restart your R session once the installation is complete to be able to use the package. You will also need an active internet connection the first time you call `set_mediocre_all`, `theme_mediocre`, or `theme_idid`.
@@ -39,27 +39,33 @@ Note that you may need to restart your R session once the installation is comple
 
 This package provides both `ggplot` themes and a breadth of color palettes. 
 
-Users can set the theme and color palette for all plots in a document with the function `set_mediocre_all` placed at the top of their document:
+The most useful feature of the package is the `set_mediocre_all` function. It allows users to set the theme and color palette for all plots in a document:
 
 ```{r set_mediocre_all, warning=FALSE}
 library(ggplot2)
 library(mediocrethemes)
 
-set_mediocre_all(pal = "idid", theme = "idid")
+set_mediocre_all(pal = "idid", theme = theme_idid)
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
-    geom_col() +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+  geom_col() +
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
+
+<!-- This can be undone with the `unset_mediocre_all` function. -->
+
+<!-- ```{r unset_mediocre_all} -->
+<!-- # unset_mediocre_all() -->
+<!-- ``` -->
 
 Users also can set the theme and color palette independently.
 
 ```{r base_graph}
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
-    geom_point() +
-    theme_idid() +
-    scale_mediocre_d() +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+  geom_point() +
+  theme_idid() +
+  scale_mediocre_d() +
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
 ## Examples
@@ -69,6 +75,8 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
 A couple of example plots obtained with this theme:
 
 ```{r examples, echo=FALSE}
+set_mediocre_all(pal = "idid", theme = theme_idid)
+
 make_example_plots <- function() {
   g1 <- ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
     geom_col() +
@@ -77,14 +85,14 @@ make_example_plots <- function() {
   print(g1)
 
   g2 <- ggplot(data = ggplot2::mpg, aes(x = drv)) +
-      geom_bar(aes(fill = factor(year)), position = "dodge") +
-      labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+    geom_bar(aes(fill = factor(year)), position = "dodge") +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
   
   print(g2)
   
   g3 <- ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
-      geom_point(aes(color = factor(year))) +
-      labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+    geom_point(aes(color = factor(year))) +
+    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
   
   print(g3)
   
@@ -147,7 +155,7 @@ Note that additional palettes are available: `r mediocrethemes::colors_table[[1]
 
 ```{r palettes, echo=FALSE}
 for (palette in mediocrethemes::colors_table[[1]][-1]) {
-  set_mediocre_all(pal = palette, theme = "idid")
+  set_mediocre_all(pal = palette, theme_idid)
 
   graph <- ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
       geom_col() +

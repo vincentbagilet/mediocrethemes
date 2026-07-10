@@ -16,8 +16,8 @@ You can install the development version of `mediocrethemes` from
 [GitHub](https://github.com/vincentbagilet/mediocrethemes) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("vincentbagilet/mediocrethemes")
+# install.packages("pak")
+pak::pak("vincentbagilet/mediocrethemes")
 ```
 
 Note that you may need to restart your R session once the installation
@@ -30,31 +30,39 @@ internet connection the first time you call `set_mediocre_all`,
 This package provides both `ggplot` themes and a breadth of color
 palettes.
 
-Users can set the theme and color palette for all plots in a document
-with the function `set_mediocre_all` placed at the top of their
-document:
+The most useful feature of the package is the `set_mediocre_all`
+function. It allows users to set the theme and color palette for all
+plots in a document:
 
 ``` r
 library(ggplot2)
 library(mediocrethemes)
 
-set_mediocre_all(pal = "idid", theme = "idid")
+set_mediocre_all(pal = "idid", theme = theme_idid)
 
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
-    geom_col() +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+  geom_col() +
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
 <img src="man/figures/README-set_mediocre_all-1.png" width="70%" style="display: block; margin: auto;" />
+
+<!-- This can be undone with the `unset_mediocre_all` function. -->
+
+<!-- ```{r unset_mediocre_all} -->
+
+<!-- # unset_mediocre_all() -->
+
+<!-- ``` -->
 
 Users also can set the theme and color palette independently.
 
 ``` r
 ggplot(data = ggplot2::mpg, aes(x = cty, y = displ)) +
-    geom_point() +
-    theme_idid() +
-    scale_mediocre_d() +
-    labs(title = "A very nice title", subtitle = "A disappointing subtitle")
+  geom_point() +
+  theme_idid() +
+  scale_mediocre_d() +
+  labs(title = "A very nice title", subtitle = "A disappointing subtitle")
 ```
 
 <img src="man/figures/README-base_graph-1.png" width="70%" style="display: block; margin: auto;" />
