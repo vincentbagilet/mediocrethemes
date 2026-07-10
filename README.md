@@ -47,13 +47,11 @@ ggplot(data = ggplot2::mpg, aes(x = cty, y = displ, fill = manufacturer)) +
 
 <img src="man/figures/README-set_mediocre_all-1.png" width="70%" style="display: block; margin: auto;" />
 
-<!-- This can be undone with the `unset_mediocre_all` function. -->
+This can be undone with the `unset_mediocre_all` function.
 
-<!-- ```{r unset_mediocre_all} -->
-
-<!-- # unset_mediocre_all() -->
-
-<!-- ``` -->
+``` r
+unset_mediocre_all()
+```
 
 Users also can set the theme and color palette independently.
 
@@ -85,48 +83,44 @@ Here are the same example graphs but with the original `mediocre` theme.
 
 ### Additional palettes
 
-Note that additional palettes are available: autumn, rainbow, green,
-hotcold, blackandwhite, coty, leo, portal, pem, idid, agdis.
+Note that additional palettes are available: autumn, rainbow, hotcold,
+blackandwhite, coty, leo, portal, pem, idid, agdis.
 
     #> [1] "set_mediocre_all(pal = 'rainbow')"
 
 <img src="man/figures/README-palettes-1.png" width="70%" style="display: block; margin: auto;" />
 
-    #> [1] "set_mediocre_all(pal = 'green')"
+    #> [1] "set_mediocre_all(pal = 'hotcold')"
 
 <img src="man/figures/README-palettes-2.png" width="70%" style="display: block; margin: auto;" />
 
-    #> [1] "set_mediocre_all(pal = 'hotcold')"
+    #> [1] "set_mediocre_all(pal = 'blackandwhite')"
 
 <img src="man/figures/README-palettes-3.png" width="70%" style="display: block; margin: auto;" />
 
-    #> [1] "set_mediocre_all(pal = 'blackandwhite')"
+    #> [1] "set_mediocre_all(pal = 'coty')"
 
 <img src="man/figures/README-palettes-4.png" width="70%" style="display: block; margin: auto;" />
 
-    #> [1] "set_mediocre_all(pal = 'coty')"
+    #> [1] "set_mediocre_all(pal = 'leo')"
 
 <img src="man/figures/README-palettes-5.png" width="70%" style="display: block; margin: auto;" />
 
-    #> [1] "set_mediocre_all(pal = 'leo')"
+    #> [1] "set_mediocre_all(pal = 'portal')"
 
 <img src="man/figures/README-palettes-6.png" width="70%" style="display: block; margin: auto;" />
 
-    #> [1] "set_mediocre_all(pal = 'portal')"
+    #> [1] "set_mediocre_all(pal = 'pem')"
 
 <img src="man/figures/README-palettes-7.png" width="70%" style="display: block; margin: auto;" />
 
-    #> [1] "set_mediocre_all(pal = 'pem')"
+    #> [1] "set_mediocre_all(pal = 'idid')"
 
 <img src="man/figures/README-palettes-8.png" width="70%" style="display: block; margin: auto;" />
 
-    #> [1] "set_mediocre_all(pal = 'idid')"
-
-<img src="man/figures/README-palettes-9.png" width="70%" style="display: block; margin: auto;" />
-
     #> [1] "set_mediocre_all(pal = 'agdis')"
 
-<img src="man/figures/README-palettes-10.png" width="70%" style="display: block; margin: auto;" />
+<img src="man/figures/README-palettes-9.png" width="70%" style="display: block; margin: auto;" />
 
 Most palettes are divergent but can be turned into two gradient
 palettes, as described in the [vignette](mediocrethemes.html).

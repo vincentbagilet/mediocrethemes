@@ -80,7 +80,7 @@
 <p><img src="reference/figures/README-set_mediocre_all-1.png" width="70%" style="display: block; margin: auto;"></p>
 <p>This can be undone with the <code>unset_mediocre_all</code> function.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># unset_mediocre_all()</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/unset_mediocre_all.html">unset_mediocre_all</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>Users also can set the theme and color palette independently.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/mpg.html" class="external-link">mpg</a></span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cty</span>, y <span class="op">=</span> <span class="va">displ</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -108,27 +108,25 @@
 <div class="section level3">
 <h3 id="additional-palettes">Additional palettes<a class="anchor" aria-label="anchor" href="#additional-palettes"></a>
 </h3>
-<p>Note that additional palettes are available: autumn, rainbow, green, hotcold, blackandwhite, coty, leo, portal, pem, idid, agdis.</p>
+<p>Note that additional palettes are available: autumn, rainbow, hotcold, blackandwhite, coty, leo, portal, pem, idid, agdis.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co">#&gt; [1] "set_mediocre_all(pal = 'rainbow')"</span></span></code></pre></div>
 <p><img src="reference/figures/README-palettes-1.png" width="70%" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co">#&gt; [1] "set_mediocre_all(pal = 'green')"</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co">#&gt; [1] "set_mediocre_all(pal = 'hotcold')"</span></span></code></pre></div>
 <p><img src="reference/figures/README-palettes-2.png" width="70%" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co">#&gt; [1] "set_mediocre_all(pal = 'hotcold')"</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co">#&gt; [1] "set_mediocre_all(pal = 'blackandwhite')"</span></span></code></pre></div>
 <p><img src="reference/figures/README-palettes-3.png" width="70%" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co">#&gt; [1] "set_mediocre_all(pal = 'blackandwhite')"</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co">#&gt; [1] "set_mediocre_all(pal = 'coty')"</span></span></code></pre></div>
 <p><img src="reference/figures/README-palettes-4.png" width="70%" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co">#&gt; [1] "set_mediocre_all(pal = 'coty')"</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co">#&gt; [1] "set_mediocre_all(pal = 'leo')"</span></span></code></pre></div>
 <p><img src="reference/figures/README-palettes-5.png" width="70%" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co">#&gt; [1] "set_mediocre_all(pal = 'leo')"</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co">#&gt; [1] "set_mediocre_all(pal = 'portal')"</span></span></code></pre></div>
 <p><img src="reference/figures/README-palettes-6.png" width="70%" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co">#&gt; [1] "set_mediocre_all(pal = 'portal')"</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co">#&gt; [1] "set_mediocre_all(pal = 'pem')"</span></span></code></pre></div>
 <p><img src="reference/figures/README-palettes-7.png" width="70%" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co">#&gt; [1] "set_mediocre_all(pal = 'pem')"</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co">#&gt; [1] "set_mediocre_all(pal = 'idid')"</span></span></code></pre></div>
 <p><img src="reference/figures/README-palettes-8.png" width="70%" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co">#&gt; [1] "set_mediocre_all(pal = 'idid')"</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co">#&gt; [1] "set_mediocre_all(pal = 'agdis')"</span></span></code></pre></div>
 <p><img src="reference/figures/README-palettes-9.png" width="70%" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co">#&gt; [1] "set_mediocre_all(pal = 'agdis')"</span></span></code></pre></div>
-<p><img src="reference/figures/README-palettes-10.png" width="70%" style="display: block; margin: auto;"></p>
 <p>Most palettes are divergent but can be turned into two gradient palettes, as described in the <a href="mediocrethemes.html">vignette</a>.</p>
 </div>
 </div>
