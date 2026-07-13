@@ -36,7 +36,7 @@ theme_idid <- function(
   background = FALSE,
   black_text = FALSE,
   base_size = if (.Platform$OS.type == "windows") 14 else 11,
-  base_family = "Arimo",
+  base_family = "Noto Sans",
   base_line_size = base_size / 22,
   base_rect_size = base_size / 22) {
 
@@ -103,9 +103,9 @@ theme_idid <- function(
 
   # set fonts
   showtextdb::load_showtext_fonts()
-  if (!("Arimo" %in% sysfonts::font_families())) {
-    arimo <- showtextdb::google_fonts("Arimo")
-    showtextdb::font_install(arimo)
+  if (!("Noto Sans" %in% sysfonts::font_families())) {
+    noto <- showtextdb::google_fonts("Noto Sans")
+    showtextdb::font_install(noto)
   }
   showtext::showtext_auto()
 
