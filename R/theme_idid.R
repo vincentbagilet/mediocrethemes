@@ -34,7 +34,7 @@ theme_idid <- function(
   pal = "idid",
   gradient = NULL,
   background = FALSE,
-  black_text = FALSE,
+  black_text = TRUE,
   base_size = if (.Platform$OS.type == "windows") 14 else 11,
   base_family = "Noto Sans",
   base_line_size = base_size / 22,
@@ -136,34 +136,34 @@ theme_idid <- function(
       plot.margin = ggplot2::unit(c(0.5, 0.5, 0.5, 0.5), "cm"),
       axis.text = ggplot2::element_text(size = ggplot2::rel(0.9)),
       axis.title.x = ggplot2::element_text(
-        hjust = 0.98,
+        hjust = 0.99,
         margin = ggplot2::margin(t = .35, unit = "cm"),
-        size = ggplot2::rel(1.2)
+        size = ggplot2::rel(1.1)
       ),
       axis.title.y = ggplot2::element_text(
-        hjust = 0.98,
+        hjust = 0.99,
         margin = ggplot2::margin(r = .35, unit = "cm"),
-        size = ggplot2::rel(1.2),
+        size = ggplot2::rel(1.1),
         angle = 90
       ),
       plot.title.position = "plot",
       plot.title = ggplot2::element_text(
         face = "bold",
         hjust = 0,
-        size = ggplot2::rel(1.6),
-        margin = ggplot2::margin(b = 7)
+        size = ggplot2::rel(1.4),
+        margin = ggplot2::margin(b = 0.7, unit = "cm")
       ),
       plot.subtitle = ggplot2::element_text(
         hjust = 0,
-        size = ggplot2::rel(1.2),
-        margin = ggplot2::margin(b = 7, t = -2
-                                 )
+        size = ggplot2::rel(1.1),
+        margin = ggplot2::margin(b = 0.8, t = -0.5, unit = "cm")
       ),
       plot.caption = ggplot2::element_text(
         hjust = 1,
-        size = ggplot2::rel(0.8),
+        size = ggplot2::rel(0.9),
         margin = ggplot2::margin(t = 10, unit = "pt")
       ),
+      #legend
       legend.position = "top",
       legend.direction = "horizontal",
       legend.justification = c("left", "top"),
@@ -173,19 +173,21 @@ theme_idid <- function(
       legend.key.height = ggplot2::unit(0.4, "cm"),
       legend.key.width = ggplot2::unit(0.4, "cm"),
       legend.title = ggplot2::element_text(
-        margin = ggplot2::margin(t = 0.3, b = 0.3, unit = "cm"),
+        margin = ggplot2::margin(t = -0.2, b = 0.2, unit = "cm"),
         size = ggplot2::rel(1)
       ),
       legend.title.position = "top",
       legend.text = ggplot2::element_text(size = ggplot2::rel(0.9)),
+      legend.box.spacing = ggplot2::unit(0.1, unit = "cm"),
+      #facet names
       strip.placement = "outside",
       strip.text = ggplot2::element_text(
-        size = ggplot2::rel(1.2),
+        size = ggplot2::rel(1.1),
         face = "bold"
       ),
       strip.text.x = ggplot2::element_text(
         hjust = 0,
-        margin = ggplot2::margin(b = .3, t = 0.4, unit = "cm")
+        margin = ggplot2::margin(b = .3, t = 0, unit = "cm")
       ),
       panel.spacing.y = ggplot2::unit(1.8, "lines"),
       panel.spacing.x = ggplot2::unit(1.3, "lines"),

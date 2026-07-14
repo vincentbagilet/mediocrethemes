@@ -17,7 +17,7 @@ set_mediocre_all <-
            pal = "autumn",
            gradient = NULL,
            background = FALSE,
-           black_text = FALSE,
+           black_text = TRUE,
            second_pair = FALSE,
            base_size = NULL,
            base_family = NULL,
