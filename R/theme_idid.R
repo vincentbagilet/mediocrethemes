@@ -168,15 +168,16 @@ theme_idid <- function(
       legend.direction = "horizontal",
       legend.justification = c("left", "top"),
       legend.location = "plot",
-      legend.margin = ggplot2::margin(t = -1, b = 8),
+      legend.margin = ggplot2::margin(t = -0.4, b = 0.5, unit = "cm"),
       legend.key.spacing.y = ggplot2::unit(0.01, "cm"),
       legend.key.height = ggplot2::unit(0.4, "cm"),
       legend.key.width = ggplot2::unit(0.4, "cm"),
       legend.title = ggplot2::element_text(
-        margin = ggplot2::margin(t = -0.2, b = 0.2, unit = "cm"),
+        # margin = ggplot2::margin(t = -0.2, b = 0.2, unit = "cm"),
         size = ggplot2::rel(1)
       ),
-      legend.title.position = "top",
+      legend.byrow = TRUE,
+      # legend.title.position = "left",
       legend.text = ggplot2::element_text(size = ggplot2::rel(0.9)),
       legend.box.spacing = ggplot2::unit(0.1, unit = "cm"),
       #facet names
