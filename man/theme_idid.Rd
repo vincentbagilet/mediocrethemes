@@ -9,9 +9,9 @@ theme_idid(
   pal = "idid",
   gradient = NULL,
   background = FALSE,
-  black_text = FALSE,
+  black_text = TRUE,
   base_size = if (.Platform$OS.type == "windows") 14 else 11,
-  base_family = "Arimo",
+  base_family = "Noto Sans",
   base_line_size = base_size/22,
   base_rect_size = base_size/22
 )

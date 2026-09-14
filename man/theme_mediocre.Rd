@@ -9,7 +9,7 @@ theme_mediocre(
   pal = "autumn",
   gradient = NULL,
   background = FALSE,
-  black_text = FALSE,
+  black_text = TRUE,
   base_size = if (.Platform$OS.type == "windows") 17 else 14,
   base_family = "Lato",
   base_line_size = base_size/50,

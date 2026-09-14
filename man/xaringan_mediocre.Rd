@@ -4,7 +4,11 @@
 \alias{xaringan_mediocre}
 \title{Mediocre xanringan theme}
 \usage{
-xaringan_mediocre(pal = "autumn", mediocre_plots = TRUE)
+xaringan_mediocre(
+  pal = "autumn",
+  theme = mediocrethemes::theme_mediocre,
+  mediocre_plots = TRUE
+)
 }
 \arguments{
 \item{pal}{a string. Defines the color palette selected.

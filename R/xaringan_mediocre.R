@@ -24,10 +24,14 @@
 #'
 #' xaringan_mediocre(pal = "rainbow")
 #'}
-xaringan_mediocre <- function(pal = "autumn", mediocre_plots = TRUE) {
+xaringan_mediocre <- function(pal = "autumn",
+                              theme = mediocrethemes::theme_mediocre,
+                              mediocre_plots = TRUE) {
 
   if (mediocre_plots) {
-    mediocrethemes::set_mediocre_all(pal = pal, background = TRUE)
+    mediocrethemes::set_mediocre_all(pal = pal,
+                                     theme = mediocrethemes::theme_mediocre,
+                                     background = TRUE)
   }
 
   colors_table <- mediocrethemes::colors_table

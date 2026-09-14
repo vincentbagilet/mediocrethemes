@@ -5,11 +5,11 @@
 \title{Sets the mediocre theme and colors for the whole document.}
 \usage{
 set_mediocre_all(
-  theme = mediocrethemes::theme_mediocre,
   pal = "autumn",
+  theme = mediocrethemes::theme_mediocre,
   gradient = NULL,
   background = FALSE,
-  black_text = FALSE,
+  black_text = TRUE,
   second_pair = FALSE,
   base_size = NULL,
   base_family = NULL,
@@ -18,13 +18,13 @@ set_mediocre_all(
 )
 }
 \arguments{
-\item{theme}{a function. The theme used, e.g. \code{theme_mediocre},
-\code{theme_idid} or any other \code{ggplot2} theme function such as
-\code{ggplot2::theme_minimal}. Passed unevaluated, i.e. without \code{()}.}
-
 \item{pal}{a string. Defines the color palette selected.
 Can either be either "autumn", "rainbow", "green",
  "hotcold", "blackandwhite", "coty", "leo", "portal" or "pem"}
+
+\item{theme}{a function. The theme used, e.g. \code{theme_mediocre},
+\code{theme_idid} or any other \code{ggplot2} theme function such as
+\code{ggplot2::theme_minimal}. Passed unevaluated, i.e. without \code{()}.}
 
 \item{gradient}{a string, either "left" or "right".
 Turns divergent palettes into gradient ones by splitting it in two.

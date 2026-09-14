@@ -13,8 +13,8 @@
 #' set_mediocre_all()
 #'
 set_mediocre_all <-
-  function(theme = mediocrethemes::theme_mediocre,
-           pal = "autumn",
+  function(pal = "autumn",
+           theme = mediocrethemes::theme_mediocre,
            gradient = NULL,
            background = FALSE,
            black_text = TRUE,
