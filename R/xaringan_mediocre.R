@@ -30,7 +30,7 @@ xaringan_mediocre <- function(pal = "autumn",
 
   if (mediocre_plots) {
     mediocrethemes::set_mediocre_all(pal = pal,
-                                     theme = mediocrethemes::theme_mediocre,
+                                     theme = theme,
                                      background = TRUE)
   }
 
